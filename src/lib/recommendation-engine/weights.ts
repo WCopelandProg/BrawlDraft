@@ -7,8 +7,8 @@ import type { ScoreWeights } from "./types";
  * swap the source without changing any call site.
  */
 export const DEFAULT_WEIGHTS: ScoreWeights = {
-  mapPerformance: 0.24,
-  matchupValue: 0.18,
+  mapPerformance: 0.2,
+  matchupValue: 0.16,
   allySynergy: 0.14,
   compositionFit: 0.12,
   roleCoverage: 0.1,
@@ -16,6 +16,11 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   recentMetaStrength: 0.06,
   playerComfort: 0.04,
   statisticalConfidence: 0.04,
+  // Rock-paper-scissors class counter and mode-priority first-pick fit, from a user-provided
+  // drafting guide (see archetypes.ts) — additive on top of the statistical terms above, not a
+  // replacement for them.
+  archetypeCounter: 0.1,
+  modeClassFit: 0.06,
   counterRiskPenalty: 0.15,
   redundancyPenalty: 0.1,
 };
@@ -38,6 +43,12 @@ export function applyDraftPositionAdjustment(base: ScoreWeights, positionFactor:
     matchupValue: base.matchupValue * (0.6 + 0.8 * clamped),
     compositionFit: base.compositionFit * (0.6 + 0.8 * clamped),
     roleCoverage: base.roleCoverage * (0.6 + 0.8 * clamped),
+    archetypeCounter: base.archetypeCounter * (0.6 + 0.8 * clamped),
     counterRiskPenalty: base.counterRiskPenalty * (0.7 + 0.6 * clamped),
+    // The drafting guide is explicit that doubling up on a class late in the draft is fine ("not
+    // a huge issue... 2 of the same class can sometimes overwhelm their natural counters") — so
+    // redundancy is penalized most early (while flexibility still matters) and least by the last
+    // pick, the mirror image of counterRiskPenalty above.
+    redundancyPenalty: base.redundancyPenalty * (1.2 - 0.6 * clamped),
   };
 }

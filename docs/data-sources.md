@@ -15,7 +15,10 @@
 4. **Curated metadata maintained within the project** — `brawler_role_features` (tags like "tank",
    "anti-assassin", "wall breaker") is necessarily hand-maintained; there is no official API field that
    labels Brawler roles. This is explicitly labeled **heuristic**, not statistical, everywhere it
-   surfaces in the UI, per spec §6.2.
+   surfaces in the UI, per spec §6.2. This now also includes a simplified 9-class drafting
+   framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/
+   Controller, grouped into Aggressive/Defensive/Passive archetypes that counter each other in a
+   fixed cycle) contributed by a user from their own hand-made drafting guide — see §2c below.
 5. **Community sources** — used for exactly one thing so far: per-Brawler map/mode/rank win rate,
    manually exported by a human from brawltime.ninja's own "Export CSV" button and imported via
    `scripts/import-brawltime-csv.mjs` (see `data/brawltime/README.md` and §2b below). This is real
@@ -97,6 +100,50 @@ and it does not run on any schedule — refreshing means re-exporting by hand an
 script, same as the spec's own emphasis on never silently blending incompatible patches (§7.2):
 each import is stamped with its own `exportedAt` date and is fully replaced (not merged/averaged)
 the next time that same map/mode/rank combination is re-imported.
+
+### 2c. The class/archetype drafting framework
+
+A user contributed a hand-made drafting guide (9 simplified classes — Assassin, Tank, Speedster,
+Anti-Agro, Damage Dealer, Trapper, Support, Sharpshooter, Controller — grouped into three
+archetypes that counter each other in a fixed cycle: Aggressive beats Passive, Passive beats
+Defensive, Defensive beats Aggressive) and asked for it to inform recommendations alongside the
+statistical data. This is implemented in `src/lib/recommendation-engine/archetypes.ts`:
+
+- The 9 classes are folded into the existing `RoleTag` vocabulary (4 — tank, assassin, controller,
+  support — already existed; speedster, anti_agro, damage_dealer, trapper, and sharpshooter are
+  new) rather than kept as a parallel taxonomy, so the pre-existing role-coverage/
+  composition-fit/redundancy scoring automatically treats "missing class" the same way it already
+  treats "missing role" (the guide's 4th/5th-pick advice: fill whatever archetype your team lacks).
+- A new `archetypeCounter` score term computes, for a candidate, how favorably its own
+  aggressive/defensive/passive mix counters the enemy's revealed mix, using the guide's cycle. It's
+  additive alongside the statistical `matchupValue` term, not a replacement for it — one is a
+  curated heuristic about playstyle categories, the other is per-Brawler-pair statistical data
+  (real where imported, mock otherwise). They can and sometimes will disagree; both are surfaced.
+- A new `modeClassFit` term implements "the 1st pick of each mode should be the strongest of the
+  most important class for that mode" — active *only* when `picksSoFar === 0` (the literal first
+  action of the draft), using a per-mode priority-class list (`MODE_PRIORITY_CLASSES`) derived from
+  the guide's own worked examples for this prototype's three seeded modes (Gem Grab, Brawl Ball,
+  Knockout). The guide's Heist/Hot Zone/Bounty examples aren't wired in because those modes aren't
+  part of this prototype's seeded mode list yet.
+- The redundancy penalty now decays toward the last pick (per the guide: "2 of the same class can
+  sometimes overwhelm their natural counters... not a huge issue" late in the draft), the mirror of
+  the existing counter-risk penalty, which *increases* toward the last pick.
+- Adding the roster needed to make this framework usable required expanding
+  `src/lib/data/brawlers.ts` from 16 to 54 Brawlers (every Brawler named in the guide). Their
+  `rarity` field is marked `"Unverified"` rather than guessed — that field is cosmetic display text
+  only and never used in scoring, so it was left honest rather than fabricated. A few Brawlers the
+  guide names only as mode-first-pick examples, without stating a class outright (Mina, Gray, Gus,
+  Pierce, JaeYong, Ninja, Finx), have their class inferred from that mode context — heuristic on
+  top of heuristic, flagged in a code comment in `brawlers.ts`.
+
+**Known limitation, stated plainly**: the guide's pick-2/pick-3 advice ("pick 3 should hard-counter
+the enemy's pick 1... pick 2 should cover pick 3's weakness") describes a *two-ply lookahead* — planning
+pick 2 around a pick 3 that doesn't exist yet. This app's scorer is a single-ply, greedy-per-pick
+scorer (score every legal candidate for the action happening right now); it does not search forward
+over hypothetical future picks. In practice the existing draft-position weighting plus the new
+archetype-counter term tend to produce complementary comps anyway (an early pick that's flexible
+and uncommitted, later picks that increasingly favor direct counters), but this is a real,
+acknowledged simplification, not a claim that multi-pick planning is implemented.
 
 ## 3. Statistical record shapes (for Phase 4 ingestion, designed now)
 

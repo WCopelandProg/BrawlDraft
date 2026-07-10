@@ -1,5 +1,11 @@
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
 import { getRankBucketMeta, rankBucketSkewPosition } from "@/lib/data/ranks";
+import {
+  archetypeCounterValue,
+  archetypeWeightsFromRoleWeights,
+  averageArchetypeWeights,
+  MODE_PRIORITY_CLASSES,
+} from "./archetypes";
 import { applyDraftPositionAdjustment, DEFAULT_WEIGHTS } from "./weights";
 import { buildReasonsAndWarnings } from "./explain";
 import type {
@@ -11,6 +17,9 @@ import type {
   ScoreWeights,
 } from "./types";
 
+// Includes the 9-class drafting-guide taxonomy (archetypes.ts) alongside the pre-existing
+// finer-grained tags, so "fill the missing class" (the guide's 4th/5th-pick advice) reuses this
+// same role-coverage/composition/redundancy machinery rather than needing bespoke logic.
 const CORE_ROLES: RoleTag[] = [
   "tank",
   "tank_counter",
@@ -21,6 +30,12 @@ const CORE_ROLES: RoleTag[] = [
   "controller",
   "area_denial",
   "wall_breaker",
+  "assassin",
+  "speedster",
+  "anti_agro",
+  "damage_dealer",
+  "trapper",
+  "sharpshooter",
 ];
 
 export function computeAvailability(
@@ -72,6 +87,10 @@ export interface ScoreBreakdown {
   metaTrend: "buffed" | "nerfed" | "stable";
   /** Whether mapPerformance came from a real imported brawltime.ninja export or the seeded mock. */
   mapStatSource: "mock" | "brawltime_export";
+  /** 0-1, centered 0.5: how well this candidate's archetype counters the enemy's, per archetypes.ts. */
+  archetypeCounter: number;
+  /** 0-1: bonus for being a strong first-pick class for the current mode (only nonzero on pick 1). */
+  modeClassFit: number;
 }
 
 export function computeScoreBreakdown(
@@ -179,6 +198,23 @@ export function computeScoreBreakdown(
   const rankBucketLabel = getRankBucketMeta(ctx.rankBucket)?.name ?? ctx.rankBucket;
   const metaTrend = dataset.getMetaTrend(candidateId, dataset.patchId);
 
+  // Class/archetype counter (a user-provided drafting guide, see archetypes.ts): how well this
+  // candidate's playstyle mix counters the enemy team's revealed playstyle mix. Neutral (0.5) when
+  // no enemy Brawlers are picked yet.
+  const candidateArchetype = archetypeWeightsFromRoleWeights((tag) => roleWeight(dataset, candidateId, tag));
+  const enemyArchetype = averageArchetypeWeights(
+    ctx.enemyPicks.map((id) => archetypeWeightsFromRoleWeights((tag) => roleWeight(dataset, id, tag))),
+  );
+  const archetypeCounter = archetypeCounterValue(candidateArchetype, enemyArchetype);
+
+  // Mode-class fit ("the 1st pick of each mode should be the strongest of the most important
+  // class in that mode"): only meaningful on the literal first pick of the draft.
+  const priorityClasses = MODE_PRIORITY_CLASSES[ctx.modeId] ?? [];
+  const modeClassFit =
+    ctx.picksSoFar === 0 && priorityClasses.length > 0
+      ? Math.max(0, ...priorityClasses.map((tag) => roleWeight(dataset, candidateId, tag)))
+      : 0;
+
   return {
     mapPerformance,
     matchupValue,
@@ -202,6 +238,8 @@ export function computeScoreBreakdown(
     rankBucketLabel,
     metaTrend,
     mapStatSource: mapStat?.source ?? "mock",
+    archetypeCounter,
+    modeClassFit,
   };
 }
 
@@ -215,7 +253,9 @@ function weightedScore(breakdown: ScoreBreakdown, weights: ScoreWeights): number
     weights.draftFlexibility * breakdown.draftFlexibility +
     weights.recentMetaStrength * breakdown.recentMetaStrength +
     weights.playerComfort * breakdown.playerComfort +
-    weights.statisticalConfidence * breakdown.statisticalConfidence;
+    weights.statisticalConfidence * breakdown.statisticalConfidence +
+    weights.archetypeCounter * breakdown.archetypeCounter +
+    weights.modeClassFit * breakdown.modeClassFit;
   const penalty = weights.counterRiskPenalty * breakdown.counterRisk + weights.redundancyPenalty * breakdown.redundancy;
   return Math.min(1, Math.max(0, positive - penalty));
 }

@@ -80,6 +80,30 @@ export function buildReasonsAndWarnings(
     });
   }
 
+  const archetypeImpact = weights.archetypeCounter * (b.archetypeCounter - 0.5) * 2;
+  if (archetypeImpact > 0.03) {
+    reasons.push({
+      type: "archetype_counter",
+      impact: archetypeImpact,
+      message: "Its playstyle (aggressive/defensive/passive) counters the enemy's current composition.",
+    });
+  } else if (archetypeImpact < -0.03) {
+    warnings.push({
+      type: "archetype_counter",
+      impact: archetypeImpact,
+      message: "Its playstyle is the one the enemy's current composition tends to beat.",
+    });
+  }
+
+  const modeFitImpact = weights.modeClassFit * b.modeClassFit;
+  if (modeFitImpact > 0.02) {
+    reasons.push({
+      type: "mode_class_fit",
+      impact: modeFitImpact,
+      message: "A strong first-pick class for this game mode.",
+    });
+  }
+
   if (b.rankFitSignal > 0.15) {
     reasons.push({
       type: "rank_bracket_fit",

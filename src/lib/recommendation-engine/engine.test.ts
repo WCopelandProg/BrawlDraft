@@ -342,3 +342,60 @@ describe("patch buff/nerf reactivity", () => {
     expect(MOCK_DATASET.getMetaStrength("rico", "2026.06")).toBe(a); // deterministic, repeatable
   });
 });
+
+describe("drafting-guide class/archetype scoring", () => {
+  it("a pure-aggressive candidate (e.g. Edgar, an assassin) scores higher against a passive enemy comp than a defensive one", () => {
+    const vsPassive = baseContext({ enemyPicks: ["ruffs", "gus", "kit"] }); // all support (passive)
+    const vsDefensive = baseContext({ enemyPicks: ["chester", "clancy", "lou"] }); // anti_agro/damage_dealer/trapper (defensive)
+    const againstPassive = computeScoreBreakdown("edgar", vsPassive, MOCK_DATASET);
+    const againstDefensive = computeScoreBreakdown("edgar", vsDefensive, MOCK_DATASET);
+    expect(againstPassive.archetypeCounter).toBeGreaterThan(againstDefensive.archetypeCounter);
+  });
+
+  it("surfaces an archetype_counter reason when a candidate favorably counters the enemy archetype mix", () => {
+    const ctx = baseContext({ enemyPicks: ["ruffs", "gus", "kit"], picksSoFar: 3, totalPicksInFormat: 6 });
+    const rec = scorePickCandidate("edgar", ctx, MOCK_DATASET);
+    expect(rec.reasons.some((r) => r.type === "archetype_counter")).toBe(true);
+  });
+
+  it("modeClassFit only applies on the literal first pick of the draft (picksSoFar === 0)", () => {
+    const firstPick = baseContext({ modeId: "knockout", picksSoFar: 0 });
+    const laterPick = baseContext({ modeId: "knockout", picksSoFar: 1, allyPicks: ["gray"] });
+    // "bea" is a sharpshooter, a Knockout priority class per MODE_PRIORITY_CLASSES.
+    const first = computeScoreBreakdown("bea", firstPick, MOCK_DATASET);
+    const later = computeScoreBreakdown("bea", laterPick, MOCK_DATASET);
+    expect(first.modeClassFit).toBeGreaterThan(0);
+    expect(later.modeClassFit).toBe(0);
+  });
+
+  it("a Brawler with no mode-priority class gets zero modeClassFit even on the first pick", () => {
+    const ctx = baseContext({ modeId: "knockout", picksSoFar: 0 });
+    // "hank" is a pure tank (aggressive), not one of Knockout's priority classes (sharpshooter/support).
+    const breakdown = computeScoreBreakdown("hank", ctx, MOCK_DATASET);
+    expect(breakdown.modeClassFit).toBe(0);
+  });
+
+  it("redundancy penalty weight is lower on the last pick than on an early pick (guide: doubling a class late is fine)", () => {
+    const earlyWeights = applyDraftPositionAdjustment(DEFAULT_WEIGHTS, 0);
+    const lastPickWeights = applyDraftPositionAdjustment(DEFAULT_WEIGHTS, 1);
+    expect(lastPickWeights.redundancyPenalty).toBeLessThan(earlyWeights.redundancyPenalty);
+  });
+});
+
+describe("expanded roster data integrity", () => {
+  it("every seeded Brawler has at least one role/class tag", () => {
+    for (const id of BRAWLER_IDS) {
+      expect(MOCK_DATASET.getRoleFeatures(id).length).toBeGreaterThan(0);
+    }
+  });
+
+  it("scoring every seeded Brawler doesn't throw and produces a finite score", () => {
+    const ctx = baseContext({ enemyPicks: ["ruffs", "chester"], allyPicks: ["gray"] });
+    for (const id of BRAWLER_IDS.filter((b) => b !== "ruffs" && b !== "chester" && b !== "gray")) {
+      const rec = scorePickCandidate(id, ctx, MOCK_DATASET);
+      expect(Number.isFinite(rec.score)).toBe(true);
+      expect(rec.score).toBeGreaterThanOrEqual(0);
+      expect(rec.score).toBeLessThanOrEqual(1);
+    }
+  });
+});

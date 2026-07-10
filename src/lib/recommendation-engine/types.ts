@@ -18,7 +18,15 @@ export type RoleTag =
   | "sustained_damage"
   | "objective_pressure"
   | "safe_first_pick"
-  | "situational_last_pick";
+  | "situational_last_pick"
+  // The 9-class simplified drafting framework from a user-provided strategy guide (see
+  // src/lib/recommendation-engine/archetypes.ts). "tank", "assassin", "controller", and "support"
+  // above already cover 4 of the 9 classes; these 5 are new.
+  | "speedster"
+  | "anti_agro"
+  | "damage_dealer"
+  | "trapper"
+  | "sharpshooter";
 
 export interface RoleFeature {
   tag: RoleTag;
@@ -116,6 +124,10 @@ export interface ScoreWeights {
   recentMetaStrength: number;
   playerComfort: number;
   statisticalConfidence: number;
+  /** Rock-paper-scissors-style class counter (aggressive/defensive/passive), see archetypes.ts. */
+  archetypeCounter: number;
+  /** Bonus for a strong first-pick class for the current mode (only active on pick 1 of the draft). */
+  modeClassFit: number;
   counterRiskPenalty: number;
   redundancyPenalty: number;
 }
@@ -133,6 +145,8 @@ export type RecommendationReasonType =
   | "unavailable_to_player"
   | "rank_bracket_fit"
   | "recent_meta_shift"
+  | "archetype_counter"
+  | "mode_class_fit"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick
   // scoring, so it gets its own vocabulary of reasons rather than being forced into the pick list).
   | "opponent_threat"

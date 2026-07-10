@@ -246,14 +246,16 @@ export interface ScoreWeights {
   recentMetaStrength: number;
   playerComfort: number;
   statisticalConfidence: number;
+  archetypeCounter: number;   // rock-paper-scissors class counter, see docs/data-sources.md §2c
+  modeClassFit: number;       // first-pick class fit for the mode, only active on pick 1
   counterRiskPenalty: number;
   redundancyPenalty: number;
 }
 
 // Starting values only — stored as data (recommendation_weight_versions), not hard-coded truth.
 export const DEFAULT_WEIGHTS: ScoreWeights = {
-  mapPerformance: 0.24,
-  matchupValue: 0.18,
+  mapPerformance: 0.20,
+  matchupValue: 0.16,
   allySynergy: 0.14,
   compositionFit: 0.12,
   roleCoverage: 0.10,
@@ -261,6 +263,8 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   recentMetaStrength: 0.06,
   playerComfort: 0.04,
   statisticalConfidence: 0.04,
+  archetypeCounter: 0.10,
+  modeClassFit: 0.06,
   counterRiskPenalty: 0.15,
   redundancyPenalty: 0.10,
 };
