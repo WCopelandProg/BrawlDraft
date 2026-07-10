@@ -18,6 +18,7 @@ export default function SetupScreen() {
   const [selectedProfileId, setSelectedProfileId] = useState<string>("guest");
   const [newProfileLabel, setNewProfileLabel] = useState("");
   const [newProfileTag, setNewProfileTag] = useState("");
+  const [newProfileRankBucket, setNewProfileRankBucket] = useState("all");
 
   const [formatId, setFormatId] = useState(DRAFT_FORMATS[1]!.id);
   const [modeId, setModeId] = useState(GAME_MODES[0]!.id);
@@ -60,9 +61,11 @@ export default function SetupScreen() {
   function handleCreateProfile() {
     if (!newProfileLabel.trim()) return;
     const profile = createProfile(newProfileLabel.trim(), newProfileTag.trim() || undefined);
-    upsertProfile({ ...profile, defaultRankBucket: rankBucket });
-    setProfiles((prev) => [...prev, { ...profile, defaultRankBucket: rankBucket }]);
+    const withRank = { ...profile, defaultRankBucket: newProfileRankBucket };
+    upsertProfile(withRank);
+    setProfiles((prev) => [...prev, withRank]);
     setSelectedProfileId(profile.id);
+    setRankBucket(newProfileRankBucket);
     setNewProfileLabel("");
     setNewProfileTag("");
   }
@@ -164,6 +167,21 @@ export default function SetupScreen() {
             onChange={(e) => setNewProfileTag(e.target.value)}
             className="flex-1 rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500"
           />
+          <label htmlFor="new-profile-rank" className="sr-only">
+            Rank for this profile
+          </label>
+          <select
+            id="new-profile-rank"
+            value={newProfileRankBucket}
+            onChange={(e) => setNewProfileRankBucket(e.target.value)}
+            className="rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100"
+          >
+            {RANK_BUCKETS.map((r) => (
+              <option key={r.id} value={r.id}>
+                {r.name}
+              </option>
+            ))}
+          </select>
           <button
             type="button"
             onClick={handleCreateProfile}

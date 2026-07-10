@@ -99,10 +99,28 @@ npm start
 
 ## Deployment
 
-Not yet deployed anywhere; there is no backend or database to provision for this delivery. When Phase
-3 (official API integration) begins, note the hosting constraint in `docs/architecture.md` §3: Supercell
-API keys are locked to a single egress IP, so the deployment target needs a stable IP, not a typical
-autoscaling serverless platform with rotating egress.
+There is no backend or database to provision for this delivery (all state is `localStorage`,
+per-browser), so any static/Next.js host works. **Vercel** (the maintainers of Next.js) is the
+easiest option and has a free tier that's enough for this app:
+
+1. Push this repo to GitHub if it isn't already (this branch is already pushed).
+2. Go to [vercel.com](https://vercel.com), sign in with GitHub, click **Add New → Project**, and
+   import this repository.
+3. Leave the defaults (Framework Preset: Next.js, no environment variables needed) and click
+   **Deploy**. No `BRAWL_STARS_API_KEY` or any other env var is required for this build.
+4. After a couple of minutes Vercel gives you a public URL like
+   `https://brawl-draft.vercel.app` — anyone with that link can open and use the app; no login or
+   invite is required. Every future push to this branch auto-redeploys the same URL.
+
+Note that because state lives in each visitor's own browser `localStorage`, profiles/drafts are
+**not shared** between different people or devices visiting the link — everyone gets their own
+private, local set of profiles and in-progress drafts, which is the intended behavior for this
+build (see "Known limitations" below).
+
+When Phase 3 (official API integration) begins, note the hosting constraint in
+`docs/architecture.md` §3: Supercell API keys are locked to a single egress IP, so that phase would
+need a stable-IP host instead of a typical autoscaling serverless platform with rotating egress —
+this does not affect the current Phase 1/2 deployment above.
 
 ## Known limitations
 
@@ -113,8 +131,10 @@ autoscaling serverless platform with rotating egress.
   two rank buckets (see table above) — win rate, matchup, and synergy remain mock.
 - Brawler role/class tags are hand-curated heuristics, not statistics — there is no official source
   for them, and a number of the newer Brawlers' classes are inferred from context rather than confirmed.
-- The Brawler roster (105) now covers essentially the full current game roster; maps/modes remain a
-  small representative subset, not the full current rotation.
+- The Brawler roster (105) now covers essentially the full current game roster. All 6 live Ranked
+  modes are seeded (confirmed via web search); the specific map names per mode (4 each, `maps.ts`)
+  are this assistant's best-effort recall, not independently verified against a live source in this
+  environment — see `docs/data-sources.md` for exactly why and how to correct them.
 - Ranked draft formats are verified as of the current season; Supercell can and does change these, so
   `docs/discovery.md` §2 should be re-checked each season.
 

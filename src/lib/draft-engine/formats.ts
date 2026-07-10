@@ -45,24 +45,32 @@ const NO_BAN_FREE_PICK: DraftFormat = {
   ]),
 };
 
-const DIAMOND_SIMULTANEOUS_BAN_TURN_PICK: DraftFormat = {
-  id: "ranked-diamond-simultaneous-ban-turn-pick",
-  name: "Ranked (Diamond–Legendary) — simultaneous bans, turn-order picks",
+/**
+ * Diamond only (not Diamond-through-Legendary — Legendary sits above Mythic, which uses the
+ * snake-draft format below). Corrected per direct user report, cross-checked against community
+ * sources: both bans and picks happen simultaneously at Diamond — there is no turn order at all.
+ * Picks are modeled as one simultaneous group of 6 (3 per team), the same "resolved together,
+ * hidden until everyone locks in" mechanic already used for the ban phase.
+ */
+const DIAMOND_SIMULTANEOUS_BAN_AND_PICK: DraftFormat = {
+  id: "ranked-diamond-simultaneous-ban-and-pick",
+  name: "Ranked (Diamond) — simultaneous bans, simultaneous picks",
   teamSize: 3,
   duplicateTeamBansAllowed: false,
   crossTeamDuplicateBansAllowed: true,
-  verifiedAt: "2026-07-10",
+  verifiedAt: "2026-07-11",
   description:
     "3 bans per team, resolved simultaneously and hidden until both sides lock in (6 total), " +
-    "then picks alternate in turn order starting with the first-pick team.",
+    "then all 6 picks (3 per team) also resolve simultaneously — there is no turn order at " +
+    "Diamond at all, unlike Mythic and above.",
   steps: reindex([
     ...banPhase(3, "diamond-ban-phase"),
-    { team: "ally", action: "pick" },
-    { team: "enemy", action: "pick" },
-    { team: "ally", action: "pick" },
-    { team: "enemy", action: "pick" },
-    { team: "ally", action: "pick" },
-    { team: "enemy", action: "pick" },
+    { team: "ally", action: "pick", simultaneousGroup: "diamond-pick-phase" },
+    { team: "ally", action: "pick", simultaneousGroup: "diamond-pick-phase" },
+    { team: "ally", action: "pick", simultaneousGroup: "diamond-pick-phase" },
+    { team: "enemy", action: "pick", simultaneousGroup: "diamond-pick-phase" },
+    { team: "enemy", action: "pick", simultaneousGroup: "diamond-pick-phase" },
+    { team: "enemy", action: "pick", simultaneousGroup: "diamond-pick-phase" },
   ]),
 };
 
@@ -91,7 +99,7 @@ const MYTHIC_SNAKE_DRAFT_CAPTAIN: DraftFormat = {
 
 export const DRAFT_FORMATS: DraftFormat[] = [
   NO_BAN_FREE_PICK,
-  DIAMOND_SIMULTANEOUS_BAN_TURN_PICK,
+  DIAMOND_SIMULTANEOUS_BAN_AND_PICK,
   MYTHIC_SNAKE_DRAFT_CAPTAIN,
 ];
 

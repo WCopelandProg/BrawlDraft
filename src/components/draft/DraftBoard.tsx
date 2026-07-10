@@ -1,4 +1,5 @@
 import { getBrawlerMeta } from "@/lib/data/brawlers";
+import { getBrawlerClassLabel } from "@/lib/recommendation-engine/class-counters";
 
 interface TeamColumnProps {
   label: string;
@@ -29,6 +30,7 @@ function TeamColumn({ label, bans, picks, accentClassName }: TeamColumnProps) {
           {picks.map((id) => (
             <span key={id} className="rounded bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-100">
               {getBrawlerMeta(id)?.name ?? id}
+              <span className="ml-1 font-normal text-slate-400">({getBrawlerClassLabel(id) ?? "?"})</span>
             </span>
           ))}
         </div>

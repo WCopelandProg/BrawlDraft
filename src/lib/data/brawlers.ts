@@ -168,194 +168,158 @@ export function getRankSkew(id: string): number {
   return BRAWLER_RANK_SKEW[id] ?? 0;
 }
 
-/** Curated role tags (spec section 6.4). Weight is 0-1, subjective, and heuristic. */
+/**
+ * Curated role tags (spec section 6.4). Weight is 0-1, subjective, and heuristic.
+ *
+ * The primary classification below (which of "tank" / "assassin" / "tank_counter" / "controller" /
+ * "sharpshooter" / "thrower" / "support" each Brawler carries at high weight) follows a 7-class
+ * drafting framework a user shared with this project: a categorized reference image covering 101
+ * of these 105 Brawlers, plus a companion long-form drafting-strategy video explaining how the
+ * classes interact. Both are summarized (not reproduced) here and drive:
+ *   - the class label shown on each Brawler during drafting (see components/draft/BrawlerSelector),
+ *   - the class-counter matrix in recommendation-engine/class-counters.ts (e.g. tank_counter beats
+ *     both tank and assassin — "anti-tank" is that framework's own name for the tank_counter tag),
+ *   - draft-position rules (thrower is only safe on the literal last pick; controller is never a
+ *     safe first pick; a class-appropriate first pick matters most in non-Bounty/Knockout modes).
+ * The 4 Brawlers the reference image didn't cover (ninja, starrnova, damian, bolt) keep an
+ * earlier best-effort guess and are marked recentlyReleased above to reflect that extra
+ * uncertainty. Secondary tags alongside the primary class reuse this project's earlier,
+ * independent 9-class/archetype framework (RPS cycle in archetypes.ts) and older granular tags
+ * (mobility, healer, area_denial, etc.) — both systems read the same tag list without conflicting.
+ */
 export const BRAWLER_ROLE_FEATURES: Record<string, RoleFeature[]> = {
-  shelly: [
-    { tag: "safe_first_pick", weight: 0.8 },
-    { tag: "burst_damage", weight: 0.5 },
-    { tag: "tank_counter", weight: 0.4 },
-    { tag: "damage_dealer", weight: 0.6 },
-  ],
-  colt: [
-    { tag: "marksman", weight: 0.8 },
-    { tag: "sustained_damage", weight: 0.6 },
-    { tag: "safe_first_pick", weight: 0.5 },
-    { tag: "damage_dealer", weight: 0.6 },
-    { tag: "sharpshooter", weight: 0.5 },
-  ],
-  bull: [
-    { tag: "tank", weight: 0.9 },
-    { tag: "burst_damage", weight: 0.6 },
-  ],
-  brock: [
-    { tag: "marksman", weight: 0.7 },
-    { tag: "wall_breaker", weight: 0.8 },
-    { tag: "objective_pressure", weight: 0.5 },
-    { tag: "sharpshooter", weight: 0.7 },
-  ],
-  elprimo: [
-    { tag: "tank", weight: 0.8 },
-    { tag: "assassin", weight: 0.4 },
-    { tag: "mobility", weight: 0.4 },
-  ],
-  barley: [
-    { tag: "thrower", weight: 0.9 },
-    { tag: "area_denial", weight: 0.7 },
-    { tag: "bush_scout", weight: 0.3 },
-    { tag: "controller", weight: 0.6 },
-  ],
-  poco: [
-    { tag: "support", weight: 0.7 },
-    { tag: "healer", weight: 0.8 },
-    { tag: "sustained_damage", weight: 0.3 },
-  ],
-  rosa: [
-    { tag: "tank", weight: 0.6 },
-    { tag: "bush_scout", weight: 0.6 },
-    { tag: "anti_assassin", weight: 0.5 },
-    { tag: "anti_agro", weight: 0.3 },
-  ],
-  jessie: [
-    { tag: "controller", weight: 0.6 },
-    { tag: "area_denial", weight: 0.5 },
-    { tag: "support", weight: 0.3 },
-  ],
-  nita: [
-    { tag: "tank", weight: 0.5 },
-    { tag: "controller", weight: 0.4 },
-    { tag: "burst_damage", weight: 0.4 },
-  ],
-  dynamike: [
-    { tag: "thrower", weight: 0.9 },
-    { tag: "area_denial", weight: 0.8 },
-    { tag: "wall_breaker", weight: 0.5 },
-    { tag: "controller", weight: 0.7 },
-  ],
-  tick: [
-    { tag: "thrower", weight: 0.7 },
-    { tag: "area_denial", weight: 0.6 },
-    { tag: "anti_assassin", weight: 0.4 },
-    { tag: "controller", weight: 0.6 },
-  ],
-  "8bit": [
-    { tag: "sustained_damage", weight: 0.7 },
-    { tag: "tank_counter", weight: 0.5 },
-    { tag: "situational_last_pick", weight: 0.4 },
-    { tag: "damage_dealer", weight: 0.6 },
-  ],
-  rico: [
-    { tag: "marksman", weight: 0.6 },
-    { tag: "objective_pressure", weight: 0.6 },
-    { tag: "wall_breaker", weight: 0.4 },
-    { tag: "sharpshooter", weight: 0.6 },
-  ],
-  penny: [
-    { tag: "controller", weight: 0.5 },
-    { tag: "area_denial", weight: 0.6 },
-    { tag: "objective_pressure", weight: 0.5 },
-  ],
-  darryl: [
-    { tag: "tank", weight: 0.7 },
-    { tag: "assassin", weight: 0.5 },
-    { tag: "mobility", weight: 0.6 },
-  ],
+  // --- Thrower (11) ---
+  barley: [{ tag: "thrower", weight: 0.85 }, { tag: "area_denial", weight: 0.6 }, { tag: "controller", weight: 0.4 }],
+  dynamike: [{ tag: "thrower", weight: 0.85 }, { tag: "area_denial", weight: 0.7 }, { tag: "wall_breaker", weight: 0.4 }],
+  larrylawrie: [{ tag: "thrower", weight: 0.85 }, { tag: "controller", weight: 0.3 }],
+  tick: [{ tag: "thrower", weight: 0.85 }, { tag: "area_denial", weight: 0.5 }, { tag: "anti_assassin", weight: 0.3 }],
+  sprout: [{ tag: "thrower", weight: 0.85 }, { tag: "trapper", weight: 0.3 }],
+  grom: [{ tag: "thrower", weight: 0.85 }, { tag: "area_denial", weight: 0.5 }],
+  ziggy: [{ tag: "thrower", weight: 0.85 }, { tag: "safe_first_pick", weight: 0.3 }],
+  sirius: [{ tag: "thrower", weight: 0.85 }, { tag: "controller", weight: 0.3 }],
+  juju: [{ tag: "thrower", weight: 0.85 }, { tag: "controller", weight: 0.3 }],
+  // Willow and Berry are the framework's own named exceptions: functionally thrower, but each
+  // doubles as something throwers normally aren't (Willow: a genuine tank_counter; Berry: a
+  // support/healer), which is why they're viable earlier than the rest of this class.
+  willow: [{ tag: "thrower", weight: 0.7 }, { tag: "tank_counter", weight: 0.7 }],
+  berry: [{ tag: "thrower", weight: 0.7 }, { tag: "support", weight: 0.6 }, { tag: "healer", weight: 0.5 }],
 
-  // --- Brawlers added to cover a user-provided drafting guide (archetypes.ts). Class-tag weights
-  // below follow the guide's explicit examples where given; a few (Mina, Gray, Gus, Pierce,
-  // JaeYong, Ninja, Finx) aren't explicitly classified in the guide and are inferred from the
-  // mode context it gives them in — heuristic on top of heuristic, and treated with appropriately
-  // lower confidence (see recentlyReleased markers above for the least-certain ones).
-  edgar: [{ tag: "assassin", weight: 0.9 }, { tag: "mobility", weight: 0.6 }, { tag: "burst_damage", weight: 0.6 }],
-  gigi: [{ tag: "assassin", weight: 0.8 }, { tag: "mobility", weight: 0.5 }],
-  alli: [{ tag: "assassin", weight: 0.7 }, { tag: "burst_damage", weight: 0.5 }],
+  // --- Tank (10) ---
+  trunk: [{ tag: "tank", weight: 0.85 }, { tag: "area_denial", weight: 0.3 }],
+  draco: [{ tag: "tank", weight: 0.85 }, { tag: "burst_damage", weight: 0.4 }],
   frank: [{ tag: "tank", weight: 0.9 }, { tag: "burst_damage", weight: 0.5 }],
-  hank: [{ tag: "tank", weight: 0.8 }, { tag: "area_denial", weight: 0.4 }],
-  bibi: [{ tag: "speedster", weight: 0.8 }, { tag: "burst_damage", weight: 0.6 }],
-  kaze: [{ tag: "speedster", weight: 0.9 }, { tag: "mobility", weight: 0.7 }],
-  shade: [{ tag: "speedster", weight: 0.8 }, { tag: "assassin", weight: 0.4 }],
-  otis: [{ tag: "anti_agro", weight: 0.9 }, { tag: "controller", weight: 0.3 }],
-  maisie: [{ tag: "anti_agro", weight: 0.7 }, { tag: "sharpshooter", weight: 0.4 }],
-  chester: [{ tag: "anti_agro", weight: 0.8 }, { tag: "damage_dealer", weight: 0.4 }],
-  clancy: [{ tag: "damage_dealer", weight: 0.8 }, { tag: "sustained_damage", weight: 0.5 }],
-  amber: [{ tag: "damage_dealer", weight: 0.8 }, { tag: "sustained_damage", weight: 0.6 }, { tag: "area_denial", weight: 0.4 }],
-  lumi: [{ tag: "trapper", weight: 0.8 }, { tag: "controller", weight: 0.3 }],
-  lou: [{ tag: "trapper", weight: 0.8 }, { tag: "controller", weight: 0.4 }],
-  charlie: [{ tag: "trapper", weight: 0.9 }, { tag: "mobility", weight: 0.3 }],
-  ruffs: [{ tag: "support", weight: 0.9 }, { tag: "safe_first_pick", weight: 0.4 }],
-  max: [{ tag: "support", weight: 0.7 }, { tag: "mobility", weight: 0.5 }, { tag: "safe_first_pick", weight: 0.3 }],
-  belle: [{ tag: "sharpshooter", weight: 0.9 }, { tag: "marksman", weight: 0.6 }],
-  nani: [{ tag: "sharpshooter", weight: 0.8 }, { tag: "marksman", weight: 0.5 }],
-  angelo: [{ tag: "sharpshooter", weight: 0.9 }, { tag: "objective_pressure", weight: 0.4 }],
-  emz: [{ tag: "controller", weight: 0.8 }, { tag: "area_denial", weight: 0.5 }],
-  mortis: [{ tag: "assassin", weight: 0.9 }, { tag: "mobility", weight: 0.7 }],
-  lily: [{ tag: "assassin", weight: 0.8 }, { tag: "mobility", weight: 0.6 }],
-  gene: [{ tag: "anti_agro", weight: 0.7 }, { tag: "support", weight: 0.5 }],
-  mina: [{ tag: "controller", weight: 0.6 }, { tag: "damage_dealer", weight: 0.5 }],
-  gray: [{ tag: "sharpshooter", weight: 0.6 }, { tag: "damage_dealer", weight: 0.6 }],
-  gus: [{ tag: "support", weight: 0.8 }, { tag: "healer", weight: 0.6 }],
-  pierce: [{ tag: "sharpshooter", weight: 0.7 }, { tag: "damage_dealer", weight: 0.5 }],
-  jaeyong: [{ tag: "damage_dealer", weight: 0.6 }, { tag: "sharpshooter", weight: 0.4 }],
-  ninja: [{ tag: "sharpshooter", weight: 0.5 }, { tag: "mobility", weight: 0.4 }],
-  finx: [{ tag: "controller", weight: 0.6 }, { tag: "support", weight: 0.4 }],
-  bea: [{ tag: "sharpshooter", weight: 0.9 }, { tag: "marksman", weight: 0.6 }],
-  griff: [{ tag: "damage_dealer", weight: 0.8 }, { tag: "sustained_damage", weight: 0.5 }],
-  stu: [{ tag: "speedster", weight: 0.8 }, { tag: "mobility", weight: 0.7 }],
-  meeple: [{ tag: "trapper", weight: 0.8 }, { tag: "controller", weight: 0.3 }],
-  sirius: [{ tag: "controller", weight: 0.8 }, { tag: "anti_assassin", weight: 0.4 }],
-  kit: [{ tag: "support", weight: 0.8 }, { tag: "healer", weight: 0.3 }],
+  fang: [{ tag: "tank", weight: 0.85 }, { tag: "mobility", weight: 0.5 }],
+  buster: [{ tag: "tank", weight: 0.85 }, { tag: "anti_assassin", weight: 0.4 }],
+  elprimo: [{ tag: "tank", weight: 0.9 }, { tag: "mobility", weight: 0.4 }],
+  hank: [{ tag: "tank", weight: 0.85 }, { tag: "area_denial", weight: 0.4 }],
+  jacky: [{ tag: "tank", weight: 0.85 }, { tag: "area_denial", weight: 0.4 }],
+  rosa: [{ tag: "tank", weight: 0.8 }, { tag: "bush_scout", weight: 0.5 }, { tag: "anti_assassin", weight: 0.4 }],
+  ash: [{ tag: "tank", weight: 0.85 }, { tag: "burst_damage", weight: 0.4 }],
 
-  // --- Brawlers added to cover a real user-provided pick-rate export (see comment above in
-  // BRAWLERS). Same caveat as the guide-derived entries: these are best-effort class guesses,
-  // not confirmed, and the least-certain ones are marked recentlyReleased above.
-  crow: [{ tag: "assassin", weight: 0.8 }, { tag: "speedster", weight: 0.5 }],
-  meg: [{ tag: "tank", weight: 0.8 }, { tag: "damage_dealer", weight: 0.5 }],
+  // --- Space Maker / "assassin" tag (19). The framework's own name for this class is "space
+  // maker": brawlers whose dash/mobility closes distance fast enough that thrower/sniper/
+  // low-damage picks can't be played safely against them. Reuses the pre-existing "assassin" tag.
+  bull: [{ tag: "assassin", weight: 0.8 }, { tag: "tank", weight: 0.5 }],
+  bibi: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.5 }],
+  ollie: [{ tag: "assassin", weight: 0.85 }, { tag: "damage_dealer", weight: 0.4 }],
+  kenji: [{ tag: "assassin", weight: 0.85 }],
+  mortis: [{ tag: "assassin", weight: 0.9 }, { tag: "mobility", weight: 0.6 }],
+  shade: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.5 }],
+  mina: [{ tag: "assassin", weight: 0.8 }, { tag: "controller", weight: 0.3 }],
+  buzz: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.5 }],
+  alli: [{ tag: "assassin", weight: 0.85 }, { tag: "burst_damage", weight: 0.4 }],
+  carl: [{ tag: "assassin", weight: 0.8 }, { tag: "tank_counter", weight: 0.3 }],
+  edgar: [{ tag: "assassin", weight: 0.9 }, { tag: "mobility", weight: 0.6 }],
+  kaze: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.6 }],
+  lily: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.5 }],
+  mico: [{ tag: "assassin", weight: 0.8 }, { tag: "mobility", weight: 0.5 }],
+  sam: [{ tag: "assassin", weight: 0.85 }, { tag: "tank", weight: 0.3 }],
+  chuck: [{ tag: "assassin", weight: 0.8 }, { tag: "damage_dealer", weight: 0.4 }],
+  gigi: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.4 }],
+  melodie: [{ tag: "assassin", weight: 0.75 }, { tag: "damage_dealer", weight: 0.5 }, { tag: "support", weight: 0.3 }],
+  darryl: [{ tag: "assassin", weight: 0.85 }, { tag: "tank", weight: 0.5 }],
+
+  // --- Anti-Tank / "tank_counter" tag (26). The framework's single most important class: the
+  // best available one is usually the correct first pick outside Bounty/Knockout, because it
+  // shuts down both Tanks and Space Makers at once.
+  chester: [{ tag: "tank_counter", weight: 0.9 }],
+  nita: [{ tag: "tank_counter", weight: 0.7 }, { tag: "tank", weight: 0.4 }],
+  moe: [{ tag: "tank_counter", weight: 0.85 }],
+  rico: [{ tag: "tank_counter", weight: 0.85 }, { tag: "wall_breaker", weight: 0.4 }, { tag: "sharpshooter", weight: 0.4 }],
+  tara: [{ tag: "tank_counter", weight: 0.8 }, { tag: "trapper", weight: 0.3 }],
+  emz: [{ tag: "tank_counter", weight: 0.8 }, { tag: "area_denial", weight: 0.4 }],
+  lou: [{ tag: "tank_counter", weight: 0.85 }, { tag: "trapper", weight: 0.3 }],
+  finx: [{ tag: "tank_counter", weight: 0.8 }],
+  ruffs: [{ tag: "tank_counter", weight: 0.85 }],
+  sandy: [{ tag: "tank_counter", weight: 0.8 }, { tag: "anti_assassin", weight: 0.3 }],
+  otis: [{ tag: "tank_counter", weight: 0.85 }, { tag: "controller", weight: 0.3 }],
+  lumi: [{ tag: "tank_counter", weight: 0.8 }, { tag: "trapper", weight: 0.3 }],
+  shelly: [{ tag: "tank_counter", weight: 0.8 }, { tag: "safe_first_pick", weight: 0.5 }, { tag: "burst_damage", weight: 0.4 }],
+  surge: [{ tag: "tank_counter", weight: 0.75 }, { tag: "mobility", weight: 0.4 }],
+  charlie: [{ tag: "tank_counter", weight: 0.8 }, { tag: "trapper", weight: 0.4 }],
+  gale: [{ tag: "tank_counter", weight: 0.75 }, { tag: "area_denial", weight: 0.4 }],
+  spike: [{ tag: "tank_counter", weight: 0.75 }, { tag: "thrower", weight: 0.4 }, { tag: "area_denial", weight: 0.4 }],
+  // Cordelius is the framework's own named exception here: a solid anti-tank in general, but
+  // notably unable to stop a pure safe-damage off-meta pick like Chuck the way other anti-tanks can.
+  cordelius: [{ tag: "tank_counter", weight: 0.75 }, { tag: "controller", weight: 0.4 }],
+  maisie: [{ tag: "tank_counter", weight: 0.75 }, { tag: "sharpshooter", weight: 0.3 }],
+  colt: [{ tag: "tank_counter", weight: 0.7 }, { tag: "sharpshooter", weight: 0.5 }, { tag: "safe_first_pick", weight: 0.4 }],
+  griff: [{ tag: "tank_counter", weight: 0.8 }, { tag: "damage_dealer", weight: 0.4 }],
+  crow: [{ tag: "tank_counter", weight: 0.9 }, { tag: "mobility", weight: 0.3 }],
+  "8bit": [{ tag: "tank_counter", weight: 0.8 }, { tag: "sustained_damage", weight: 0.5 }, { tag: "situational_last_pick", weight: 0.3 }],
+  clancy: [{ tag: "tank_counter", weight: 0.85 }, { tag: "sustained_damage", weight: 0.4 }],
+  colette: [{ tag: "tank_counter", weight: 0.8 }, { tag: "sharpshooter", weight: 0.3 }],
+  meg: [{ tag: "tank_counter", weight: 0.75 }, { tag: "tank", weight: 0.3 }],
+
+  // --- Support (7) ---
+  kit: [{ tag: "support", weight: 0.85 }, { tag: "healer", weight: 0.3 }],
+  max: [{ tag: "support", weight: 0.85 }, { tag: "mobility", weight: 0.4 }, { tag: "safe_first_pick", weight: 0.3 }],
+  gray: [{ tag: "support", weight: 0.8 }, { tag: "sharpshooter", weight: 0.3 }],
+  poco: [{ tag: "support", weight: 0.85 }, { tag: "healer", weight: 0.7 }],
+  jaeyong: [{ tag: "support", weight: 0.75 }, { tag: "sharpshooter", weight: 0.3 }],
+  doug: [{ tag: "support", weight: 0.85 }, { tag: "healer", weight: 0.6 }],
+  glowy: [{ tag: "support", weight: 0.75 }],
+
+  // --- Sniper / "sharpshooter" tag (11). Mostly a Bounty/Knockout niche per the framework — pure
+  // snipers (Mandy, Piper) are rarely viable in the current meta; the hybrids (Belle, Byron, Gus,
+  // RT) and the two exceptions (Angelo, Pierce) see far more play.
+  mandy: [{ tag: "sharpshooter", weight: 0.85 }],
+  rt: [{ tag: "sharpshooter", weight: 0.8 }, { tag: "tank", weight: 0.3 }],
+  gus: [{ tag: "sharpshooter", weight: 0.6 }, { tag: "support", weight: 0.6 }, { tag: "healer", weight: 0.3 }],
+  piper: [{ tag: "sharpshooter", weight: 0.75 }],
+  brock: [{ tag: "sharpshooter", weight: 0.8 }, { tag: "wall_breaker", weight: 0.6 }, { tag: "objective_pressure", weight: 0.4 }],
+  byron: [{ tag: "sharpshooter", weight: 0.6 }, { tag: "support", weight: 0.6 }, { tag: "healer", weight: 0.5 }],
+  angelo: [{ tag: "sharpshooter", weight: 0.85 }, { tag: "objective_pressure", weight: 0.4 }],
+  pierce: [{ tag: "sharpshooter", weight: 0.85 }, { tag: "damage_dealer", weight: 0.5 }],
+  nani: [{ tag: "sharpshooter", weight: 0.85 }, { tag: "marksman", weight: 0.4 }],
+  belle: [{ tag: "sharpshooter", weight: 0.8 }, { tag: "damage_dealer", weight: 0.4 }],
+  bea: [{ tag: "sharpshooter", weight: 0.85 }, { tag: "marksman", weight: 0.4 }],
+
+  // --- Control (17). Punishes mid-range Anti-Tanks via range/turret/HP advantage, but is weak to
+  // real Snipers and Throwers and should not be a first pick (too little damage to survive a rush
+  // before establishing position).
+  amber: [{ tag: "controller", weight: 0.75 }, { tag: "damage_dealer", weight: 0.5 }, { tag: "area_denial", weight: 0.4 }],
+  meeple: [{ tag: "controller", weight: 0.8 }, { tag: "trapper", weight: 0.4 }],
+  leon: [{ tag: "controller", weight: 0.7 }, { tag: "assassin", weight: 0.4 }, { tag: "mobility", weight: 0.5 }],
+  pam: [{ tag: "controller", weight: 0.7 }, { tag: "support", weight: 0.6 }, { tag: "healer", weight: 0.5 }],
+  bo: [{ tag: "controller", weight: 0.75 }, { tag: "trapper", weight: 0.4 }, { tag: "sharpshooter", weight: 0.3 }],
+  pearl: [{ tag: "controller", weight: 0.7 }, { tag: "tank", weight: 0.4 }],
+  gene: [{ tag: "controller", weight: 0.75 }, { tag: "support", weight: 0.5 }, { tag: "anti_agro", weight: 0.4 }],
+  stu: [{ tag: "controller", weight: 0.7 }, { tag: "speedster", weight: 0.6 }, { tag: "mobility", weight: 0.6 }],
+  janet: [{ tag: "controller", weight: 0.75 }, { tag: "sharpshooter", weight: 0.4 }, { tag: "mobility", weight: 0.4 }],
+  penny: [{ tag: "controller", weight: 0.8 }, { tag: "area_denial", weight: 0.5 }, { tag: "objective_pressure", weight: 0.4 }],
+  jessie: [{ tag: "controller", weight: 0.8 }, { tag: "area_denial", weight: 0.4 }],
+  squeak: [{ tag: "controller", weight: 0.75 }, { tag: "trapper", weight: 0.4 }],
+  eve: [{ tag: "controller", weight: 0.75 }, { tag: "area_denial", weight: 0.5 }],
+  lola: [{ tag: "controller", weight: 0.65 }, { tag: "assassin", weight: 0.4 }, { tag: "mobility", weight: 0.4 }],
+  najia: [{ tag: "controller", weight: 0.7 }, { tag: "sharpshooter", weight: 0.3 }],
+  bonnie: [{ tag: "controller", weight: 0.65 }, { tag: "sharpshooter", weight: 0.6 }],
+  mrp: [{ tag: "controller", weight: 0.8 }, { tag: "support", weight: 0.4 }],
+
+  // --- Not covered by the reference image (4 of 105) — kept as an earlier best-effort guess, see
+  // the recentlyReleased markers above.
+  ninja: [{ tag: "sharpshooter", weight: 0.5 }, { tag: "mobility", weight: 0.4 }],
   starrnova: [{ tag: "support", weight: 0.6 }, { tag: "controller", weight: 0.4 }],
-  colette: [{ tag: "damage_dealer", weight: 0.8 }, { tag: "sharpshooter", weight: 0.4 }],
-  surge: [{ tag: "speedster", weight: 0.6 }, { tag: "damage_dealer", weight: 0.6 }],
-  damian: [{ tag: "damage_dealer", weight: 0.5 }],
-  byron: [{ tag: "support", weight: 0.8 }, { tag: "healer", weight: 0.6 }],
-  piper: [{ tag: "sharpshooter", weight: 0.9 }],
-  leon: [{ tag: "assassin", weight: 0.9 }, { tag: "mobility", weight: 0.6 }],
-  najia: [{ tag: "sharpshooter", weight: 0.5 }],
-  bolt: [{ tag: "speedster", weight: 0.7 }],
-  kenji: [{ tag: "assassin", weight: 0.6 }],
-  cordelius: [{ tag: "controller", weight: 0.7 }, { tag: "trapper", weight: 0.4 }],
-  mico: [{ tag: "speedster", weight: 0.7 }, { tag: "assassin", weight: 0.4 }],
-  chuck: [{ tag: "speedster", weight: 0.8 }],
-  melodie: [{ tag: "damage_dealer", weight: 0.6 }, { tag: "support", weight: 0.4 }],
-  carl: [{ tag: "damage_dealer", weight: 0.6 }, { tag: "tank_counter", weight: 0.5 }],
-  mandy: [{ tag: "sharpshooter", weight: 0.8 }],
-  bo: [{ tag: "trapper", weight: 0.7 }, { tag: "sharpshooter", weight: 0.4 }],
-  sprout: [{ tag: "controller", weight: 0.7 }, { tag: "trapper", weight: 0.5 }],
-  spike: [{ tag: "thrower", weight: 0.7 }, { tag: "controller", weight: 0.6 }],
-  fang: [{ tag: "speedster", weight: 0.7 }, { tag: "assassin", weight: 0.5 }],
-  tara: [{ tag: "controller", weight: 0.7 }, { tag: "trapper", weight: 0.4 }],
-  moe: [{ tag: "controller", weight: 0.5 }, { tag: "damage_dealer", weight: 0.4 }],
-  pearl: [{ tag: "tank", weight: 0.6 }, { tag: "damage_dealer", weight: 0.5 }],
-  ash: [{ tag: "tank", weight: 0.7 }, { tag: "damage_dealer", weight: 0.5 }],
-  buster: [{ tag: "tank", weight: 0.6 }, { tag: "anti_agro", weight: 0.4 }],
-  berry: [{ tag: "support", weight: 0.7 }, { tag: "healer", weight: 0.6 }],
-  lola: [{ tag: "assassin", weight: 0.5 }, { tag: "mobility", weight: 0.5 }],
-  squeak: [{ tag: "controller", weight: 0.7 }, { tag: "trapper", weight: 0.4 }],
-  trunk: [{ tag: "tank", weight: 0.6 }, { tag: "damage_dealer", weight: 0.5 }],
-  juju: [{ tag: "controller", weight: 0.6 }],
-  willow: [{ tag: "controller", weight: 0.7 }, { tag: "trapper", weight: 0.5 }],
-  buzz: [{ tag: "assassin", weight: 0.7 }, { tag: "mobility", weight: 0.6 }],
-  eve: [{ tag: "controller", weight: 0.7 }, { tag: "area_denial", weight: 0.5 }],
-  rt: [{ tag: "tank", weight: 0.5 }, { tag: "controller", weight: 0.5 }],
-  gale: [{ tag: "controller", weight: 0.7 }, { tag: "area_denial", weight: 0.5 }],
-  ziggy: [{ tag: "support", weight: 0.5 }],
-  glowy: [{ tag: "support", weight: 0.5 }],
-  sandy: [{ tag: "support", weight: 0.6 }, { tag: "anti_agro", weight: 0.5 }],
-  janet: [{ tag: "sharpshooter", weight: 0.7 }, { tag: "mobility", weight: 0.4 }],
-  larrylawrie: [{ tag: "controller", weight: 0.5 }, { tag: "tank", weight: 0.4 }],
-  bonnie: [{ tag: "sharpshooter", weight: 0.8 }],
-  draco: [{ tag: "damage_dealer", weight: 0.5 }],
-  grom: [{ tag: "thrower", weight: 0.7 }, { tag: "area_denial", weight: 0.6 }],
-  doug: [{ tag: "support", weight: 0.7 }, { tag: "healer", weight: 0.6 }],
-  ollie: [{ tag: "damage_dealer", weight: 0.5 }],
-  jacky: [{ tag: "tank", weight: 0.7 }, { tag: "area_denial", weight: 0.4 }],
-  mrp: [{ tag: "controller", weight: 0.7 }, { tag: "support", weight: 0.4 }],
-  pam: [{ tag: "support", weight: 0.8 }, { tag: "healer", weight: 0.7 }],
-  sam: [{ tag: "assassin", weight: 0.6 }, { tag: "tank", weight: 0.4 }],
+  damian: [{ tag: "damage_dealer", weight: 0.5 }, { tag: "tank_counter", weight: 0.3 }],
+  bolt: [{ tag: "speedster", weight: 0.7 }, { tag: "assassin", weight: 0.4 }],
 };

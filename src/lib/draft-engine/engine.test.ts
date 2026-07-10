@@ -43,7 +43,7 @@ describe("draft formats registry", () => {
   it("has exactly the three verified Ranked formats", () => {
     expect(DRAFT_FORMATS.map((f) => f.id)).toEqual([
       "ranked-no-ban-free-pick",
-      "ranked-diamond-simultaneous-ban-turn-pick",
+      "ranked-diamond-simultaneous-ban-and-pick",
       "ranked-mythic-snake-draft-captain",
     ]);
   });
@@ -54,7 +54,7 @@ describe("draft formats registry", () => {
   });
 
   it("flips team assignment when enemy has first pick", () => {
-    const base = getDraftFormat("ranked-diamond-simultaneous-ban-turn-pick")!;
+    const base = getDraftFormat("ranked-diamond-simultaneous-ban-and-pick")!;
     const flipped = resolveFormatForFirstPick(base, "enemy");
     // The first non-ban step should now belong to "enemy" instead of "ally".
     const firstPickStep = base.steps.find((s) => s.action === "pick")!;
@@ -215,7 +215,7 @@ describe.each(DRAFT_FORMATS)("engine over format: $id", (format) => {
 });
 
 describe("ban-specific rules", () => {
-  const diamond = getDraftFormat("ranked-diamond-simultaneous-ban-turn-pick")!;
+  const diamond = getDraftFormat("ranked-diamond-simultaneous-ban-and-pick")!;
 
   it("treats the whole ban phase as one simultaneous, hidden group", () => {
     const state = createInitialState(diamond);
@@ -307,7 +307,7 @@ describe("player availability enforcement", () => {
   });
 
   it("does not restrict bans by player availability", () => {
-    const diamond = getDraftFormat("ranked-diamond-simultaneous-ban-turn-pick")!;
+    const diamond = getDraftFormat("ranked-diamond-simultaneous-ban-and-pick")!;
     const state = createInitialState(diamond);
     const result = validateAction(
       state,
@@ -324,7 +324,7 @@ describe("player availability enforcement", () => {
 
 describe("history helpers", () => {
   it("bannedBrawlerIds and pickedBrawlerIds reflect history accurately", () => {
-    const format = getDraftFormat("ranked-diamond-simultaneous-ban-turn-pick")!;
+    const format = getDraftFormat("ranked-diamond-simultaneous-ban-and-pick")!;
     const state = fillSteps(format, [...BRAWLERS]);
     expect(bannedBrawlerIds(state)).toHaveLength(6);
     expect(pickedBrawlerIds(state)).toHaveLength(6);
@@ -336,7 +336,7 @@ describe("history helpers", () => {
 
 describe("determinism", () => {
   it("identical action sequences produce identical resulting state", () => {
-    const format = getDraftFormat("ranked-diamond-simultaneous-ban-turn-pick")!;
+    const format = getDraftFormat("ranked-diamond-simultaneous-ban-and-pick")!;
     const pool = [...BRAWLERS];
     const stateA = fillSteps(format, pool);
     const stateB = fillSteps(format, pool);

@@ -216,7 +216,9 @@ export default function DraftScreen() {
             className="rounded-md border border-slate-800 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-200"
           >
             {isSimultaneousPhase
-              ? "Ban phase: enter both teams' bans as they're revealed."
+              ? currentActionType === "ban"
+                ? "Ban phase: enter both teams' bans as they're revealed. Both teams may ban the same Brawler — that's legal and doesn't exclude it for the other team."
+                : "Pick phase: both teams pick simultaneously at this rank — enter both teams' picks as they're revealed."
               : `Current turn: ${legalSteps[0]?.team === "ally" ? "Your team" : "Enemy team"} to ${legalSteps[0]?.action}.`}
           </div>
 
@@ -225,26 +227,39 @@ export default function DraftScreen() {
               <div className="flex-1">
                 {allyLegal.length > 0 ? (
                   <BrawlerSelector
-                    label="Your ban"
-                    excludedBrawlerIds={[...banned, ...picked]}
-                    onSelect={(id) => handleSelect(id, "ally", "ban")}
+                    label={currentActionType === "ban" ? "Your ban" : "Your pick"}
+                    excludedBrawlerIds={
+                      currentActionType === "ban"
+                        ? [...allyBans, ...picked]
+                        : [...banned, ...picked]
+                    }
+                    availableBrawlerIds={
+                      currentActionType === "pick" && profile
+                        ? profile.unlockedBrawlerIds.filter((id) => !profile.manuallyExcludedBrawlerIds.includes(id))
+                        : undefined
+                    }
+                    onSelect={(id) => handleSelect(id, "ally", currentActionType ?? "ban")}
                   />
                 ) : (
                   <p className="rounded-md border border-slate-800 bg-slate-900/40 p-3 text-sm text-slate-400">
-                    Your bans are locked in.
+                    Your {currentActionType === "ban" ? "bans" : "picks"} are locked in.
                   </p>
                 )}
               </div>
               <div className="flex-1">
                 {enemyLegal.length > 0 ? (
                   <BrawlerSelector
-                    label="Enemy ban"
-                    excludedBrawlerIds={[...banned, ...picked]}
-                    onSelect={(id) => handleSelect(id, "enemy", "ban")}
+                    label={currentActionType === "ban" ? "Enemy ban" : "Enemy pick"}
+                    excludedBrawlerIds={
+                      currentActionType === "ban"
+                        ? [...enemyBans, ...picked]
+                        : [...banned, ...picked]
+                    }
+                    onSelect={(id) => handleSelect(id, "enemy", currentActionType ?? "ban")}
                   />
                 ) : (
                   <p className="rounded-md border border-slate-800 bg-slate-900/40 p-3 text-sm text-slate-400">
-                    Enemy bans are locked in.
+                    Enemy {currentActionType === "ban" ? "bans" : "picks"} are locked in.
                   </p>
                 )}
               </div>

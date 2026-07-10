@@ -109,16 +109,16 @@ tiered — there is no single universal draft sequence**, which validates the sp
 | Tier band | Ban mechanic | Pick mechanic | Notes |
 |---|---|---|---|
 | Below Diamond | No ban phase | Free/simultaneous pick, no structured order | Ranked at these tiers is closer to a normal match with a rank attached |
-| Diamond I and above | Ban phase introduced: **3 bans per team, 6 total**, occurring simultaneously (hidden from the opposing team until resolved) before picks begin | Picks proceed in turn order once bans resolve | First-pick team decided by coin flip when matchmaking completes |
-| Mythic I and above | Same 3-bans-per-team simultaneous ban phase | **Snake draft**: picks alternate in a 1-2-2-1 pattern across the two teams (first picker picks alone, then two picks from the other team, then two from the first team, then the last picker alone) with a **Team Captain** (highest Elo, or lobby host in premade teams) reserved for the last pick of their team | Each player gets an individual pick (not one player choosing for the whole team), and each pick has a ~20 second timer |
+| Diamond only | Ban phase introduced: **3 bans per team, 6 total**, occurring simultaneously (hidden from the opposing team until resolved) before picks begin | **Picks are also fully simultaneous** — both teams lock in all 3 picks at once, with no turn order at all. Corrected per direct user report and cross-checked against community sources; an earlier version of this document incorrectly described Diamond as turn-order and mislabeled the tier band as "Diamond-Legendary" (Legendary is actually above Mythic, which is where the snake draft below begins) | First-pick team decided by coin flip when matchmaking completes |
+| Mythic I and above (includes Legendary and Masters) | Same 3-bans-per-team simultaneous ban phase | **Snake draft**: picks alternate in a 1-2-2-1 pattern across the two teams (first picker picks alone, then two picks from the other team, then two from the first team, then the last picker alone) with a **Team Captain** (highest Elo, or lobby host in premade teams) reserved for the last pick of their team | Each player gets an individual pick (not one player choosing for the whole team), and each pick has a ~20 second timer |
 
 Team size is 3v3 across all Ranked bands (Brawl Stars' standard competitive team size).
 
 **Design consequence**: our `DraftFormat` engine must support at minimum three seeded configurations
 out of the box —
 1. `ranked-no-ban-free-pick` (sub-Diamond),
-2. `ranked-diamond-simultaneous-ban-turn-pick` (Diamond–Legendary, pre-Mythic snake),
-3. `ranked-mythic-snake-draft-captain` (Mythic+, snake order + captain-last rule) —
+2. `ranked-diamond-simultaneous-ban-and-pick` (Diamond only — both bans and picks simultaneous),
+3. `ranked-mythic-snake-draft-captain` (Mythic and above, including Legendary/Masters — snake order + captain-last rule) —
 
 and treat the exact ban count, simultaneity, and pick pattern as **data**, not code, since Supercell
 has changed these numbers before and will again. See `docs/implementation-plan.md` for the

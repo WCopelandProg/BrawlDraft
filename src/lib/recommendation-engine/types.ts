@@ -137,6 +137,10 @@ export interface ScoreWeights {
   modeClassFit: number;
   /** Real pick-rate popularity for this rank bucket where imported, neutral (0.5) otherwise. */
   metaPopularity: number;
+  /** Class-counter matrix (Anti-Tank/Tank/Space Maker/Thrower/Sniper/Control/Support), see class-counters.ts. */
+  classCounter: number;
+  /** Draft-position/mode fit for the candidate's class (e.g. Thrower only safe last pick), see class-counters.ts. */
+  classPositionFit: number;
   counterRiskPenalty: number;
   redundancyPenalty: number;
 }
@@ -157,6 +161,8 @@ export type RecommendationReasonType =
   | "archetype_counter"
   | "mode_class_fit"
   | "meta_popularity"
+  | "class_counter"
+  | "class_position_fit"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick
   // scoring, so it gets its own vocabulary of reasons rather than being forced into the pick list).
   | "opponent_threat"

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { BRAWLERS } from "@/lib/data/brawlers";
+import { getBrawlerClassLabel } from "@/lib/recommendation-engine/class-counters";
 
 interface BrawlerSelectorProps {
   /** Brawler ids that must not be selectable (already banned or picked). */
@@ -58,6 +59,7 @@ export function BrawlerSelector({
               className="flex min-h-[44px] flex-col items-start justify-center rounded-md border border-slate-700 bg-slate-800 px-3 py-2 text-left text-sm font-medium text-slate-100 transition hover:border-yellow-400 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-yellow-400 disabled:cursor-not-allowed disabled:opacity-40"
             >
               <span>{b.name}</span>
+              <span className="text-[10px] font-normal text-slate-400">{getBrawlerClassLabel(b.id) ?? "Unclassified"}</span>
               {!isAvailable && <span className="text-[10px] font-normal text-amber-400">not in your pool</span>}
             </button>
           );

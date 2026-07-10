@@ -26,6 +26,10 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   // for every candidate otherwise (same "neutral until real data exists" pattern as
   // mapPerformance/matchupValue/allySynergy above when their own inputs are absent).
   metaPopularity: 0.08,
+  // Class-counter matrix and draft-position/mode fit (Anti-Tank/Tank/Space Maker/Thrower/Sniper/
+  // Control/Support), from a second, independent user-provided framework — see class-counters.ts.
+  classCounter: 0.1,
+  classPositionFit: 0.08,
   counterRiskPenalty: 0.15,
   redundancyPenalty: 0.1,
 };
@@ -49,6 +53,7 @@ export function applyDraftPositionAdjustment(base: ScoreWeights, positionFactor:
     compositionFit: base.compositionFit * (0.6 + 0.8 * clamped),
     roleCoverage: base.roleCoverage * (0.6 + 0.8 * clamped),
     archetypeCounter: base.archetypeCounter * (0.6 + 0.8 * clamped),
+    classCounter: base.classCounter * (0.6 + 0.8 * clamped),
     counterRiskPenalty: base.counterRiskPenalty * (0.7 + 0.6 * clamped),
     // The drafting guide is explicit that doubling up on a class late in the draft is fine ("not
     // a huge issue... 2 of the same class can sometimes overwhelm their natural counters") — so

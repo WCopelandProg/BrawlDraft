@@ -34,7 +34,7 @@ production behavior (§18, §19.14):
 | Data | Status in this delivery |
 |---|---|
 | Brawler list, names, roles/tags | **Seeded by hand** in `src/lib/data/brawlers.ts`. A real deployment must replace/reconcile this against `GET /v1/brawlers` in Phase 3 — that endpoint gives us canonical IDs/names, but not roles/tags (see source #4 above), so role tags stay hand-maintained even after Phase 3. |
-| Maps, modes | **Seeded by hand**, a small representative set for the prototype, not the full current map rotation. |
+| Maps, modes | **Modes confirmed, maps best-effort.** The 6 modes in `src/lib/data/modes.ts` (Gem Grab, Brawl Ball, Bounty, Heist, Hot Zone, Knockout) are confirmed via web search (July 2026) as the actual live Ranked mode rotation — every Ranked match is a random one of these 6 on a random map from that mode's pool, 4 maps/mode (24 total). The specific map names in `src/lib/data/maps.ts` (4 per mode) could **not** be verified against a live source in this environment — brawlify.com, brawltime.ninja, and the Brawl Stars Fandom wiki all return HTTP 403 to automated fetches here — so they're this assistant's own best-effort recall of maps that have recurred across many past seasons, not a guaranteed-current list. Ranked maps rotate every season; edit `maps.ts` directly if one has since rotated out. |
 | Draft formats | **Seeded from verified research** in `docs/discovery.md` §2 (three formats: no-ban free pick, Diamond simultaneous-ban turn pick, Mythic snake draft with captain). Marked with a `source: "verified-2026-07"` style note in config so it's obvious when it needs re-checking against live patch notes. |
 | Map/mode win rates | **Mock by default, real where imported.** `src/lib/recommendation-engine/hybrid-dataset.ts` overlays real per-Brawler win/use rate rows (from a manually-exported brawltime.ninja CSV, see §2b) on top of the seeded mock dataset for whichever (map, mode, rank bucket) combinations have actually been imported; everything else still falls back to mock. `generated-map-stats.json` ships empty, so out of the box this is 100% mock until someone runs the import script. |
 | Matchup rates, synergy rates | **100% mock/seeded** in `src/lib/recommendation-engine/mock-data.ts` — brawltime.ninja's simple per-Brawler export doesn't carry matchup-pair or ally-pair data, so there is no real-data path for these yet. Generated to be internally consistent (so the engine's math is testable) but not derived from any real match data. |
@@ -123,9 +123,11 @@ statistical data. This is implemented in `src/lib/recommendation-engine/archetyp
 - A new `modeClassFit` term implements "the 1st pick of each mode should be the strongest of the
   most important class for that mode" — active *only* when `picksSoFar === 0` (the literal first
   action of the draft), using a per-mode priority-class list (`MODE_PRIORITY_CLASSES`) derived from
-  the guide's own worked examples for this prototype's three seeded modes (Gem Grab, Brawl Ball,
-  Knockout). The guide's Heist/Hot Zone/Bounty examples aren't wired in because those modes aren't
-  part of this prototype's seeded mode list yet.
+  the guide's own worked examples. Now covers all 6 seeded modes: Heist and Hot Zone follow Gem
+  Grab/Brawl Ball's "aggro-meta" template (anti_agro/tank_counter-favored first pick), and Bounty
+  follows Knockout's "passive-meta" template (sharpshooter/support favored), per the class-counters
+  video summary's own mode-meta split (see `AGGRO_META_MODE_IDS`/`PASSIVE_META_MODE_IDS` in
+  `class-counters.ts`).
 - The redundancy penalty now decays toward the last pick (per the guide: "2 of the same class can
   sometimes overwhelm their natural counters... not a huge issue" late in the draft), the mirror of
   the existing counter-risk penalty, which *increases* toward the last pick.

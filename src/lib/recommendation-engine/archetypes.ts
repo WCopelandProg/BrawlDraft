@@ -122,12 +122,16 @@ export function archetypeCounterValue(candidate: ArchetypeWeights, opponentTeam:
  * Which classes make the strongest true first pick (spec section 6.5 / the user-provided guide:
  * "the 1st pick of each mode should be the strongest of the most important class in that game
  * mode"), derived from the guide's own worked examples for the modes this prototype seeds
- * (src/lib/data/modes.ts). Heist/Hot Zone/Bounty examples from the guide aren't wired in yet
- * because those modes aren't part of this prototype's seeded mode list — add them here the same
- * way once they are.
+ * (src/lib/data/modes.ts). Heist and Hot Zone follow the same "aggro-meta" template as Gem
+ * Grab/Brawl Ball (anti_agro/tank_counter first pick, see class-counters.ts AGGRO_META_MODE_IDS);
+ * Bounty follows the same "passive-meta" template as Knockout (sharpshooter/support favored, tanks
+ * lose most of their raw-stat-check value), per the video-derived strategy summarized there.
  */
 export const MODE_PRIORITY_CLASSES: Record<string, RoleTag[]> = {
   "gem-grab": ["assassin", "support", "anti_agro"],
   "brawl-ball": ["anti_agro", "speedster", "controller"],
+  heist: ["anti_agro", "assassin", "controller"],
+  "hot-zone": ["anti_agro", "speedster", "controller"],
+  bounty: ["sharpshooter", "support", "trapper"],
   knockout: ["sharpshooter", "support"],
 };

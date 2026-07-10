@@ -6,6 +6,7 @@ import {
   averageArchetypeWeights,
   MODE_PRIORITY_CLASSES,
 } from "./archetypes";
+import { classCounterValue, classPositionFit, dominantClass, type CoreClass } from "./class-counters";
 import { applyDraftPositionAdjustment, DEFAULT_WEIGHTS } from "./weights";
 import { buildReasonsAndWarnings } from "./explain";
 import type {
@@ -94,6 +95,12 @@ export interface ScoreBreakdown {
   /** 0-1 if real pick-rate data exists for this rank bucket, else undefined (metaPopularity uses 0.5). */
   realPopularity?: number;
   metaPopularity: number;
+  /** The candidate's single dominant class per class-counters.ts (Thrower/Tank/Space Maker/Anti-Tank/Support/Sniper/Control). */
+  candidateClass?: CoreClass;
+  /** 0-1, centered 0.5: how well the candidate's class counters the enemy's revealed classes. */
+  classCounter: number;
+  /** 0-1, centered 0.5: draft-position/mode fit for the candidate's class (e.g. Thrower only safe last pick). */
+  classPositionFit: number;
 }
 
 export function computeScoreBreakdown(
@@ -218,6 +225,22 @@ export function computeScoreBreakdown(
       ? Math.max(0, ...priorityClasses.map((tag) => roleWeight(dataset, candidateId, tag)))
       : 0;
 
+  // Class-counter matrix (class-counters.ts): Anti-Tank/Tank/Space Maker/Thrower/Sniper/Control/
+  // Support, a second, independent user-provided framework from a reference image + companion
+  // strategy video. Distinct from the archetype system above (different guide, same tag list).
+  const candidateClass = dominantClass((tag) => roleWeight(dataset, candidateId, tag));
+  const enemyClasses = ctx.enemyPicks.map((id) => dominantClass((tag) => roleWeight(dataset, id, tag)));
+  const classCounter = classCounterValue(candidateClass, enemyClasses);
+
+  const allyClasses = ctx.allyPicks.map((id) => dominantClass((tag) => roleWeight(dataset, id, tag)));
+  const classPositionFitValue = classPositionFit({
+    candidateClass,
+    modeId: ctx.modeId,
+    isFirstPick: ctx.action === "pick" && ctx.picksSoFar === 0,
+    isLastPick: ctx.action === "pick" && ctx.totalPicksInFormat - ctx.picksSoFar === 1,
+    allyDominantClasses: allyClasses,
+  });
+
   // Real pick-rate popularity (data/brawltime/README.md): undefined until a real export has been
   // imported for this exact rank bucket, in which case it's a genuine measured percentile — never
   // fabricated. Neutral (0.5) fallback so it contributes nothing when absent.
@@ -251,6 +274,9 @@ export function computeScoreBreakdown(
     modeClassFit,
     realPopularity,
     metaPopularity,
+    candidateClass,
+    classCounter,
+    classPositionFit: classPositionFitValue,
   };
 }
 
@@ -267,7 +293,9 @@ function weightedScore(breakdown: ScoreBreakdown, weights: ScoreWeights): number
     weights.statisticalConfidence * breakdown.statisticalConfidence +
     weights.archetypeCounter * breakdown.archetypeCounter +
     weights.modeClassFit * breakdown.modeClassFit +
-    weights.metaPopularity * breakdown.metaPopularity;
+    weights.metaPopularity * breakdown.metaPopularity +
+    weights.classCounter * breakdown.classCounter +
+    weights.classPositionFit * breakdown.classPositionFit;
   const penalty = weights.counterRiskPenalty * breakdown.counterRisk + weights.redundancyPenalty * breakdown.redundancy;
   return Math.min(1, Math.max(0, positive - penalty));
 }

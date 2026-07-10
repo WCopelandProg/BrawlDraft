@@ -1,4 +1,5 @@
 import { getBrawlerMeta } from "@/lib/data/brawlers";
+import { CLASS_DISPLAY_NAMES } from "./class-counters";
 import type { ScoreBreakdown } from "./engine";
 import type { BanScoreBreakdown } from "./ban";
 import type { DEFAULT_BAN_WEIGHTS } from "./ban";
@@ -17,6 +18,10 @@ function brawlerName(id: string): string {
 
 function roleLabel(tag: string): string {
   return tag.replace(/_/g, " ");
+}
+
+function classLabel(tag?: string): string {
+  return (tag && CLASS_DISPLAY_NAMES[tag as keyof typeof CLASS_DISPLAY_NAMES]) || "its class";
 }
 
 export function buildReasonsAndWarnings(
@@ -101,6 +106,46 @@ export function buildReasonsAndWarnings(
       type: "mode_class_fit",
       impact: modeFitImpact,
       message: "A strong first-pick class for this game mode.",
+    });
+  }
+
+  const classCounterImpact = weights.classCounter * (b.classCounter - 0.5) * 2;
+  if (classCounterImpact > 0.03 && b.candidateClass) {
+    reasons.push({
+      type: "class_counter",
+      impact: classCounterImpact,
+      message: `${classLabel(b.candidateClass)} directly counters the enemy's revealed picks.`,
+    });
+  } else if (classCounterImpact < -0.03 && b.candidateClass) {
+    warnings.push({
+      type: "class_counter",
+      impact: classCounterImpact,
+      message: `${classLabel(b.candidateClass)} is directly countered by the enemy's revealed picks.`,
+    });
+  }
+
+  const classPositionImpact = weights.classPositionFit * (b.classPositionFit - 0.5) * 2;
+  if (classPositionImpact > 0.03 && b.candidateClass) {
+    reasons.push({
+      type: "class_position_fit",
+      impact: classPositionImpact,
+      message:
+        b.candidateClass === "thrower"
+          ? "Thrower saved for the last pick, where it's very hard for the enemy to counter."
+          : b.candidateClass === "tank_counter"
+            ? "Best available Anti-Tank — the strongest first pick outside Bounty/Knockout, since it denies both Tanks and Space Makers."
+            : "Strong draft-position fit for its class.",
+    });
+  } else if (classPositionImpact < -0.03 && b.candidateClass) {
+    warnings.push({
+      type: "class_position_fit",
+      impact: classPositionImpact,
+      message:
+        b.candidateClass === "thrower"
+          ? "Throwers are only safe on the last pick — taking one now risks losing the lane outright."
+          : b.candidateClass === "controller"
+            ? "Control is a risky first pick — it can get overrun before it establishes position."
+            : "Weak draft-position fit for its class right now.",
     });
   }
 
