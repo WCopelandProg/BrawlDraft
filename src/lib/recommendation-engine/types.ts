@@ -35,6 +35,14 @@ export interface MapStatRecord {
   sampleSize: number;
   adjustedWinRate: number; // 0-1, already shrinkage-adjusted upstream
   confidenceScore: number; // 0-1
+  /**
+   * Provenance of this specific record. "mock" is the seeded/synthetic dataset
+   * (mock-data.ts). "brawltime_export" means it was parsed from a real, user-exported CSV from
+   * brawltime.ninja's dashboard (see data/brawltime/README.md) — real match data, not fabricated,
+   * but community-sourced rather than official (spec/data-sources.md source priority #5).
+   */
+  source?: "mock" | "brawltime_export";
+  exportedAt?: string;
 }
 
 export interface MatchupStatRecord {

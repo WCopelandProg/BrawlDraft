@@ -76,15 +76,19 @@ function sampleSizeFor(...parts: string[]): number {
   return Math.round(300 + keyedFloat(...parts, "n") * 4000); // n in [300,4300)
 }
 
-const PRIOR_STRENGTH = 200;
-const GLOBAL_PRIOR_WIN_RATE = 0.5;
+export const PRIOR_STRENGTH = 200;
+export const GLOBAL_PRIOR_WIN_RATE = 0.5;
 
-/** Bayesian shrinkage per docs/implementation-plan.md section 4. */
-function shrinkToPrior(observed: number, sampleSize: number): number {
+/**
+ * Bayesian shrinkage per docs/implementation-plan.md section 4. Exported (not mock-specific) so
+ * hybrid-dataset.ts can apply the same, real statistical treatment to imported brawltime.ninja
+ * rows, which only carry an approximate sample size rather than raw win/loss counts.
+ */
+export function shrinkToPrior(observed: number, sampleSize: number): number {
   return (sampleSize * observed + PRIOR_STRENGTH * GLOBAL_PRIOR_WIN_RATE) / (sampleSize + PRIOR_STRENGTH);
 }
 
-function confidenceFromSampleSize(sampleSize: number): number {
+export function confidenceFromSampleSize(sampleSize: number): number {
   return sampleSize / (sampleSize + PRIOR_STRENGTH);
 }
 
@@ -118,6 +122,7 @@ function getMapStat(
     sampleSize,
     adjustedWinRate,
     confidenceScore: confidenceFromSampleSize(sampleSize),
+    source: "mock",
   };
 }
 

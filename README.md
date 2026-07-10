@@ -47,6 +47,27 @@ No environment variables are required to run Phase 1/2 — everything runs on th
 zero network calls. `.env.example` documents `BRAWL_STARS_API_KEY`, which is unused until Phase 3
 (official API integration) and must never contain a real key in version control.
 
+### Using the app
+
+1. **Setup screen** (`/`): optionally create a profile (name + your available Brawlers), pick a
+   Ranked format/mode/map/rank bracket, then **Start Draft**.
+2. **Draft screen** (`/draft`): enter bans/picks as they happen in-game by searching and tapping a
+   Brawler. The banner at the top always says whose turn/action is legal right now, and illegal
+   actions (already-banned/picked Brawlers, wrong team, wrong action type) are simply not
+   selectable. Recommendations for your team's current action appear below, with a plain-language
+   reason and any warning for each. **Undo** removes the last action; **Reset** clears the whole
+   draft without leaving the screen.
+3. Your progress is saved automatically (`localStorage`) — reloading the page resumes the same
+   draft; **Start a new draft** at the end returns to the setup screen.
+
+### Importing real map win-rate data (optional)
+
+By default all statistics are a seeded/labeled mock dataset. To use real per-Brawler win-rate data
+for a specific map/mode/rank bracket, export a CSV from [brawltime.ninja](https://brawltime.ninja)'s
+dashboard and run the import script — see `data/brawltime/README.md` for the exact steps. The draft
+screen shows, per map/mode/rank, whether it's currently backed by real imported data (green) or
+still the mock fallback (amber).
+
 ### Testing
 
 ```bash

@@ -70,6 +70,8 @@ export interface ScoreBreakdown {
   rankFitSignal: number;
   rankBucketLabel: string;
   metaTrend: "buffed" | "nerfed" | "stable";
+  /** Whether mapPerformance came from a real imported brawltime.ninja export or the seeded mock. */
+  mapStatSource: "mock" | "brawltime_export";
 }
 
 export function computeScoreBreakdown(
@@ -199,6 +201,7 @@ export function computeScoreBreakdown(
     rankFitSignal,
     rankBucketLabel,
     metaTrend,
+    mapStatSource: mapStat?.source ?? "mock",
   };
 }
 

@@ -30,10 +30,11 @@ export function buildReasonsAndWarnings(
 
   const mapImpact = weights.mapPerformance * (b.mapPerformance - 0.5) * 2;
   if (mapImpact > 0.02) {
+    const provenance = b.mapStatSource === "brawltime_export" ? " (real brawltime.ninja data)" : "";
     reasons.push({
       type: "map_strength",
       impact: mapImpact,
-      message: `Strong performance on this map/mode (adjusted win rate ${(b.mapPerformance * 100).toFixed(0)}%).`,
+      message: `Strong performance on this map/mode (adjusted win rate ${(b.mapPerformance * 100).toFixed(0)}%)${provenance}.`,
     });
   }
 

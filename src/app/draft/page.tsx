@@ -21,7 +21,7 @@ import { getMapMeta } from "@/lib/data/maps";
 import { getRankBucketMeta } from "@/lib/data/ranks";
 import { generatePickRecommendations, splitByAvailability } from "@/lib/recommendation-engine/engine";
 import { generateBanRecommendations } from "@/lib/recommendation-engine/ban";
-import { MOCK_DATASET } from "@/lib/recommendation-engine/mock-data";
+import { hasRealMapData, HYBRID_DATASET } from "@/lib/recommendation-engine/hybrid-dataset";
 import type { DraftRecommendationContext } from "@/lib/recommendation-engine/types";
 import { loadProfiles, type PlayerProfile } from "@/lib/storage/profiles";
 import { clearDraftSession, loadDraftSession, saveDraftSession } from "@/lib/storage/draft-session";
@@ -133,8 +133,8 @@ export default function DraftScreen() {
   const showAllyRecommendations = allyLegal.length > 0 && recommendationContext && !complete;
   const recommendations = showAllyRecommendations
     ? currentActionType === "ban"
-      ? generateBanRecommendations(recommendationContext!, MOCK_DATASET)
-      : generatePickRecommendations(recommendationContext!, MOCK_DATASET)
+      ? generateBanRecommendations(recommendationContext!, HYBRID_DATASET)
+      : generatePickRecommendations(recommendationContext!, HYBRID_DATASET)
     : [];
   const { available: availableRecs, unavailable: unavailableRecs } =
     currentActionType === "pick" ? splitByAvailability(recommendations) : { available: recommendations, unavailable: [] };
@@ -151,6 +151,7 @@ export default function DraftScreen() {
   const mapMeta = getMapMeta(session.mapId);
   const modeMeta = getGameModeMeta(session.modeId);
   const rankBucketMeta = getRankBucketMeta(session.rankBucket);
+  const realMapDataActive = hasRealMapData(session.mapId, session.modeId, session.rankBucket);
 
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-6">
@@ -160,10 +161,15 @@ export default function DraftScreen() {
             {mapMeta?.name ?? session.mapId} &middot; {modeMeta?.name ?? session.modeId}
           </h1>
           <p className="text-xs text-slate-500">
-            Dataset: {MOCK_DATASET.versionId} (seeded/mock) &middot; Patch: {MOCK_DATASET.patchId} &middot; Rank:{" "}
+            Dataset: {HYBRID_DATASET.versionId} &middot; Patch: {HYBRID_DATASET.patchId} &middot; Rank:{" "}
             {rankBucketMeta?.name ?? session.rankBucket}
           </p>
           <p className="text-xs text-slate-500">Format: {resolvedFormat.name}</p>
+          <p className={`text-xs font-medium ${realMapDataActive ? "text-emerald-400" : "text-amber-400"}`}>
+            {realMapDataActive
+              ? "Map win rates for this map/mode/rank: real data imported from brawltime.ninja."
+              : "Map win rates for this map/mode/rank: seeded/mock demo data, not real match stats."}
+          </p>
         </div>
         <div className="flex gap-2">
           <button
