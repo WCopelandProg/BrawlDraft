@@ -18,6 +18,7 @@ import type { DraftState, Team } from "@/lib/draft-engine/types";
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
 import { getGameModeMeta } from "@/lib/data/modes";
 import { getMapMeta } from "@/lib/data/maps";
+import { getRankBucketMeta } from "@/lib/data/ranks";
 import { generatePickRecommendations, splitByAvailability } from "@/lib/recommendation-engine/engine";
 import { generateBanRecommendations } from "@/lib/recommendation-engine/ban";
 import { MOCK_DATASET } from "@/lib/recommendation-engine/mock-data";
@@ -138,12 +139,18 @@ export default function DraftScreen() {
   const { available: availableRecs, unavailable: unavailableRecs } =
     currentActionType === "pick" ? splitByAvailability(recommendations) : { available: recommendations, unavailable: [] };
 
+  const isFinalPickOfDraft =
+    currentActionType === "pick" &&
+    recommendationContext !== undefined &&
+    recommendationContext.totalPicksInFormat - recommendationContext.picksSoFar === 1;
+
   if (!loaded || !session || !resolvedFormat || !state) {
     return <main className="px-4 py-6 text-slate-300">Loading draft…</main>;
   }
 
   const mapMeta = getMapMeta(session.mapId);
   const modeMeta = getGameModeMeta(session.modeId);
+  const rankBucketMeta = getRankBucketMeta(session.rankBucket);
 
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-6">
@@ -153,8 +160,10 @@ export default function DraftScreen() {
             {mapMeta?.name ?? session.mapId} &middot; {modeMeta?.name ?? session.modeId}
           </h1>
           <p className="text-xs text-slate-500">
-            Dataset: {MOCK_DATASET.versionId} (seeded/mock) &middot; Format: {resolvedFormat.name}
+            Dataset: {MOCK_DATASET.versionId} (seeded/mock) &middot; Patch: {MOCK_DATASET.patchId} &middot; Rank:{" "}
+            {rankBucketMeta?.name ?? session.rankBucket}
           </p>
+          <p className="text-xs text-slate-500">Format: {resolvedFormat.name}</p>
         </div>
         <div className="flex gap-2">
           <button
@@ -249,6 +258,12 @@ export default function DraftScreen() {
 
           {showAllyRecommendations && (
             <>
+              {isFinalPickOfDraft && (
+                <p className="rounded-md border border-yellow-700/50 bg-yellow-900/20 px-3 py-2 text-xs text-yellow-200">
+                  Last pick of the draft &mdash; the enemy comp is fully revealed, so recommendations now
+                  prioritize direct counters over general flexibility.
+                </p>
+              )}
               <RecommendationList
                 title={currentActionType === "ban" ? "Recommended bans" : "Recommended picks"}
                 recommendations={availableRecs}

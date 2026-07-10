@@ -14,6 +14,12 @@ export interface PlayerProfile {
   unlockedBrawlerIds: string[];
   underleveledBrawlerIds: string[];
   manuallyExcludedBrawlerIds: string[];
+  /**
+   * Remembered so picking a profile on the setup screen also restores the rank bracket in one
+   * step — the draft timer is short, so re-entering it every time isn't acceptable. Still
+   * overridable per draft (rank can change between sessions).
+   */
+  defaultRankBucket?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -51,6 +57,7 @@ export function createProfile(label: string, playerTag?: string): PlayerProfile 
     unlockedBrawlerIds: [...BRAWLER_IDS],
     underleveledBrawlerIds: [],
     manuallyExcludedBrawlerIds: [],
+    defaultRankBucket: "all",
     createdAt: now,
     updatedAt: now,
   };

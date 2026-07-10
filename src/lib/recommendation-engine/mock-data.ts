@@ -1,4 +1,5 @@
-import { BRAWLER_ROLE_FEATURES, BRAWLERS, getBrawlerMeta } from "@/lib/data/brawlers";
+import { BRAWLER_ROLE_FEATURES, BRAWLERS, getBrawlerMeta, getRankSkew } from "@/lib/data/brawlers";
+import { rankBucketSkewPosition } from "@/lib/data/ranks";
 import type {
   MapStatRecord,
   MatchupStatRecord,
@@ -18,7 +19,32 @@ import type {
  */
 
 export const MOCK_DATASET_VERSION = "mock-2026.07.1";
-export const MOCK_PATCH_ID = "2026.07";
+
+export interface MockPatchInfo {
+  id: string;
+  releasedAt: string;
+  buffedBrawlerIds: string[];
+  nerfedBrawlerIds: string[];
+}
+
+/**
+ * Small seeded patch history demonstrating the mechanism spec section 8.2 asks for: when a patch
+ * buffs/nerfs a Brawler, meta-strength (and therefore the recommendation score) shifts for that
+ * Brawler on the very next lookup — no code change required, only a new entry here. In Phase 4
+ * this same shape is populated by the real `balance_patches` table (docs/implementation-plan.md
+ * section 2) instead of being hand-written, and getMetaStrength would additionally apply the
+ * exp(-lambda * ageInDays) decay of pre-patch match data described in that same section.
+ */
+export const MOCK_PATCH_HISTORY: MockPatchInfo[] = [
+  { id: "2026.06", releasedAt: "2026-06-04", buffedBrawlerIds: ["poco"], nerfedBrawlerIds: ["bull", "elprimo"] },
+  { id: "2026.07", releasedAt: "2026-07-08", buffedBrawlerIds: ["tick", "rico"], nerfedBrawlerIds: ["shelly"] },
+];
+
+export const MOCK_PATCH_ID = MOCK_PATCH_HISTORY[MOCK_PATCH_HISTORY.length - 1]!.id;
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}
 
 function hashString(input: string): number {
   let hash = 2166136261;
@@ -71,7 +97,17 @@ function getMapStat(
   if (!getBrawlerMeta(brawlerId)) return undefined;
   const bucket = rankBucket || "all";
   const sampleSize = sampleSizeFor(brawlerId, mapId, modeId, bucket);
-  const observedWinRate = 0.38 + keyedFloat(brawlerId, mapId, modeId, bucket, "wr") * 0.24; // 0.38-0.62
+  // Rank-bracket skew (docs/data-sources.md): a Brawler curated as "low-elo strong" trends worse
+  // as the bucket climbs toward Masters, and vice versa for "high-elo strong" — up to ~12 points.
+  // Deliberately keyed WITHOUT `bucket` in the base noise term below, so rank bucket only ever
+  // moves this number through the explicit, monotonic skew term — not through unrelated per-bucket
+  // hash noise that could just as easily point the wrong way.
+  const skewAdjustment = getRankSkew(brawlerId) * rankBucketSkewPosition(bucket) * 0.12;
+  const observedWinRate = clamp(
+    0.38 + keyedFloat(brawlerId, mapId, modeId, "wr") * 0.24 + skewAdjustment,
+    0.05,
+    0.95,
+  ); // base 0.38-0.62 before skew
   const adjustedWinRate = shrinkToPrior(observedWinRate, sampleSize);
   return {
     brawlerId,
@@ -98,7 +134,19 @@ function getMatchup(
   // Keep the pair-level random draw symmetric so matchup(A,B) + matchup(B,A) == 1, a real invariant
   // any adjustedMatchupRate must satisfy (it's "probability candidate beats opponent").
   const [first, second] = [candidateId, opponentId].sort() as [string, string];
-  const base = 0.32 + keyedFloat(first, second, mapId, modeId, bucket, "matchup") * 0.36; // 0.32-0.68
+  // Apply rank skew as the *relative* difference between the two Brawlers' curated skews, split
+  // evenly into `base` (first's win probability) — this keeps the antisymmetry invariant
+  // (candidate-vs-opponent + opponent-vs-candidate == 1) exact by construction while still letting
+  // "easily countered at high elo" show up as a genuinely worse matchup number at high brackets.
+  // As with getMapStat, the base noise term below is deliberately keyed WITHOUT `bucket`, so rank
+  // bucket only ever moves this number through the explicit skewDelta term.
+  const skewDelta =
+    (getRankSkew(first) - getRankSkew(second)) * rankBucketSkewPosition(bucket) * 0.08;
+  const base = clamp(
+    0.32 + keyedFloat(first, second, mapId, modeId, "matchup") * 0.36 + skewDelta,
+    0.05,
+    0.95,
+  ); // base 0.32-0.68 before skew
   const rate = candidateId === first ? base : 1 - base;
   const sampleSize = sampleSizeFor(candidateId, opponentId, mapId, modeId, bucket);
   return {
@@ -142,9 +190,24 @@ function getRoleFeatures(brawlerId: string): RoleFeature[] {
   return BRAWLER_ROLE_FEATURES[brawlerId] ?? [];
 }
 
+function patchInfo(patchId: string): MockPatchInfo | undefined {
+  return MOCK_PATCH_HISTORY.find((p) => p.id === patchId);
+}
+
+function getMetaTrend(brawlerId: string, patchId: string): "buffed" | "nerfed" | "stable" {
+  const patch = patchInfo(patchId);
+  if (!patch) return "stable";
+  if (patch.buffedBrawlerIds.includes(brawlerId)) return "buffed";
+  if (patch.nerfedBrawlerIds.includes(brawlerId)) return "nerfed";
+  return "stable";
+}
+
 function getMetaStrength(brawlerId: string, patchId: string): number {
   if (!getBrawlerMeta(brawlerId)) return 0.5;
-  return 0.35 + keyedFloat(brawlerId, patchId, "meta") * 0.3; // 0.35-0.65
+  const base = 0.35 + keyedFloat(brawlerId, patchId, "meta") * 0.3; // 0.35-0.65
+  const trend = getMetaTrend(brawlerId, patchId);
+  const trendAdjustment = trend === "buffed" ? 0.15 : trend === "nerfed" ? -0.15 : 0;
+  return clamp(base + trendAdjustment, 0.05, 0.95);
 }
 
 export const MOCK_DATASET: RecommendationDataset = {
@@ -156,4 +219,6 @@ export const MOCK_DATASET: RecommendationDataset = {
   getSynergy,
   getRoleFeatures,
   getMetaStrength,
+  getMetaTrend,
+  getRankSkew,
 };

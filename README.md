@@ -15,7 +15,9 @@ recommendation engine)** delivery, per the phased plan in `docs/implementation-p
 |---|---|---|
 | Configurable draft-rules engine (ban/pick legality, undo, reset, 3 verified Ranked formats) | All map/matchup/synergy statistics and "meta strength" numbers (`src/lib/recommendation-engine/mock-data.ts`) | Official Brawl Stars API integration (player lookup, live collection import) |
 | Deterministic recommendation scoring (map/matchup/synergy/composition/role coverage/flexibility/confidence) with structured, non-LLM explanations | Brawler role/archetype tags (hand-curated, always labeled heuristic) | Statistical ingestion pipeline / real match data |
-| Guest-mode local profiles with manual Brawler availability editing | — | Accounts/auth |
+| Rank-bracket-sensitive scoring (a Brawler strong at low elo but an easy high-elo counter scores differently by bracket — real mechanism, curated skew values) | Rank-skew values per Brawler (`BRAWLER_RANK_SKEW`) | Rank-segmented real match data to replace the curated skew guesses |
+| Patch buff/nerf reactivity (recommendations shift immediately when a patch buffs/nerfs a Brawler) | Patch buff/nerf list (`MOCK_PATCH_HISTORY`) | Real, continuously updated patch feed + the pre/post-patch decay weighting from `docs/implementation-plan.md` §4 |
+| Guest-mode local profiles (rank bracket + available Brawlers remembered per profile, bulk unlock/lock/filter for fast setup) | — | Accounts/auth, official player-tag lookup |
 | Local persistence of in-progress drafts (survives reload) | — | Screenshot/draft auto-detection (deliberately out of scope — see §14/Phase 6 of the original spec) |
 | Mobile-first responsive UI, installable as a PWA | — | Service worker / offline caching strategy (nothing real to cache yet) |
 

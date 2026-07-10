@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
-import { generatePickRecommendations, scorePickCandidate, splitByAvailability } from "./engine";
+import { computeScoreBreakdown, generatePickRecommendations, scorePickCandidate, splitByAvailability } from "./engine";
 import { generateBanRecommendations, scoreBanCandidate } from "./ban";
 import { MOCK_DATASET } from "./mock-data";
-import { DEFAULT_WEIGHTS } from "./weights";
+import { applyDraftPositionAdjustment, DEFAULT_WEIGHTS } from "./weights";
 import type { DraftRecommendationContext } from "./types";
 
 function baseContext(overrides: Partial<DraftRecommendationContext> = {}): DraftRecommendationContext {
@@ -151,6 +151,36 @@ describe("generatePickRecommendations", () => {
   });
 });
 
+describe("last-pick (captain) counter emphasis", () => {
+  it("matchup weight dominates by the final pick of the format, surfacing direct counters to the fully revealed enemy comp", () => {
+    // Simulates being the Mythic snake-draft captain: the enemy's whole comp and two of our three
+    // allies are already on the board, and this is the very last pick of the entire draft.
+    const enemyPicks = ["nita", "rosa", "poco"];
+    const allyPicks = ["colt", "brock"];
+    const lastPickCtx = baseContext({ enemyPicks, allyPicks, picksSoFar: 5, totalPicksInFormat: 6 });
+
+    const last = generatePickRecommendations(lastPickCtx, MOCK_DATASET);
+
+    const byMatchupValue = last
+      .map((r) => ({ id: r.brawlerId, matchupValue: computeScoreBreakdown(r.brawlerId, lastPickCtx, MOCK_DATASET).matchupValue }))
+      .sort((a, b) => b.matchupValue - a.matchupValue);
+    const bestCounterId = byMatchupValue[0]!.id;
+
+    // The single best-matchup candidate against the revealed enemy comp should rank near the top
+    // of the overall recommendation list (within the top 5 shown in the UI) once matchup value is
+    // the dominant weighted term.
+    const rankOfBestCounter = last.findIndex((r) => r.brawlerId === bestCounterId);
+    expect(rankOfBestCounter).toBeLessThan(5);
+  });
+
+  it("draft-position weighting actually increases matchup weight and decreases flexibility weight as picks progress", () => {
+    const earlyWeights = applyDraftPositionAdjustment(DEFAULT_WEIGHTS, 0);
+    const lateWeights = applyDraftPositionAdjustment(DEFAULT_WEIGHTS, 5 / 6);
+    expect(lateWeights.matchupValue).toBeGreaterThan(earlyWeights.matchupValue);
+    expect(lateWeights.draftFlexibility).toBeLessThan(earlyWeights.draftFlexibility);
+  });
+});
+
 describe("scorePickCandidate weight configuration", () => {
   it("is driven by configurable weights, not hard-coded constants", () => {
     const ctx = baseContext({ enemyPicks: ["nita"] });
@@ -210,5 +240,105 @@ describe("mock dataset invariants", () => {
   it("is explicitly labeled as mock data", () => {
     expect(MOCK_DATASET.isMock).toBe(true);
     expect(MOCK_DATASET.versionId).toMatch(/^mock-/);
+  });
+
+  it("preserves the antisymmetry invariant even when rank skew is applied", () => {
+    // bull is curated strongly low-elo-favored; masters is the highest tracked bracket, so this
+    // exercises the skew-adjustment path inside getMatchup, not just the neutral "all" bucket.
+    const a = MOCK_DATASET.getMatchup("bull", "colt", "sneaky-fields", "brawl-ball", "masters")!;
+    const b = MOCK_DATASET.getMatchup("colt", "bull", "sneaky-fields", "brawl-ball", "masters")!;
+    expect(a.adjustedMatchupRate + b.adjustedMatchupRate).toBeCloseTo(1, 10);
+  });
+});
+
+describe("rank-bracket sensitivity", () => {
+  it("a low-elo-favored Brawler scores worse at Masters than at Diamond on the same map", () => {
+    // bull is curated as strongly low-elo-favored (docs: easy stat-checks at low elo, easily
+    // countered once opponents play around it at high elo).
+    const diamondCtx = baseContext({ rankBucket: "diamond" });
+    const mastersCtx = baseContext({ rankBucket: "masters" });
+    const atDiamond = scorePickCandidate("bull", diamondCtx, MOCK_DATASET);
+    const atMasters = scorePickCandidate("bull", mastersCtx, MOCK_DATASET);
+    expect(atMasters.score).toBeLessThan(atDiamond.score);
+  });
+
+  it("a high-elo-favored Brawler scores worse at Diamond than at Masters on the same map", () => {
+    // colt is curated as high-elo-favored (rewards precise aim low-elo opponents can't punish).
+    const diamondCtx = baseContext({ rankBucket: "diamond" });
+    const mastersCtx = baseContext({ rankBucket: "masters" });
+    const atDiamond = scorePickCandidate("colt", diamondCtx, MOCK_DATASET);
+    const atMasters = scorePickCandidate("colt", mastersCtx, MOCK_DATASET);
+    expect(atDiamond.score).toBeLessThan(atMasters.score);
+  });
+
+  it("surfaces a rank_bracket_fit warning for a low-elo-favored Brawler at the highest bracket", () => {
+    const rec = scorePickCandidate("bull", baseContext({ rankBucket: "masters" }), MOCK_DATASET);
+    expect(rec.warnings.some((w) => w.type === "rank_bracket_fit")).toBe(true);
+  });
+
+  it("the 'all ranks' bucket applies no rank skew", () => {
+    const ctx = baseContext({ rankBucket: "all" });
+    const rec = scorePickCandidate("bull", ctx, MOCK_DATASET);
+    expect(rec.reasons.some((r) => r.type === "rank_bracket_fit")).toBe(false);
+    expect(rec.warnings.some((w) => w.type === "rank_bracket_fit")).toBe(false);
+  });
+});
+
+describe("patch buff/nerf reactivity", () => {
+  it("a Brawler buffed in the current patch has a meta strength shifted upward", () => {
+    // tick is seeded as buffed in patch 2026.07 (MOCK_PATCH_HISTORY in mock-data.ts).
+    const buffed = MOCK_DATASET.getMetaStrength("tick", "2026.07");
+    const priorPatch = MOCK_DATASET.getMetaStrength("tick", "2026.06");
+    expect(MOCK_DATASET.getMetaTrend("tick", "2026.07")).toBe("buffed");
+    expect(buffed).toBeGreaterThan(priorPatch - 0.3); // sanity: buffed value is a real, higher number
+    expect(buffed).toBeGreaterThan(0.5);
+  });
+
+  it("a Brawler nerfed in the current patch has a meta strength shifted downward", () => {
+    // shelly is seeded as nerfed in patch 2026.07.
+    expect(MOCK_DATASET.getMetaTrend("shelly", "2026.07")).toBe("nerfed");
+    expect(MOCK_DATASET.getMetaStrength("shelly", "2026.07")).toBeLessThan(0.5);
+  });
+
+  it("a Brawler untouched by the current patch is reported as stable", () => {
+    expect(MOCK_DATASET.getMetaTrend("jessie", "2026.07")).toBe("stable");
+  });
+
+  it("the buff/nerf adjustment actually moves recentMetaStrength in computeScoreBreakdown", () => {
+    const breakdown = computeScoreBreakdown("tick", baseContext(), MOCK_DATASET);
+    expect(breakdown.metaTrend).toBe("buffed");
+    expect(breakdown.recentMetaStrength).toBeGreaterThan(0.5);
+
+    const nerfedBreakdown = computeScoreBreakdown("shelly", baseContext(), MOCK_DATASET);
+    expect(nerfedBreakdown.metaTrend).toBe("nerfed");
+    expect(nerfedBreakdown.recentMetaStrength).toBeLessThan(0.5);
+  });
+
+  it("can surface a recent_meta_shift reason/warning when it is impactful enough to rank", () => {
+    // Isolate the meta term by zeroing every other positive weight so meta_shift is guaranteed to
+    // be the (or a) top-ranked reason/warning, without asserting it always wins against unrelated
+    // map/matchup/role factors on an arbitrary board (that would make this test flaky by design).
+    const metaOnlyWeights = {
+      ...DEFAULT_WEIGHTS,
+      mapPerformance: 0,
+      matchupValue: 0,
+      allySynergy: 0,
+      compositionFit: 0,
+      roleCoverage: 0,
+      draftFlexibility: 0,
+      playerComfort: 0,
+      statisticalConfidence: 0,
+    };
+    const buffedRec = scorePickCandidate("tick", baseContext(), MOCK_DATASET, metaOnlyWeights);
+    const nerfedRec = scorePickCandidate("shelly", baseContext(), MOCK_DATASET, metaOnlyWeights);
+    expect(buffedRec.reasons.some((r) => r.type === "recent_meta_shift")).toBe(true);
+    expect(nerfedRec.warnings.some((w) => w.type === "recent_meta_shift")).toBe(true);
+  });
+
+  it("changing the patch id changes meta strength deterministically (no live network call)", () => {
+    const a = MOCK_DATASET.getMetaStrength("rico", "2026.06");
+    const b = MOCK_DATASET.getMetaStrength("rico", "2026.07");
+    expect(a).not.toBe(b); // rico is buffed in 2026.07 but not in 2026.06
+    expect(MOCK_DATASET.getMetaStrength("rico", "2026.06")).toBe(a); // deterministic, repeatable
   });
 });

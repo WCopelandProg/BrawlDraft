@@ -32,10 +32,37 @@ production behavior (§18, §19.14):
 | Draft formats | **Seeded from verified research** in `docs/discovery.md` §2 (three formats: no-ban free pick, Diamond simultaneous-ban turn pick, Mythic snake draft with captain). Marked with a `source: "verified-2026-07"` style note in config so it's obvious when it needs re-checking against live patch notes. |
 | Map/mode win rates, matchup rates, synergy rates, confidence scores | **100% mock/seeded** in `src/lib/recommendation-engine/mock-data.ts`, generated to be internally consistent (so the engine's math is testable) but **not derived from any real match data**. Every recommendation surfaced in the UI carries a visible "seeded/mock dataset" version string so this is never confused with real statistics. |
 | Player Brawler collections | Not fetched (no live API integration yet). Setup screen supports manual entry of "available Brawlers" so the recommendation-filtering logic can be exercised and tested honestly without pretending to call a live API. |
+| Rank-bracket skew (a Brawler being stronger at low elo but easily countered at high elo, or vice versa) | **Mechanism is real, inputs are curated.** `BRAWLER_RANK_SKEW` in `src/lib/data/brawlers.ts` is a hand-curated -1..+1 value per Brawler; `getMapStat`/`getMatchup` in the mock dataset apply it as a genuine, monotonic function of the selected rank bucket (see §2a below). The *shape* of the effect is real and tested; the specific skew numbers are heuristic guesses, not measured from real rank-segmented data. |
+| Patch buff/nerf reactivity (a recent buff/nerf shifting a Brawler's recommendation) | **Mechanism is real, patch list is seeded.** `MOCK_PATCH_HISTORY` in `mock-data.ts` lists which Brawlers were buffed/nerfed per patch; `getMetaStrength`/`getMetaTrend` react to it immediately. In Phase 4 this same shape is populated from the real `balance_patches` table instead of being hand-written — no engine code changes when that happens. |
 
 No part of the Phase 1/2 delivery calls the network. This is intentional — it lets the draft engine
 and recommendation engine be fully built and tested against the real constraints (formats, filtering,
 scoring math) before taking on the added complexity and failure modes of a live integration.
+
+### 2a. Rank-bracket and patch reactivity, in more detail
+
+Two specific mechanisms exist now, in the seeded dataset, in response to a real product requirement
+(a Brawler can be great at low elo and a trap pick at high elo once opponents know how to punish it,
+and stats must react automatically when a patch buffs/nerfs a Brawler):
+
+- **Rank skew** (`src/lib/data/ranks.ts` + `BRAWLER_RANK_SKEW`): rank buckets are ordered low-to-high
+  (Diamond → Mythic → Legendary → Masters), each Brawler has a curated -1..+1 skew, and the mock
+  win-rate/matchup functions apply `skew * bucketPosition` as an explicit, monotonic term — not as
+  extra hash noise. That's what makes it possible to state, and test, "this Brawler's recommendation
+  score is lower at Masters than at Diamond." The "all ranks" bucket is neutral (no skew applied),
+  matching its role as an aggregate/default view. **What's still heuristic**: the specific -1..+1
+  number per Brawler. Replacing it with truth requires rank-segmented real match data (the
+  `rank_bucket` column already exists throughout the schema in `docs/implementation-plan.md` for
+  exactly this reason).
+- **Patch reactivity** (`MOCK_PATCH_HISTORY` in `mock-data.ts`): each patch entry lists which
+  Brawlers were buffed or nerfed; `getMetaStrength` reads the current patch id and applies a
+  deterministic adjustment, and `getMetaTrend` exposes "buffed"/"nerfed"/"stable" so the UI can
+  explain *why* a score moved ("Recently buffed this patch — historical stats may understate current
+  strength"). Adding a new patch is a one-line data change, not a code change — the mechanism this
+  delivery was missing wasn't "can the system react to patches," it's "do we have a real, continuously
+  updated feed of patch notes and post-patch match data," which remains Phase 4 work (see §4 below;
+  in particular the `exp(-lambda * ageInDays)` decay of pre-patch matches described there is not yet
+  implemented, since there's no real pre/post-patch match data to decay between in the mock dataset).
 
 ## 3. Statistical record shapes (for Phase 4 ingestion, designed now)
 

@@ -86,6 +86,16 @@ export interface RecommendationDataset {
   getRoleFeatures(brawlerId: string): RoleFeature[];
   /** Static per-patch meta-strength signal, 0-1. Curated/seeded, see docs/data-sources.md. */
   getMetaStrength(brawlerId: string, patchId: string): number;
+  /** Whether this Brawler was buffed/nerfed/unchanged in the given patch. Drives "recent_meta_shift" reasons. */
+  getMetaTrend(brawlerId: string, patchId: string): "buffed" | "nerfed" | "stable";
+  /**
+   * Curated -1..+1 rank-bracket skew (see BRAWLER_RANK_SKEW in lib/data/brawlers.ts): negative
+   * means stronger at low-elo brackets, positive means stronger at high-elo brackets. Already
+   * baked into getMapStat/getMatchup for the requested rankBucket — exposed here separately only
+   * so the engine can explain *why* (spec section 6.7: explanations must be grounded in real score
+   * components, not just the final number).
+   */
+  getRankSkew(brawlerId: string): number;
 }
 
 export interface ScoreWeights {
@@ -113,6 +123,8 @@ export type RecommendationReasonType =
   | "counter_risk"
   | "redundancy_warning"
   | "unavailable_to_player"
+  | "rank_bracket_fit"
+  | "recent_meta_shift"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick
   // scoring, so it gets its own vocabulary of reasons rather than being forced into the pick list).
   | "opponent_threat"

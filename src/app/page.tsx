@@ -7,11 +7,10 @@ import { reset } from "@/lib/draft-engine/engine";
 import type { Team } from "@/lib/draft-engine/types";
 import { GAME_MODES } from "@/lib/data/modes";
 import { mapsForMode } from "@/lib/data/maps";
-import { BRAWLERS } from "@/lib/data/brawlers";
+import { BRAWLERS, BRAWLER_IDS } from "@/lib/data/brawlers";
+import { RANK_BUCKETS } from "@/lib/data/ranks";
 import { createProfile, loadProfiles, upsertProfile, type PlayerProfile } from "@/lib/storage/profiles";
 import { saveDraftSession } from "@/lib/storage/draft-session";
-
-const RANK_BUCKETS = ["all", "diamond", "mythic", "legendary", "masters"];
 
 export default function SetupScreen() {
   const router = useRouter();
@@ -25,6 +24,7 @@ export default function SetupScreen() {
   const [mapId, setMapId] = useState(mapsForMode(GAME_MODES[0]!.id)[0]?.id ?? "");
   const [firstPickTeam, setFirstPickTeam] = useState<Team>("ally");
   const [rankBucket, setRankBucket] = useState("all");
+  const [brawlerFilter, setBrawlerFilter] = useState("");
 
   useEffect(() => {
     setProfiles(loadProfiles());
@@ -39,10 +39,29 @@ export default function SetupScreen() {
     if (firstMap) setMapId(firstMap.id);
   }
 
+  // Picking a saved profile restores its remembered rank bracket in one step — with only ~30-60
+  // seconds available once the actual draft starts, nothing about profile/rank setup should need
+  // re-entering by hand each time.
+  function handleProfileChange(nextProfileId: string) {
+    setSelectedProfileId(nextProfileId);
+    const profile = profiles.find((p) => p.id === nextProfileId);
+    if (profile?.defaultRankBucket) setRankBucket(profile.defaultRankBucket);
+  }
+
+  function handleRankBucketChange(nextRankBucket: string) {
+    setRankBucket(nextRankBucket);
+    if (selectedProfile) {
+      const updated = { ...selectedProfile, defaultRankBucket: nextRankBucket };
+      upsertProfile(updated);
+      setProfiles((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+    }
+  }
+
   function handleCreateProfile() {
     if (!newProfileLabel.trim()) return;
     const profile = createProfile(newProfileLabel.trim(), newProfileTag.trim() || undefined);
-    setProfiles((prev) => [...prev, profile]);
+    upsertProfile({ ...profile, defaultRankBucket: rankBucket });
+    setProfiles((prev) => [...prev, { ...profile, defaultRankBucket: rankBucket }]);
     setSelectedProfileId(profile.id);
     setNewProfileLabel("");
     setNewProfileTag("");
@@ -67,6 +86,26 @@ export default function SetupScreen() {
     upsertProfile(updated);
     setProfiles((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
   }
+
+  function setAllUnlocked(unlocked: boolean) {
+    if (!selectedProfile) return;
+    const updated = { ...selectedProfile, unlockedBrawlerIds: unlocked ? [...BRAWLER_IDS] : [] };
+    upsertProfile(updated);
+    setProfiles((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+  }
+
+  function clearExclusions() {
+    if (!selectedProfile) return;
+    const updated = { ...selectedProfile, manuallyExcludedBrawlerIds: [] };
+    upsertProfile(updated);
+    setProfiles((prev) => prev.map((p) => (p.id === updated.id ? updated : p)));
+  }
+
+  const filteredBrawlers = useMemo(() => {
+    const q = brawlerFilter.trim().toLowerCase();
+    if (!q) return BRAWLERS;
+    return BRAWLERS.filter((b) => b.name.toLowerCase().includes(q));
+  }, [brawlerFilter]);
 
   function handleStartDraft() {
     const format = DRAFT_FORMATS.find((f) => f.id === formatId);
@@ -98,7 +137,7 @@ export default function SetupScreen() {
         </h2>
         <select
           value={selectedProfileId}
-          onChange={(e) => setSelectedProfileId(e.target.value)}
+          onChange={(e) => handleProfileChange(e.target.value)}
           className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100"
         >
           <option value="guest">Guest (no saved profile)</option>
@@ -143,8 +182,38 @@ export default function SetupScreen() {
             <summary className="cursor-pointer text-sm font-medium text-slate-200">
               Edit available Brawlers for {selectedProfile.label}
             </summary>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => setAllUnlocked(true)}
+                className="min-h-[36px] rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs text-slate-200 hover:border-emerald-400"
+              >
+                Unlock all
+              </button>
+              <button
+                type="button"
+                onClick={() => setAllUnlocked(false)}
+                className="min-h-[36px] rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs text-slate-200 hover:border-rose-400"
+              >
+                Lock all
+              </button>
+              <button
+                type="button"
+                onClick={clearExclusions}
+                className="min-h-[36px] rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs text-slate-200 hover:border-yellow-400"
+              >
+                Clear exclusions
+              </button>
+            </div>
+            <input
+              type="text"
+              placeholder="Filter Brawlers…"
+              value={brawlerFilter}
+              onChange={(e) => setBrawlerFilter(e.target.value)}
+              className="mt-2 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500"
+            />
             <div className="mt-2 grid grid-cols-2 gap-1.5 sm:grid-cols-3">
-              {BRAWLERS.map((b) => {
+              {filteredBrawlers.map((b) => {
                 const unlocked = selectedProfile.unlockedBrawlerIds.includes(b.id);
                 const excluded = selectedProfile.manuallyExcludedBrawlerIds.includes(b.id);
                 return (
@@ -264,15 +333,18 @@ export default function SetupScreen() {
           <select
             id="rank-select"
             value={rankBucket}
-            onChange={(e) => setRankBucket(e.target.value)}
+            onChange={(e) => handleRankBucketChange(e.target.value)}
             className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100"
           >
             {RANK_BUCKETS.map((r) => (
-              <option key={r} value={r}>
-                {r === "all" ? "All ranks" : r[0]!.toUpperCase() + r.slice(1)}
+              <option key={r.id} value={r.id}>
+                {r.name}
               </option>
             ))}
           </select>
+          {selectedProfile && (
+            <p className="text-[11px] text-slate-500">Saved to {selectedProfile.label} for next time.</p>
+          )}
         </div>
       </section>
 

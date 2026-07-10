@@ -39,6 +39,40 @@ export function getBrawlerMeta(id: string): BrawlerMeta | undefined {
   return BRAWLERS.find((b) => b.id === id);
 }
 
+/**
+ * Curated, heuristic "rank skew" per Brawler: -1 means historically much stronger at low-elo
+ * brackets (wins on raw stats/positioning mistakes opponents make, gets punished hard once
+ * opponents play around it correctly), +1 means historically stronger at high-elo brackets
+ * (rewards precise mechanics/awareness that low-elo opponents rarely have available to counter
+ * it). 0 means no meaningful skew. This is exactly the "great at low elo, bad pick at high elo
+ * due to easy counters" effect — modeled explicitly here rather than left to unstructured
+ * per-bucket noise, so recommendations shift in a directionally sensible way across rank
+ * brackets. Like all role/archetype metadata, this has no official statistical source and is
+ * always surfaced as heuristic (see docs/data-sources.md section 2).
+ */
+export const BRAWLER_RANK_SKEW: Record<string, number> = {
+  shelly: -0.3,
+  colt: 0.2,
+  bull: -0.4,
+  brock: 0.1,
+  elprimo: -0.3,
+  barley: 0.0,
+  poco: -0.2,
+  rosa: -0.2,
+  jessie: 0.0,
+  nita: -0.1,
+  dynamike: 0.1,
+  tick: 0.2,
+  "8bit": 0.0,
+  rico: 0.2,
+  penny: 0.0,
+  darryl: -0.3,
+};
+
+export function getRankSkew(id: string): number {
+  return BRAWLER_RANK_SKEW[id] ?? 0;
+}
+
 /** Curated role tags (spec section 6.4). Weight is 0-1, subjective, and heuristic. */
 export const BRAWLER_ROLE_FEATURES: Record<string, RoleFeature[]> = {
   shelly: [

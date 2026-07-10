@@ -79,6 +79,35 @@ export function buildReasonsAndWarnings(
     });
   }
 
+  if (b.rankFitSignal > 0.15) {
+    reasons.push({
+      type: "rank_bracket_fit",
+      impact: b.rankFitSignal * 0.06,
+      message: `Tends to perform especially well at the ${b.rankBucketLabel} bracket.`,
+    });
+  } else if (b.rankFitSignal < -0.15) {
+    warnings.push({
+      type: "rank_bracket_fit",
+      impact: b.rankFitSignal * 0.06,
+      message: `Tends to underperform at the ${b.rankBucketLabel} bracket — easier for opponents to play around at this skill level.`,
+    });
+  }
+
+  const metaImpact = weights.recentMetaStrength * (b.recentMetaStrength - 0.5) * 2;
+  if (b.metaTrend === "buffed" && metaImpact > 0.01) {
+    reasons.push({
+      type: "recent_meta_shift",
+      impact: metaImpact,
+      message: "Recently buffed this patch — historical stats may understate current strength.",
+    });
+  } else if (b.metaTrend === "nerfed" && metaImpact < -0.01) {
+    warnings.push({
+      type: "recent_meta_shift",
+      impact: metaImpact,
+      message: "Recently nerfed this patch — historical stats may overstate current strength.",
+    });
+  }
+
   const counterRiskImpact = weights.counterRiskPenalty * b.counterRisk;
   if (counterRiskImpact > 0.02 && b.worstMatchupOpponentId) {
     warnings.push({

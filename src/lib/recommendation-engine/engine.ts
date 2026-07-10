@@ -1,4 +1,5 @@
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
+import { getRankBucketMeta, rankBucketSkewPosition } from "@/lib/data/ranks";
 import { applyDraftPositionAdjustment, DEFAULT_WEIGHTS } from "./weights";
 import { buildReasonsAndWarnings } from "./explain";
 import type {
@@ -65,6 +66,10 @@ export interface ScoreBreakdown {
   dominantRedundantTag?: RoleTag;
   sampleSize: number;
   safeFirstPickWeight: number;
+  /** -1..+1 signal for "this Brawler is notably rank-bracket sensitive at the requested bucket". */
+  rankFitSignal: number;
+  rankBucketLabel: string;
+  metaTrend: "buffed" | "nerfed" | "stable";
 }
 
 export function computeScoreBreakdown(
@@ -168,6 +173,10 @@ export function computeScoreBreakdown(
   const sampleSize = mapStat?.sampleSize ?? 0;
   const statisticalConfidence = mapStat?.confidenceScore ?? 0.3;
 
+  const rankFitSignal = dataset.getRankSkew(candidateId) * rankBucketSkewPosition(ctx.rankBucket);
+  const rankBucketLabel = getRankBucketMeta(ctx.rankBucket)?.name ?? ctx.rankBucket;
+  const metaTrend = dataset.getMetaTrend(candidateId, dataset.patchId);
+
   return {
     mapPerformance,
     matchupValue,
@@ -187,6 +196,9 @@ export function computeScoreBreakdown(
     dominantRedundantTag,
     sampleSize,
     safeFirstPickWeight,
+    rankFitSignal,
+    rankBucketLabel,
+    metaTrend,
   };
 }
 
