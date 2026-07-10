@@ -1,0 +1,13 @@
+{
+  "name": "BrawlDraft — Ranked Draft Assistant (Unofficial)",
+  "short_name": "BrawlDraft",
+  "description": "Unofficial Brawl Stars Ranked draft assistant. Not endorsed by Supercell.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
