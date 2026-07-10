@@ -112,6 +112,13 @@ export interface RecommendationDataset {
    * components, not just the final number).
    */
   getRankSkew(brawlerId: string): number;
+  /**
+   * 0-1 percentile popularity from real, user-imported pick-rate data for this exact rank bucket
+   * (see data/brawltime/README.md and scripts/import-pickrate-csv.mjs), or undefined when no real
+   * data has been imported for that bucket. This is popularity, not measured win rate — never
+   * conflated with getMapStat's adjustedWinRate.
+   */
+  getRealPopularity(brawlerId: string, rankBucket: string): number | undefined;
 }
 
 export interface ScoreWeights {
@@ -128,6 +135,8 @@ export interface ScoreWeights {
   archetypeCounter: number;
   /** Bonus for a strong first-pick class for the current mode (only active on pick 1 of the draft). */
   modeClassFit: number;
+  /** Real pick-rate popularity for this rank bucket where imported, neutral (0.5) otherwise. */
+  metaPopularity: number;
   counterRiskPenalty: number;
   redundancyPenalty: number;
 }
@@ -147,6 +156,7 @@ export type RecommendationReasonType =
   | "recent_meta_shift"
   | "archetype_counter"
   | "mode_class_fit"
+  | "meta_popularity"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick
   // scoring, so it gets its own vocabulary of reasons rather than being forced into the pick list).
   | "opponent_threat"

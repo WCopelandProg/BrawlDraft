@@ -41,6 +41,7 @@ production behavior (§18, §19.14):
 | Player Brawler collections | Not fetched (no live API integration yet). Setup screen supports manual entry of "available Brawlers" so the recommendation-filtering logic can be exercised and tested honestly without pretending to call a live API. |
 | Rank-bracket skew (a Brawler being stronger at low elo but easily countered at high elo, or vice versa) | **Mechanism is real, inputs are curated.** `BRAWLER_RANK_SKEW` in `src/lib/data/brawlers.ts` is a hand-curated -1..+1 value per Brawler; `getMapStat`/`getMatchup` in the mock dataset apply it as a genuine, monotonic function of the selected rank bucket (see §2a below). The *shape* of the effect is real and tested; the specific skew numbers are heuristic guesses, not measured from real rank-segmented data. |
 | Patch buff/nerf reactivity (a recent buff/nerf shifting a Brawler's recommendation) | **Mechanism is real, patch list is seeded.** `MOCK_PATCH_HISTORY` in `mock-data.ts` lists which Brawlers were buffed/nerfed per patch; `getMetaStrength`/`getMetaTrend` react to it immediately. In Phase 4 this same shape is populated from the real `balance_patches` table instead of being hand-written — no engine code changes when that happens. |
+| Meta popularity (pick rate) | **Real**, as of this writing. `generated-pick-rates.json` holds a real, user-provided brawltime.ninja pick-rate-by-Brawler export (Ranked, Legendary I-Masters), imported into the `legendary` and `masters` rank buckets via `scripts/import-pickrate-csv.mjs`. This is genuinely measured popularity, not fabricated — see §2d below for exactly what it does and doesn't imply. |
 
 No part of the Phase 1/2 delivery calls the network. This is intentional — it lets the draft engine
 and recommendation engine be fully built and tested against the real constraints (formats, filtering,
@@ -145,6 +146,41 @@ archetype-counter term tend to produce complementary comps anyway (an early pick
 and uncommitted, later picks that increasingly favor direct counters), but this is a real,
 acknowledged simplification, not a claim that multi-pick planning is implemented.
 
+### 2d. Real pick-rate data (imported, live in this repo as of this writing)
+
+A user provided a real CSV export from brawltime.ninja's dashboard: general pick rate by Brawler
+for real Ranked matches, Legendary I-Masters, all maps/modes combined
+(`data/brawltime/legendary-masters-pickrate.csv`). This was imported with:
+
+```
+node scripts/import-pickrate-csv.mjs data/brawltime/legendary-masters-pickrate.csv \
+  --rank legendary,masters --exported-at 2026-07-10 \
+  --note "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+```
+
+104 of this app's 105 Brawlers matched a row in the export (the one that didn't — `ninja`, from
+the guide-derived roster in §2c — has no corresponding row in this particular export; it isn't the
+same entry as the export's `Najia`, which was added as its own Brawler rather than guessed to be a
+rename, per the same no-fabrication rule as everything else in this file). The result lives in
+`src/lib/recommendation-engine/real-data/generated-pick-rates.json` and is genuinely real: every
+number in it is exactly what the user pasted, converted to a 0-1 popularity percentile per rank
+bucket (§2b's `computePercentiles`).
+
+**What this real data does and does not claim.** Pick rate measures what real Legendary-Masters
+players actually chose to play — that's a real, useful signal (it's evidence of what the current
+competitive community considers worth picking), but it is popularity, not a measured win rate. A
+heavily-picked Brawler is *not* thereby proven to be statistically strong (overpicked-but-mediocre
+and underpicked-but-strong Brawlers both exist), so this data feeds its own `metaPopularity` score
+term rather than being written into `adjustedWinRate`, and every recommendation it influences says
+so explicitly in its own words ("... reflects real pick-rate data, not measured win rate"). This
+is the same honesty boundary as everywhere else in this document — real data is used as exactly
+what it is, not stretched to claim something stronger.
+
+**Coverage**: this only affects the `legendary` and `masters` rank buckets (where the export
+applies) — `all`/`diamond`/`mythic` still get a neutral 0.5 contribution from this term, since
+applying a Legendary-Masters-specific popularity signal to lower brackets would be an unwarranted
+generalization the data doesn't support.
+
 ## 3. Statistical record shapes (for Phase 4 ingestion, designed now)
 
 See `docs/implementation-plan.md` for the full schema. The important design decision here: aggregate
@@ -181,10 +217,11 @@ automated bulk collection adds a legal/ToS risk with no statistical benefit over
 official API ourselves for consenting users (Phase 4), and — as a practical matter — this app's own
 build/dev environment cannot reach third-party hosts like brawltime.ninja over the network at all.
 
-The brawltime.ninja CSV import (§2b) is deliberately **not** an exception to that rule so much as a
-different activity entirely: a human uses the site's own explicit "Export CSV" feature in their own
-browser session, and only the resulting file — never a live request to the site — enters this
-project. No credentials, automation, or scheduled job talks to brawltime.ninja. If that boundary
-ever needs to move (e.g. towards an automated refresh), it would require actually reaching out to
-brawltime.ninja's maintainer for explicit permission/terms first, at which point it would be
-documented here as a proper source-priority-#2 licensed dataset instead of a manual §2b import.
+The brawltime.ninja CSV imports (§2b map win rate, §2d pick rate) are deliberately **not** an
+exception to that rule so much as a different activity entirely: a human uses the site's own
+explicit "Export CSV" feature in their own browser session, and only the resulting file — never a
+live request to the site — enters this project. No credentials, automation, or scheduled job talks
+to brawltime.ninja. If that boundary ever needs to move (e.g. towards an automated refresh), it
+would require actually reaching out to brawltime.ninja's maintainer for explicit permission/terms
+first, at which point it would be documented here as a proper source-priority-#2 licensed dataset
+instead of a manual §2b/§2d import.

@@ -21,6 +21,11 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   // replacement for them.
   archetypeCounter: 0.1,
   modeClassFit: 0.06,
+  // Real pick-rate popularity (data/brawltime/README.md) — a genuine measured percentile where a
+  // real export has been imported for the requested rank bucket; a flat, non-differentiating 0.5
+  // for every candidate otherwise (same "neutral until real data exists" pattern as
+  // mapPerformance/matchupValue/allySynergy above when their own inputs are absent).
+  metaPopularity: 0.08,
   counterRiskPenalty: 0.15,
   redundancyPenalty: 0.1,
 };

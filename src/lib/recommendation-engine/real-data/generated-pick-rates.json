@@ -1,0 +1,1666 @@
+[
+  {
+    "brawlerId": "8bit",
+    "rankBucket": "legendary",
+    "pickRate": 0.035644097956225404,
+    "popularityPercentile": 0.941747572815534,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "alli",
+    "rankBucket": "legendary",
+    "pickRate": 0.006188469561742993,
+    "popularityPercentile": 0.5631067961165048,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "amber",
+    "rankBucket": "legendary",
+    "pickRate": 0.002383397060941558,
+    "popularityPercentile": 0.3883495145631068,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "angelo",
+    "rankBucket": "legendary",
+    "pickRate": 0.010983139672642969,
+    "popularityPercentile": 0.7378640776699029,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ash",
+    "rankBucket": "legendary",
+    "pickRate": 0.0023044150920604536,
+    "popularityPercentile": 0.36893203883495146,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "barley",
+    "rankBucket": "legendary",
+    "pickRate": 0.002388043059111035,
+    "popularityPercentile": 0.39805825242718446,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bea",
+    "rankBucket": "legendary",
+    "pickRate": 0.0015889313739610386,
+    "popularityPercentile": 0.27184466019417475,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "belle",
+    "rankBucket": "legendary",
+    "pickRate": 0.006978289250554035,
+    "popularityPercentile": 0.6116504854368932,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "berry",
+    "rankBucket": "legendary",
+    "pickRate": 0.0021464511542982454,
+    "popularityPercentile": 0.34951456310679613,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bibi",
+    "rankBucket": "legendary",
+    "pickRate": 0.0035960025831749823,
+    "popularityPercentile": 0.46601941747572817,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bo",
+    "rankBucket": "legendary",
+    "pickRate": 0.006606609396995897,
+    "popularityPercentile": 0.5728155339805825,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bolt",
+    "rankBucket": "legendary",
+    "pickRate": 0.010137568005798205,
+    "popularityPercentile": 0.7087378640776699,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bonnie",
+    "rankBucket": "legendary",
+    "pickRate": 0.0007712356961331357,
+    "popularityPercentile": 0.11650485436893204,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "brock",
+    "rankBucket": "legendary",
+    "pickRate": 0.041656019587528285,
+    "popularityPercentile": 0.970873786407767,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bull",
+    "rankBucket": "legendary",
+    "pickRate": 0.006727405349402292,
+    "popularityPercentile": 0.5825242718446602,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "buster",
+    "rankBucket": "legendary",
+    "pickRate": 0.0022904770975520237,
+    "popularityPercentile": 0.3592233009708738,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "buzz",
+    "rankBucket": "legendary",
+    "pickRate": 0.0013705694599956328,
+    "popularityPercentile": 0.2621359223300971,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "byron",
+    "rankBucket": "legendary",
+    "pickRate": 0.025385733998020805,
+    "popularityPercentile": 0.8640776699029126,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "carl",
+    "rankBucket": "legendary",
+    "pickRate": 0.0074568270620101375,
+    "popularityPercentile": 0.6310679611650486,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "charlie",
+    "rankBucket": "legendary",
+    "pickRate": 0.0057099317502868905,
+    "popularityPercentile": 0.5533980582524272,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "chester",
+    "rankBucket": "legendary",
+    "pickRate": 0.019169388447260953,
+    "popularityPercentile": 0.8349514563106796,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "chuck",
+    "rankBucket": "legendary",
+    "pickRate": 0.008478946659295016,
+    "popularityPercentile": 0.6504854368932039,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "clancy",
+    "rankBucket": "legendary",
+    "pickRate": 0.0008409256686752865,
+    "popularityPercentile": 0.1262135922330097,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "colette",
+    "rankBucket": "legendary",
+    "pickRate": 0.03399012260789169,
+    "popularityPercentile": 0.9320388349514563,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "colt",
+    "rankBucket": "legendary",
+    "pickRate": 0.0278016530461487,
+    "popularityPercentile": 0.8932038834951457,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "cordelius",
+    "rankBucket": "legendary",
+    "pickRate": 0.009501066256579895,
+    "popularityPercentile": 0.6699029126213593,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "crow",
+    "rankBucket": "legendary",
+    "pickRate": 0.05309911307894945,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "damian",
+    "rankBucket": "legendary",
+    "pickRate": 0.027179089291438818,
+    "popularityPercentile": 0.883495145631068,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "darryl",
+    "rankBucket": "legendary",
+    "pickRate": 0.0012404815112502846,
+    "popularityPercentile": 0.1941747572815534,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "doug",
+    "rankBucket": "legendary",
+    "pickRate": 0.0006736697345741246,
+    "popularityPercentile": 0.07766990291262135,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "draco",
+    "rankBucket": "legendary",
+    "pickRate": 0.0007247757144383685,
+    "popularityPercentile": 0.0970873786407767,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "dynamike",
+    "rankBucket": "legendary",
+    "pickRate": 0.0017376033153842937,
+    "popularityPercentile": 0.2815533980582524,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "edgar",
+    "rankBucket": "legendary",
+    "pickRate": 0.026928205390287077,
+    "popularityPercentile": 0.8737864077669902,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "elprimo",
+    "rankBucket": "legendary",
+    "pickRate": 0.00042278583342238163,
+    "popularityPercentile": 0.038834951456310676,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "emz",
+    "rankBucket": "legendary",
+    "pickRate": 0.009803056137595882,
+    "popularityPercentile": 0.6796116504854369,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "eve",
+    "rankBucket": "legendary",
+    "pickRate": 0.0013426934709787725,
+    "popularityPercentile": 0.2524271844660194,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "fang",
+    "rankBucket": "legendary",
+    "pickRate": 0.005273207922356079,
+    "popularityPercentile": 0.5242718446601942,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "finx",
+    "rankBucket": "legendary",
+    "pickRate": 0.0028712268687366136,
+    "popularityPercentile": 0.4368932038834951,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "frank",
+    "rankBucket": "legendary",
+    "pickRate": 0.0012683575002671449,
+    "popularityPercentile": 0.23300970873786409,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gale",
+    "rankBucket": "legendary",
+    "pickRate": 0.001249773507589238,
+    "popularityPercentile": 0.21359223300970873,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gene",
+    "rankBucket": "legendary",
+    "pickRate": 0.013710340598125804,
+    "popularityPercentile": 0.7864077669902912,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gigi",
+    "rankBucket": "legendary",
+    "pickRate": 0.0026435729584322544,
+    "popularityPercentile": 0.4174757281553398,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "glowy",
+    "rankBucket": "legendary",
+    "pickRate": 0.0010453495881322622,
+    "popularityPercentile": 0.17475728155339806,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gray",
+    "rankBucket": "legendary",
+    "pickRate": 0.004399760266494455,
+    "popularityPercentile": 0.49514563106796117,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "griff",
+    "rankBucket": "legendary",
+    "pickRate": 0.029650760317600434,
+    "popularityPercentile": 0.912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "grom",
+    "rankBucket": "legendary",
+    "pickRate": 0.0007201297162688918,
+    "popularityPercentile": 0.08737864077669903,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gus",
+    "rankBucket": "legendary",
+    "pickRate": 0.004687812153002012,
+    "popularityPercentile": 0.5145631067961165,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "hank",
+    "rankBucket": "legendary",
+    "pickRate": 0.0009617216210816813,
+    "popularityPercentile": 0.13592233009708737,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jacky",
+    "rankBucket": "legendary",
+    "pickRate": 0.00037632585172761443,
+    "popularityPercentile": 0.02912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "rankBucket": "legendary",
+    "pickRate": 0.0030756507881935895,
+    "popularityPercentile": 0.44660194174757284,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "janet",
+    "rankBucket": "legendary",
+    "pickRate": 0.0009756596155901115,
+    "popularityPercentile": 0.1553398058252427,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jessie",
+    "rankBucket": "legendary",
+    "pickRate": 0.0006365017492183108,
+    "popularityPercentile": 0.06796116504854369,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "juju",
+    "rankBucket": "legendary",
+    "pickRate": 0.0019141512458244092,
+    "popularityPercentile": 0.3106796116504854,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kaze",
+    "rankBucket": "legendary",
+    "pickRate": 0.011424509498743258,
+    "popularityPercentile": 0.7572815533980582,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kenji",
+    "rankBucket": "legendary",
+    "pickRate": 0.010067878033256055,
+    "popularityPercentile": 0.6893203883495146,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kit",
+    "rankBucket": "legendary",
+    "pickRate": 0.006852847299978163,
+    "popularityPercentile": 0.6019417475728155,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "rankBucket": "legendary",
+    "pickRate": 0.0009710136174206348,
+    "popularityPercentile": 0.14563106796116504,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "leon",
+    "rankBucket": "legendary",
+    "pickRate": 0.012832246944094704,
+    "popularityPercentile": 0.7766990291262136,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lily",
+    "rankBucket": "legendary",
+    "pickRate": 0.003335826685684286,
+    "popularityPercentile": 0.4563106796116505,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lola",
+    "rankBucket": "legendary",
+    "pickRate": 0.0021092831689424317,
+    "popularityPercentile": 0.33980582524271846,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lou",
+    "rankBucket": "legendary",
+    "pickRate": 0.004116354378156375,
+    "popularityPercentile": 0.4854368932038835,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lumi",
+    "rankBucket": "legendary",
+    "pickRate": 0.01885810656990601,
+    "popularityPercentile": 0.8252427184466019,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "maisie",
+    "rankBucket": "legendary",
+    "pickRate": 0.00045066182243924197,
+    "popularityPercentile": 0.04854368932038835,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mandy",
+    "rankBucket": "legendary",
+    "pickRate": 0.007159483179163627,
+    "popularityPercentile": 0.6213592233009708,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "max",
+    "rankBucket": "legendary",
+    "pickRate": 0.04406264663931722,
+    "popularityPercentile": 0.9902912621359223,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "meeple",
+    "rankBucket": "legendary",
+    "pickRate": 0.029209390491500148,
+    "popularityPercentile": 0.9029126213592233,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "meg",
+    "rankBucket": "legendary",
+    "pickRate": 0.041697833571053576,
+    "popularityPercentile": 0.9805825242718447,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "melodie",
+    "rankBucket": "legendary",
+    "pickRate": 0.008116558802075832,
+    "popularityPercentile": 0.6407766990291263,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mico",
+    "rankBucket": "legendary",
+    "pickRate": 0.008980714461598501,
+    "popularityPercentile": 0.6601941747572816,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mina",
+    "rankBucket": "legendary",
+    "pickRate": 0.010992431668981922,
+    "popularityPercentile": 0.7475728155339806,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "moe",
+    "rankBucket": "legendary",
+    "pickRate": 0.0023973350554499884,
+    "popularityPercentile": 0.4077669902912621,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mortis",
+    "rankBucket": "legendary",
+    "pickRate": 0.0174828911117409,
+    "popularityPercentile": 0.8058252427184466,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mrp",
+    "rankBucket": "legendary",
+    "pickRate": 0.0003577418590497075,
+    "popularityPercentile": 0.019417475728155338,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "najia",
+    "rankBucket": "legendary",
+    "pickRate": 0.010746193765999655,
+    "popularityPercentile": 0.7281553398058253,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "nani",
+    "rankBucket": "legendary",
+    "pickRate": 0.006750635340249676,
+    "popularityPercentile": 0.5922330097087378,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "nita",
+    "rankBucket": "legendary",
+    "pickRate": 0.004655290165815675,
+    "popularityPercentile": 0.5048543689320388,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ollie",
+    "rankBucket": "legendary",
+    "pickRate": 0.0005761037730151134,
+    "popularityPercentile": 0.05825242718446602,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "otis",
+    "rankBucket": "legendary",
+    "pickRate": 0.023202114858366745,
+    "popularityPercentile": 0.8543689320388349,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pam",
+    "rankBucket": "legendary",
+    "pickRate": 0.0002787598901686033,
+    "popularityPercentile": 0.009708737864077669,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pearl",
+    "rankBucket": "legendary",
+    "pickRate": 0.002360167070094174,
+    "popularityPercentile": 0.3786407766990291,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "penny",
+    "rankBucket": "legendary",
+    "pickRate": 0.010681149791626982,
+    "popularityPercentile": 0.7184466019417476,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pierce",
+    "rankBucket": "legendary",
+    "pickRate": 0.040503812041498055,
+    "popularityPercentile": 0.9611650485436893,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "piper",
+    "rankBucket": "legendary",
+    "pickRate": 0.018384214756619385,
+    "popularityPercentile": 0.8155339805825242,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "poco",
+    "rankBucket": "legendary",
+    "pickRate": 0.0012544195057587147,
+    "popularityPercentile": 0.22330097087378642,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rico",
+    "rankBucket": "legendary",
+    "pickRate": 0.02169216545328681,
+    "popularityPercentile": 0.8446601941747572,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rosa",
+    "rankBucket": "legendary",
+    "pickRate": 0.0007572977016247056,
+    "popularityPercentile": 0.10679611650485436,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rt",
+    "rankBucket": "legendary",
+    "pickRate": 0.001282295494775575,
+    "popularityPercentile": 0.24271844660194175,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ruffs",
+    "rankBucket": "legendary",
+    "pickRate": 0.010132922007628728,
+    "popularityPercentile": 0.6990291262135923,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sam",
+    "rankBucket": "legendary",
+    "pickRate": 0.0001533179395927318,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sandy",
+    "rankBucket": "legendary",
+    "pickRate": 0.0010128276009459252,
+    "popularityPercentile": 0.1650485436893204,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "shade",
+    "rankBucket": "legendary",
+    "pickRate": 0.013868304535888012,
+    "popularityPercentile": 0.7961165048543689,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "shelly",
+    "rankBucket": "legendary",
+    "pickRate": 0.0011893755313860405,
+    "popularityPercentile": 0.18446601941747573,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sirius",
+    "rankBucket": "legendary",
+    "pickRate": 0.003935160449546783,
+    "popularityPercentile": 0.47572815533980584,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "spike",
+    "rankBucket": "legendary",
+    "pickRate": 0.005561259808863636,
+    "popularityPercentile": 0.5339805825242718,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sprout",
+    "rankBucket": "legendary",
+    "pickRate": 0.0055751978033720655,
+    "popularityPercentile": 0.5436893203883495,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "squeak",
+    "rankBucket": "legendary",
+    "pickRate": 0.0019745492220276067,
+    "popularityPercentile": 0.3300970873786408,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "starrnova",
+    "rankBucket": "legendary",
+    "pickRate": 0.03877550072245271,
+    "popularityPercentile": 0.9514563106796117,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "stu",
+    "rankBucket": "legendary",
+    "pickRate": 0.012167869205859532,
+    "popularityPercentile": 0.7669902912621359,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "surge",
+    "rankBucket": "legendary",
+    "pickRate": 0.03076579987827485,
+    "popularityPercentile": 0.9223300970873787,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "tara",
+    "rankBucket": "legendary",
+    "pickRate": 0.0028061828943639396,
+    "popularityPercentile": 0.42718446601941745,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "tick",
+    "rankBucket": "legendary",
+    "pickRate": 0.001746895311723247,
+    "popularityPercentile": 0.2912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "trunk",
+    "rankBucket": "legendary",
+    "pickRate": 0.0019373812366717928,
+    "popularityPercentile": 0.32038834951456313,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "willow",
+    "rankBucket": "legendary",
+    "pickRate": 0.0018444612732822583,
+    "popularityPercentile": 0.30097087378640774,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ziggy",
+    "rankBucket": "legendary",
+    "pickRate": 0.0012451275094197613,
+    "popularityPercentile": 0.20388349514563106,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "8bit",
+    "rankBucket": "masters",
+    "pickRate": 0.035644097956225404,
+    "popularityPercentile": 0.941747572815534,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "alli",
+    "rankBucket": "masters",
+    "pickRate": 0.006188469561742993,
+    "popularityPercentile": 0.5631067961165048,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "amber",
+    "rankBucket": "masters",
+    "pickRate": 0.002383397060941558,
+    "popularityPercentile": 0.3883495145631068,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "angelo",
+    "rankBucket": "masters",
+    "pickRate": 0.010983139672642969,
+    "popularityPercentile": 0.7378640776699029,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ash",
+    "rankBucket": "masters",
+    "pickRate": 0.0023044150920604536,
+    "popularityPercentile": 0.36893203883495146,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "barley",
+    "rankBucket": "masters",
+    "pickRate": 0.002388043059111035,
+    "popularityPercentile": 0.39805825242718446,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bea",
+    "rankBucket": "masters",
+    "pickRate": 0.0015889313739610386,
+    "popularityPercentile": 0.27184466019417475,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "belle",
+    "rankBucket": "masters",
+    "pickRate": 0.006978289250554035,
+    "popularityPercentile": 0.6116504854368932,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "berry",
+    "rankBucket": "masters",
+    "pickRate": 0.0021464511542982454,
+    "popularityPercentile": 0.34951456310679613,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bibi",
+    "rankBucket": "masters",
+    "pickRate": 0.0035960025831749823,
+    "popularityPercentile": 0.46601941747572817,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bo",
+    "rankBucket": "masters",
+    "pickRate": 0.006606609396995897,
+    "popularityPercentile": 0.5728155339805825,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bolt",
+    "rankBucket": "masters",
+    "pickRate": 0.010137568005798205,
+    "popularityPercentile": 0.7087378640776699,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bonnie",
+    "rankBucket": "masters",
+    "pickRate": 0.0007712356961331357,
+    "popularityPercentile": 0.11650485436893204,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "brock",
+    "rankBucket": "masters",
+    "pickRate": 0.041656019587528285,
+    "popularityPercentile": 0.970873786407767,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "bull",
+    "rankBucket": "masters",
+    "pickRate": 0.006727405349402292,
+    "popularityPercentile": 0.5825242718446602,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "buster",
+    "rankBucket": "masters",
+    "pickRate": 0.0022904770975520237,
+    "popularityPercentile": 0.3592233009708738,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "buzz",
+    "rankBucket": "masters",
+    "pickRate": 0.0013705694599956328,
+    "popularityPercentile": 0.2621359223300971,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "byron",
+    "rankBucket": "masters",
+    "pickRate": 0.025385733998020805,
+    "popularityPercentile": 0.8640776699029126,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "carl",
+    "rankBucket": "masters",
+    "pickRate": 0.0074568270620101375,
+    "popularityPercentile": 0.6310679611650486,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "charlie",
+    "rankBucket": "masters",
+    "pickRate": 0.0057099317502868905,
+    "popularityPercentile": 0.5533980582524272,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "chester",
+    "rankBucket": "masters",
+    "pickRate": 0.019169388447260953,
+    "popularityPercentile": 0.8349514563106796,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "chuck",
+    "rankBucket": "masters",
+    "pickRate": 0.008478946659295016,
+    "popularityPercentile": 0.6504854368932039,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "clancy",
+    "rankBucket": "masters",
+    "pickRate": 0.0008409256686752865,
+    "popularityPercentile": 0.1262135922330097,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "colette",
+    "rankBucket": "masters",
+    "pickRate": 0.03399012260789169,
+    "popularityPercentile": 0.9320388349514563,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "colt",
+    "rankBucket": "masters",
+    "pickRate": 0.0278016530461487,
+    "popularityPercentile": 0.8932038834951457,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "cordelius",
+    "rankBucket": "masters",
+    "pickRate": 0.009501066256579895,
+    "popularityPercentile": 0.6699029126213593,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "crow",
+    "rankBucket": "masters",
+    "pickRate": 0.05309911307894945,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "damian",
+    "rankBucket": "masters",
+    "pickRate": 0.027179089291438818,
+    "popularityPercentile": 0.883495145631068,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "darryl",
+    "rankBucket": "masters",
+    "pickRate": 0.0012404815112502846,
+    "popularityPercentile": 0.1941747572815534,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "doug",
+    "rankBucket": "masters",
+    "pickRate": 0.0006736697345741246,
+    "popularityPercentile": 0.07766990291262135,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "draco",
+    "rankBucket": "masters",
+    "pickRate": 0.0007247757144383685,
+    "popularityPercentile": 0.0970873786407767,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "dynamike",
+    "rankBucket": "masters",
+    "pickRate": 0.0017376033153842937,
+    "popularityPercentile": 0.2815533980582524,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "edgar",
+    "rankBucket": "masters",
+    "pickRate": 0.026928205390287077,
+    "popularityPercentile": 0.8737864077669902,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "elprimo",
+    "rankBucket": "masters",
+    "pickRate": 0.00042278583342238163,
+    "popularityPercentile": 0.038834951456310676,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "emz",
+    "rankBucket": "masters",
+    "pickRate": 0.009803056137595882,
+    "popularityPercentile": 0.6796116504854369,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "eve",
+    "rankBucket": "masters",
+    "pickRate": 0.0013426934709787725,
+    "popularityPercentile": 0.2524271844660194,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "fang",
+    "rankBucket": "masters",
+    "pickRate": 0.005273207922356079,
+    "popularityPercentile": 0.5242718446601942,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "finx",
+    "rankBucket": "masters",
+    "pickRate": 0.0028712268687366136,
+    "popularityPercentile": 0.4368932038834951,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "frank",
+    "rankBucket": "masters",
+    "pickRate": 0.0012683575002671449,
+    "popularityPercentile": 0.23300970873786409,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gale",
+    "rankBucket": "masters",
+    "pickRate": 0.001249773507589238,
+    "popularityPercentile": 0.21359223300970873,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gene",
+    "rankBucket": "masters",
+    "pickRate": 0.013710340598125804,
+    "popularityPercentile": 0.7864077669902912,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gigi",
+    "rankBucket": "masters",
+    "pickRate": 0.0026435729584322544,
+    "popularityPercentile": 0.4174757281553398,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "glowy",
+    "rankBucket": "masters",
+    "pickRate": 0.0010453495881322622,
+    "popularityPercentile": 0.17475728155339806,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gray",
+    "rankBucket": "masters",
+    "pickRate": 0.004399760266494455,
+    "popularityPercentile": 0.49514563106796117,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "griff",
+    "rankBucket": "masters",
+    "pickRate": 0.029650760317600434,
+    "popularityPercentile": 0.912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "grom",
+    "rankBucket": "masters",
+    "pickRate": 0.0007201297162688918,
+    "popularityPercentile": 0.08737864077669903,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "gus",
+    "rankBucket": "masters",
+    "pickRate": 0.004687812153002012,
+    "popularityPercentile": 0.5145631067961165,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "hank",
+    "rankBucket": "masters",
+    "pickRate": 0.0009617216210816813,
+    "popularityPercentile": 0.13592233009708737,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jacky",
+    "rankBucket": "masters",
+    "pickRate": 0.00037632585172761443,
+    "popularityPercentile": 0.02912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "rankBucket": "masters",
+    "pickRate": 0.0030756507881935895,
+    "popularityPercentile": 0.44660194174757284,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "janet",
+    "rankBucket": "masters",
+    "pickRate": 0.0009756596155901115,
+    "popularityPercentile": 0.1553398058252427,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "jessie",
+    "rankBucket": "masters",
+    "pickRate": 0.0006365017492183108,
+    "popularityPercentile": 0.06796116504854369,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "juju",
+    "rankBucket": "masters",
+    "pickRate": 0.0019141512458244092,
+    "popularityPercentile": 0.3106796116504854,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kaze",
+    "rankBucket": "masters",
+    "pickRate": 0.011424509498743258,
+    "popularityPercentile": 0.7572815533980582,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kenji",
+    "rankBucket": "masters",
+    "pickRate": 0.010067878033256055,
+    "popularityPercentile": 0.6893203883495146,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "kit",
+    "rankBucket": "masters",
+    "pickRate": 0.006852847299978163,
+    "popularityPercentile": 0.6019417475728155,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "rankBucket": "masters",
+    "pickRate": 0.0009710136174206348,
+    "popularityPercentile": 0.14563106796116504,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "leon",
+    "rankBucket": "masters",
+    "pickRate": 0.012832246944094704,
+    "popularityPercentile": 0.7766990291262136,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lily",
+    "rankBucket": "masters",
+    "pickRate": 0.003335826685684286,
+    "popularityPercentile": 0.4563106796116505,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lola",
+    "rankBucket": "masters",
+    "pickRate": 0.0021092831689424317,
+    "popularityPercentile": 0.33980582524271846,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lou",
+    "rankBucket": "masters",
+    "pickRate": 0.004116354378156375,
+    "popularityPercentile": 0.4854368932038835,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "lumi",
+    "rankBucket": "masters",
+    "pickRate": 0.01885810656990601,
+    "popularityPercentile": 0.8252427184466019,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "maisie",
+    "rankBucket": "masters",
+    "pickRate": 0.00045066182243924197,
+    "popularityPercentile": 0.04854368932038835,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mandy",
+    "rankBucket": "masters",
+    "pickRate": 0.007159483179163627,
+    "popularityPercentile": 0.6213592233009708,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "max",
+    "rankBucket": "masters",
+    "pickRate": 0.04406264663931722,
+    "popularityPercentile": 0.9902912621359223,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "meeple",
+    "rankBucket": "masters",
+    "pickRate": 0.029209390491500148,
+    "popularityPercentile": 0.9029126213592233,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "meg",
+    "rankBucket": "masters",
+    "pickRate": 0.041697833571053576,
+    "popularityPercentile": 0.9805825242718447,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "melodie",
+    "rankBucket": "masters",
+    "pickRate": 0.008116558802075832,
+    "popularityPercentile": 0.6407766990291263,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mico",
+    "rankBucket": "masters",
+    "pickRate": 0.008980714461598501,
+    "popularityPercentile": 0.6601941747572816,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mina",
+    "rankBucket": "masters",
+    "pickRate": 0.010992431668981922,
+    "popularityPercentile": 0.7475728155339806,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "moe",
+    "rankBucket": "masters",
+    "pickRate": 0.0023973350554499884,
+    "popularityPercentile": 0.4077669902912621,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mortis",
+    "rankBucket": "masters",
+    "pickRate": 0.0174828911117409,
+    "popularityPercentile": 0.8058252427184466,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "mrp",
+    "rankBucket": "masters",
+    "pickRate": 0.0003577418590497075,
+    "popularityPercentile": 0.019417475728155338,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "najia",
+    "rankBucket": "masters",
+    "pickRate": 0.010746193765999655,
+    "popularityPercentile": 0.7281553398058253,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "nani",
+    "rankBucket": "masters",
+    "pickRate": 0.006750635340249676,
+    "popularityPercentile": 0.5922330097087378,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "nita",
+    "rankBucket": "masters",
+    "pickRate": 0.004655290165815675,
+    "popularityPercentile": 0.5048543689320388,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ollie",
+    "rankBucket": "masters",
+    "pickRate": 0.0005761037730151134,
+    "popularityPercentile": 0.05825242718446602,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "otis",
+    "rankBucket": "masters",
+    "pickRate": 0.023202114858366745,
+    "popularityPercentile": 0.8543689320388349,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pam",
+    "rankBucket": "masters",
+    "pickRate": 0.0002787598901686033,
+    "popularityPercentile": 0.009708737864077669,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pearl",
+    "rankBucket": "masters",
+    "pickRate": 0.002360167070094174,
+    "popularityPercentile": 0.3786407766990291,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "penny",
+    "rankBucket": "masters",
+    "pickRate": 0.010681149791626982,
+    "popularityPercentile": 0.7184466019417476,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "pierce",
+    "rankBucket": "masters",
+    "pickRate": 0.040503812041498055,
+    "popularityPercentile": 0.9611650485436893,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "piper",
+    "rankBucket": "masters",
+    "pickRate": 0.018384214756619385,
+    "popularityPercentile": 0.8155339805825242,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "poco",
+    "rankBucket": "masters",
+    "pickRate": 0.0012544195057587147,
+    "popularityPercentile": 0.22330097087378642,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rico",
+    "rankBucket": "masters",
+    "pickRate": 0.02169216545328681,
+    "popularityPercentile": 0.8446601941747572,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rosa",
+    "rankBucket": "masters",
+    "pickRate": 0.0007572977016247056,
+    "popularityPercentile": 0.10679611650485436,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "rt",
+    "rankBucket": "masters",
+    "pickRate": 0.001282295494775575,
+    "popularityPercentile": 0.24271844660194175,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ruffs",
+    "rankBucket": "masters",
+    "pickRate": 0.010132922007628728,
+    "popularityPercentile": 0.6990291262135923,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sam",
+    "rankBucket": "masters",
+    "pickRate": 0.0001533179395927318,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sandy",
+    "rankBucket": "masters",
+    "pickRate": 0.0010128276009459252,
+    "popularityPercentile": 0.1650485436893204,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "shade",
+    "rankBucket": "masters",
+    "pickRate": 0.013868304535888012,
+    "popularityPercentile": 0.7961165048543689,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "shelly",
+    "rankBucket": "masters",
+    "pickRate": 0.0011893755313860405,
+    "popularityPercentile": 0.18446601941747573,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sirius",
+    "rankBucket": "masters",
+    "pickRate": 0.003935160449546783,
+    "popularityPercentile": 0.47572815533980584,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "spike",
+    "rankBucket": "masters",
+    "pickRate": 0.005561259808863636,
+    "popularityPercentile": 0.5339805825242718,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "sprout",
+    "rankBucket": "masters",
+    "pickRate": 0.0055751978033720655,
+    "popularityPercentile": 0.5436893203883495,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "squeak",
+    "rankBucket": "masters",
+    "pickRate": 0.0019745492220276067,
+    "popularityPercentile": 0.3300970873786408,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "starrnova",
+    "rankBucket": "masters",
+    "pickRate": 0.03877550072245271,
+    "popularityPercentile": 0.9514563106796117,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "stu",
+    "rankBucket": "masters",
+    "pickRate": 0.012167869205859532,
+    "popularityPercentile": 0.7669902912621359,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "surge",
+    "rankBucket": "masters",
+    "pickRate": 0.03076579987827485,
+    "popularityPercentile": 0.9223300970873787,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "tara",
+    "rankBucket": "masters",
+    "pickRate": 0.0028061828943639396,
+    "popularityPercentile": 0.42718446601941745,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "tick",
+    "rankBucket": "masters",
+    "pickRate": 0.001746895311723247,
+    "popularityPercentile": 0.2912621359223301,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "trunk",
+    "rankBucket": "masters",
+    "pickRate": 0.0019373812366717928,
+    "popularityPercentile": 0.32038834951456313,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "willow",
+    "rankBucket": "masters",
+    "pickRate": 0.0018444612732822583,
+    "popularityPercentile": 0.30097087378640774,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  },
+  {
+    "brawlerId": "ziggy",
+    "rankBucket": "masters",
+    "pickRate": 0.0012451275094197613,
+    "popularityPercentile": 0.20388349514563106,
+    "exportedAt": "2026-07-10",
+    "sourceNote": "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
+  }
+]

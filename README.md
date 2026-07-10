@@ -17,7 +17,8 @@ recommendation engine)** delivery, per the phased plan in `docs/implementation-p
 | Deterministic recommendation scoring (map/matchup/synergy/composition/role coverage/flexibility/confidence) with structured, non-LLM explanations | Brawler role/archetype tags (hand-curated, always labeled heuristic) | Statistical ingestion pipeline / real match data |
 | Rank-bracket-sensitive scoring (a Brawler strong at low elo but an easy high-elo counter scores differently by bracket — real mechanism, curated skew values) | Rank-skew values per Brawler (`BRAWLER_RANK_SKEW`) | Rank-segmented real match data to replace the curated skew guesses |
 | Patch buff/nerf reactivity (recommendations shift immediately when a patch buffs/nerfs a Brawler) | Patch buff/nerf list (`MOCK_PATCH_HISTORY`) | Real, continuously updated patch feed + the pre/post-patch decay weighting from `docs/implementation-plan.md` §4 |
-| Class/archetype drafting framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/Controller, with an Aggressive-beats-Passive-beats-Defensive-beats-Aggressive counter cycle and mode-specific first-pick fit), contributed by a user from their own drafting guide | Class assignment per Brawler (54 seeded Brawlers) | Two-ply "pick 2 sets up pick 3" lookahead (this is a known, stated simplification — see `docs/data-sources.md` §2c) |
+| Class/archetype drafting framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/Controller, with an Aggressive-beats-Passive-beats-Defensive-beats-Aggressive counter cycle and mode-specific first-pick fit), contributed by a user from their own drafting guide | Class assignment per Brawler (all 105 seeded Brawlers) | Two-ply "pick 2 sets up pick 3" lookahead (this is a known, stated simplification — see `docs/data-sources.md` §2c) |
+| **Real pick-rate (popularity) data** for the Legendary and Masters rank buckets, imported from a user-provided brawltime.ninja export (104 of 105 Brawlers matched) | Everywhere else (`all`/`diamond`/`mythic` buckets still get a neutral value) | Real win-rate/matchup/synergy data — pick rate is popularity, not measured win rate, and is never conflated with it (see `docs/data-sources.md` §2d) |
 | Guest-mode local profiles (rank bracket + available Brawlers remembered per profile, bulk unlock/lock/filter for fast setup) | — | Accounts/auth, official player-tag lookup |
 | Local persistence of in-progress drafts (survives reload) | — | Screenshot/draft auto-detection (deliberately out of scope — see §14/Phase 6 of the original spec) |
 | Mobile-first responsive UI, installable as a PWA | — | Service worker / offline caching strategy (nothing real to cache yet) |
@@ -61,13 +62,16 @@ zero network calls. `.env.example` documents `BRAWL_STARS_API_KEY`, which is unu
 3. Your progress is saved automatically (`localStorage`) — reloading the page resumes the same
    draft; **Start a new draft** at the end returns to the setup screen.
 
-### Importing real map win-rate data (optional)
+### Importing real data (optional, and partly already done)
 
-By default all statistics are a seeded/labeled mock dataset. To use real per-Brawler win-rate data
-for a specific map/mode/rank bracket, export a CSV from [brawltime.ninja](https://brawltime.ninja)'s
-dashboard and run the import script — see `data/brawltime/README.md` for the exact steps. The draft
-screen shows, per map/mode/rank, whether it's currently backed by real imported data (green) or
-still the mock fallback (amber).
+By default all statistics are a seeded/labeled mock dataset, but this repo already includes one
+real import: a user-provided brawltime.ninja pick-rate export for Legendary/Masters Ranked (104 of
+105 Brawlers), feeding a `meta_popularity` signal that's honestly labeled as popularity, never as
+win rate. To add real per-Brawler **win-rate** data for a specific map/mode/rank bracket too,
+export a CSV from [brawltime.ninja](https://brawltime.ninja)'s dashboard and run the other import
+script — see `data/brawltime/README.md` for both. The draft screen shows, per map/mode/rank,
+whether it's currently backed by real imported win-rate data (green) or still the mock fallback
+(amber), independent of the pick-rate signal.
 
 ### Testing
 
@@ -105,10 +109,12 @@ autoscaling serverless platform with rotating egress.
 - No live draft detection — the official Brawl Stars API has no endpoint for in-progress
   matches/bans/picks. This is a permanent constraint, not a phase gap (`docs/discovery.md` §1.3).
   BrawlDraft is, and will remain, a fast-manual-entry tool.
-- All statistics shown are seeded/mock, not real Brawl Stars match data (see table above).
-- Brawler role tags are hand-curated heuristics, not statistics — there is no official source for them.
-- Only a representative subset of Brawlers/maps/modes is seeded for this prototype, not the full
-  current roster/rotation.
+- Most statistics shown are still seeded/mock; real data currently covers pick-rate popularity at
+  two rank buckets (see table above) — win rate, matchup, and synergy remain mock.
+- Brawler role/class tags are hand-curated heuristics, not statistics — there is no official source
+  for them, and a number of the newer Brawlers' classes are inferred from context rather than confirmed.
+- The Brawler roster (105) now covers essentially the full current game roster; maps/modes remain a
+  small representative subset, not the full current rotation.
 - Ranked draft formats are verified as of the current season; Supercell can and does change these, so
   `docs/discovery.md` §2 should be re-checked each season.
 

@@ -215,6 +215,11 @@ function getMetaStrength(brawlerId: string, patchId: string): number {
   return clamp(base + trendAdjustment, 0.05, 0.95);
 }
 
+/** The pure mock dataset has no concept of real pick-rate data — only hybrid-dataset.ts does. */
+function getRealPopularity(): number | undefined {
+  return undefined;
+}
+
 export const MOCK_DATASET: RecommendationDataset = {
   versionId: MOCK_DATASET_VERSION,
   patchId: MOCK_PATCH_ID,
@@ -226,4 +231,5 @@ export const MOCK_DATASET: RecommendationDataset = {
   getMetaStrength,
   getMetaTrend,
   getRankSkew,
+  getRealPopularity,
 };

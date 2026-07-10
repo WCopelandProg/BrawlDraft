@@ -20,40 +20,13 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { normalizeBrawlerName, resolveBrawlerId } from "./brawler-ids.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = path.join(
   __dirname,
   "../src/lib/recommendation-engine/real-data/generated-map-stats.json",
 );
-
-// Kept in sync with src/lib/data/brawlers.ts by hand — this script intentionally has no TS/build
-// step, so it can't import that file directly. Update both places together when the roster grows.
-const BRAWLER_ID_BY_NORMALIZED_NAME = {
-  shelly: "shelly",
-  colt: "colt",
-  bull: "bull",
-  brock: "brock",
-  elprimo: "elprimo",
-  barley: "barley",
-  poco: "poco",
-  rosa: "rosa",
-  jessie: "jessie",
-  nita: "nita",
-  dynamike: "dynamike",
-  tick: "tick",
-  "8bit": "8bit",
-  rico: "rico",
-  penny: "penny",
-  darryl: "darryl",
-};
-
-function normalizeBrawlerName(rawName) {
-  return rawName
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[^a-z0-9]/g, "");
-}
 
 function parseCsv(text) {
   // Minimal RFC4180-ish parser: handles quoted fields containing commas, escaped quotes ("").
@@ -164,7 +137,7 @@ function main() {
   for (const row of rows.slice(1)) {
     const rawName = row[brawlerCol];
     if (!rawName) continue;
-    const brawlerId = BRAWLER_ID_BY_NORMALIZED_NAME[normalizeBrawlerName(rawName)];
+    const brawlerId = resolveBrawlerId(rawName);
     if (!brawlerId) {
       unmatched.push(rawName);
       continue;
@@ -215,4 +188,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main();
 }
 
-export { parseCsv, parseRateValue, normalizeBrawlerName, findColumnIndex, parseArgs, BRAWLER_ID_BY_NORMALIZED_NAME };
+export { parseCsv, parseRateValue, normalizeBrawlerName, findColumnIndex, parseArgs };

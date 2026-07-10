@@ -68,7 +68,30 @@ map/mode/rank combination has real data loaded, amber when it's still on the moc
 
 ## 4. Brawler name matching
 
-The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (a
-representative subset, not the full roster — see `docs/data-sources.md`). Any CSV row for a
-Brawler outside that set is skipped with a warning printed to the console; it isn't silently
-dropped without telling you.
+The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (105 as of
+this writing — every Brawler named in a user-provided drafting guide plus every Brawler appearing
+in the real pick-rate export in step 5 below). Any CSV row for a Brawler outside that set is
+skipped with a warning printed to the console; it isn't silently dropped without telling you. Both
+import scripts resolve names to ids via `scripts/brawler-ids.mjs`, kept in sync with
+`src/lib/data/brawlers.ts` by hand.
+
+## 5. Importing pick-rate (popularity) data instead of win rate
+
+If your export is a **global, non-map-specific pick-rate snapshot** (dashboard: Metric = "Pick
+Rate" or "Use Rate", Map = "All Maps", Group By = "Brawler"), use the other importer instead —
+this data doesn't get written into map win rate at all (see `docs/data-sources.md` §2d for why pick
+rate and win rate are kept strictly separate):
+
+```bash
+node scripts/import-pickrate-csv.mjs data/brawltime/legendary-masters-pickrate.csv \
+  --rank legendary,masters \
+  --exported-at 2026-07-10 \
+  --note "brawltime.ninja, Ranked pick rate, Legendary I-Masters"
+```
+
+`--rank` takes a comma-separated list because one export commonly spans a *range* of this app's
+rank buckets (brawltime.ninja's "Legendary I-Masters" spans both `legendary` and `masters`) — the
+same real numbers are written to each bucket named, with that fact recorded in `--note`. The result
+lands in `src/lib/recommendation-engine/real-data/generated-pick-rates.json` as a 0-1 percentile
+per Brawler per rank bucket, and shows up in recommendations as a `meta_popularity` reason on
+Brawlers with real, high pick rate at the active rank bucket — never as a claim about win rate.

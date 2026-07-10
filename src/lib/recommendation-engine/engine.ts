@@ -91,6 +91,9 @@ export interface ScoreBreakdown {
   archetypeCounter: number;
   /** 0-1: bonus for being a strong first-pick class for the current mode (only nonzero on pick 1). */
   modeClassFit: number;
+  /** 0-1 if real pick-rate data exists for this rank bucket, else undefined (metaPopularity uses 0.5). */
+  realPopularity?: number;
+  metaPopularity: number;
 }
 
 export function computeScoreBreakdown(
@@ -215,6 +218,12 @@ export function computeScoreBreakdown(
       ? Math.max(0, ...priorityClasses.map((tag) => roleWeight(dataset, candidateId, tag)))
       : 0;
 
+  // Real pick-rate popularity (data/brawltime/README.md): undefined until a real export has been
+  // imported for this exact rank bucket, in which case it's a genuine measured percentile — never
+  // fabricated. Neutral (0.5) fallback so it contributes nothing when absent.
+  const realPopularity = dataset.getRealPopularity(candidateId, ctx.rankBucket);
+  const metaPopularity = realPopularity ?? 0.5;
+
   return {
     mapPerformance,
     matchupValue,
@@ -240,6 +249,8 @@ export function computeScoreBreakdown(
     mapStatSource: mapStat?.source ?? "mock",
     archetypeCounter,
     modeClassFit,
+    realPopularity,
+    metaPopularity,
   };
 }
 
@@ -255,7 +266,8 @@ function weightedScore(breakdown: ScoreBreakdown, weights: ScoreWeights): number
     weights.playerComfort * breakdown.playerComfort +
     weights.statisticalConfidence * breakdown.statisticalConfidence +
     weights.archetypeCounter * breakdown.archetypeCounter +
-    weights.modeClassFit * breakdown.modeClassFit;
+    weights.modeClassFit * breakdown.modeClassFit +
+    weights.metaPopularity * breakdown.metaPopularity;
   const penalty = weights.counterRiskPenalty * breakdown.counterRisk + weights.redundancyPenalty * breakdown.redundancy;
   return Math.min(1, Math.max(0, positive - penalty));
 }

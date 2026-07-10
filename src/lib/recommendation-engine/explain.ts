@@ -104,6 +104,14 @@ export function buildReasonsAndWarnings(
     });
   }
 
+  if (b.realPopularity !== undefined && b.realPopularity > 0.7) {
+    reasons.push({
+      type: "meta_popularity",
+      impact: weights.metaPopularity * (b.realPopularity - 0.5),
+      message: `Heavily favored by real Ranked players at this rank bracket (top ${Math.round((1 - b.realPopularity) * 100)}% by pick rate) — reflects real pick-rate data, not measured win rate.`,
+    });
+  }
+
   if (b.rankFitSignal > 0.15) {
     reasons.push({
       type: "rank_bracket_fit",

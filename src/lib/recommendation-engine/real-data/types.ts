@@ -27,3 +27,25 @@ export interface ImportedMapStatRow {
   /** Free-text note, e.g. the source URL/filter description, kept for auditability. */
   sourceNote?: string;
 }
+
+/**
+ * One row of real, global (not map-specific) pick-rate data imported from a brawltime.ninja CSV
+ * export, e.g. "general pick rate for all ranked matches from Legendary to Masters". Pick rate
+ * measures popularity — how often players choose this Brawler — not measured win rate/strength,
+ * and is never written into MapStatRecord.adjustedWinRate; see hybrid-dataset.ts for how it's
+ * actually used (a separate, honestly-labeled "real meta popularity" signal).
+ */
+export interface ImportedPickRateRow {
+  brawlerId: string;
+  rankBucket: string;
+  /** 0-1 fraction, exactly as exported (typically small, e.g. 0.05 for the most-picked Brawler). */
+  pickRate: number;
+  /**
+   * 0-1, this Brawler's rank among every Brawler in the same import by pick rate (1.0 = most
+   * picked in the export, 0.0 = least picked). Precomputed at import time since raw pick-rate
+   * fractions are hard to compare directly to the rest of this app's 0-1-normalized signals.
+   */
+  popularityPercentile: number;
+  exportedAt: string;
+  sourceNote?: string;
+}
