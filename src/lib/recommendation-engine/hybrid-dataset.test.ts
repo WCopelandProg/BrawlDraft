@@ -98,11 +98,24 @@ describe("real per-mode win rate / pick rate / score data (imported from 6 user-
     expect(detail!.winRate).toBeCloseTo(0.563, 3);
   });
 
-  it("modeStatsForMode returns every imported row for a mode, sorted best-winrate-first", () => {
+  it("modeStatsForMode returns every imported row for a mode, sorted best-composite-score-first", () => {
     const rows = modeStatsForMode("gem-grab");
     expect(rows.length).toBe(105);
-    expect(rows[0]!.brawlerId).toBe("mrp"); // 76.92% — the highest real win rate in this mode
-    expect(rows[0]!.winRate).toBeGreaterThan(rows[rows.length - 1]!.winRate);
+    expect(rows[0]!.brawlerId).toBe("crow"); // #1 composite score ("S tier") in this mode
+    expect(rows[0]!.score).toBeGreaterThan(rows[rows.length - 1]!.score);
+  });
+
+  it("Crow (the #1 composite score in Gem Grab) has the maximum meta-tier percentile", () => {
+    expect(HYBRID_DATASET.getModeMetaPercentile("crow", "gem-grab")).toBeCloseTo(1, 5);
+  });
+
+  it("Mr. P has a high real win rate but a much lower meta-tier percentile (small-sample, rarely-played outlier)", () => {
+    const mrpWinRate = HYBRID_DATASET.getModeWinRate("mrp", "gem-grab")!;
+    const crowWinRate = HYBRID_DATASET.getModeWinRate("crow", "gem-grab")!;
+    expect(mrpWinRate).toBeGreaterThan(crowWinRate); // Mr. P's raw win rate really is higher...
+    const mrpMeta = HYBRID_DATASET.getModeMetaPercentile("mrp", "gem-grab")!;
+    const crowMeta = HYBRID_DATASET.getModeMetaPercentile("crow", "gem-grab")!;
+    expect(crowMeta).toBeGreaterThan(mrpMeta); // ...but Crow is the far more meta-relevant ban target.
   });
 
   it("is a distinct axis from rank-bucket pick rate — not defined for a mode with no import", () => {

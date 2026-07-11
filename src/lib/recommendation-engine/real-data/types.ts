@@ -69,18 +69,24 @@ export interface ImportedModeStatsRow {
   /** 0-1 fraction, exactly as exported. */
   pickRate: number;
   /**
-   * The source's own composite ranking score (higher = better/more meta-relevant in this mode).
-   * Stored as-is for explanatory display (e.g. "ranked #2 in Brawl Ball") and for driving ban
-   * recommendations' "highest real winrate" ask indirectly via `winRateRank` below — not fed into
-   * pick scoring as its own weighted term, since it's a derived function of win rate and pick rate
-   * this app already has as independent, more legible inputs; adding a third overlapping term
-   * would just double-count the same underlying signal under a different name.
+   * The source's own composite ranking score (higher = better/more meta-relevant in this mode —
+   * this is this app's real proxy for "S tier"/overall meta status, since it already combines win
+   * rate and pick rate the way a real tier list would). Stored as-is for explanatory display (e.g.
+   * "ranked #2 in Brawl Ball") — the derived `scorePercentile` below is what actually feeds
+   * scoring. Not fed into *pick* scoring as its own weighted term (see engine.ts/ScoreBreakdown):
+   * for picks, win rate and pick rate are already independent, more legible inputs, and a
+   * genuinely strong-but-niche Brawler can still be a good pick even at low "meta tier" — but for
+   * *bans*, the goal is different (ban whatever the whole community treats as best), which is
+   * exactly what this composite already measures, so it's the dominant ban-scoring term instead
+   * (see DEFAULT_BAN_WEIGHTS.modeMetaScore in ban.ts).
    */
   score: number;
   /** 0-1, this Brawler's rank among every Brawler in the same mode's import by win rate. */
   winRatePercentile: number;
   /** 0-1, this Brawler's rank among every Brawler in the same mode's import by pick rate. */
   pickRatePercentile: number;
+  /** 0-1, this Brawler's rank among every Brawler in the same mode's import by composite score — the primary ban-scoring signal. */
+  scorePercentile: number;
   /** 1 = best (highest score) in this mode's import, used for "ranked #N" explanations. */
   scoreRank: number;
   /** Total number of Brawlers in this mode's import, so scoreRank can be shown as "#N of M". */

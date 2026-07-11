@@ -14,11 +14,11 @@ import type { MapStatRecord, ModeStatsDetail, RecommendationDataset } from "./ty
  *   simple "Group By: Brawler" dashboard export.
  * - getRealPopularity: real, global (not map-specific) pick-rate percentile for a rank bucket —
  *   popularity, not win rate, and never written into adjustedWinRate.
- * - getModeWinRate / getModePopularity / getModeStatsDetail: real, per-mode (all maps, all ranks
- *   combined) win rate + pick rate + composite ranking score — a different axis from
- *   getRealPopularity above (mode-scoped instead of rank-bucket-scoped). The source export didn't
- *   state a rank bracket, so this applies the same per-mode numbers regardless of the selected
- *   rank bucket rather than guessing one (see real-data/types.ts).
+ * - getModeWinRate / getModePopularity / getModeMetaPercentile / getModeStatsDetail: real, per-mode
+ *   (all maps, all ranks combined) win rate + pick rate + composite ranking score — a different
+ *   axis from getRealPopularity above (mode-scoped instead of rank-bucket-scoped). The source
+ *   export didn't state a rank bracket, so this applies the same per-mode numbers regardless of
+ *   the selected rank bucket rather than guessing one (see real-data/types.ts).
  *
  * getMatchup/getSynergy/getRoleFeatures/getMetaStrength/getRankSkew still come from the seeded
  * mock dataset — none of these exports carry pairwise or role/archetype data. This is the entire
@@ -80,6 +80,16 @@ function getModePopularity(brawlerId: string, modeId: string): number | undefine
   return findImportedModeStatsRow(brawlerId, modeId)?.pickRatePercentile;
 }
 
+/**
+ * Real composite-score percentile (0-1, 1 = most "S tier"/meta-relevant) for this Brawler within
+ * this mode's import — combines win rate and pick rate the way a real tier list would, so it
+ * doesn't surface small-sample, rarely-played outliers the way raw win rate alone can. This is the
+ * primary signal for ban recommendations (see ban.ts).
+ */
+function getModeMetaPercentile(brawlerId: string, modeId: string): number | undefined {
+  return findImportedModeStatsRow(brawlerId, modeId)?.scorePercentile;
+}
+
 /** Full real-data detail for rich "why" explanations (rank, raw rates), or undefined if not imported. */
 function getModeStatsDetail(brawlerId: string, modeId: string): ModeStatsDetail | undefined {
   const row = findImportedModeStatsRow(brawlerId, modeId);
@@ -111,9 +121,9 @@ export function hasRealModeStatsData(modeId: string): boolean {
   return IMPORTED_MODE_STATS_ROWS.some((r) => r.modeId === modeId);
 }
 
-/** Every imported row for a mode, sorted best-winrate-first — used to drive "recommended bans". */
+/** Every imported row for a mode, sorted best-composite-score-first (i.e. "S tier" first). */
 export function modeStatsForMode(modeId: string): ImportedModeStatsRow[] {
-  return IMPORTED_MODE_STATS_ROWS.filter((r) => r.modeId === modeId).sort((a, b) => b.winRate - a.winRate);
+  return IMPORTED_MODE_STATS_ROWS.filter((r) => r.modeId === modeId).sort((a, b) => b.score - a.score);
 }
 
 export const HYBRID_DATASET: RecommendationDataset = {
@@ -124,5 +134,6 @@ export const HYBRID_DATASET: RecommendationDataset = {
   getRealPopularity,
   getModeWinRate,
   getModePopularity,
+  getModeMetaPercentile,
   getModeStatsDetail,
 };

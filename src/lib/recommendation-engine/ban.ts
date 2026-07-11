@@ -8,23 +8,31 @@ import type { BrawlerRecommendation, DraftRecommendationContext, ModeStatsDetail
  * ban is often a Brawler that's dangerous *for the enemy to have available*, not one our own team
  * necessarily wants. Starting weights, not permanent truth, same as DEFAULT_WEIGHTS.
  *
- * modeWinRate is weighted the highest of any positive term by explicit user request: "initial
- * recommended bans... should be the brawlers with the highest winrates from the datasets" — before
- * any picks/bans reveal enemy-specific signal, this real per-mode win rate (see
- * scripts/import-mode-stats-csv.mjs) is what should drive the top of the ban list.
+ * modeMetaScore (the source's own composite win-rate + pick-rate ranking, this app's real proxy
+ * for "S tier") is weighted the highest of any positive term, by explicit user request: bans
+ * should "consistently reflect... the best and most meta brawlers... the S tier and highest win
+ * rate brawlers." An earlier version of this weighting used raw modeWinRate as the dominant term,
+ * which surfaced rarely-played, small-sample outliers (a Brawler with a handful of real games and
+ * a lucky win rate) instead of the mode's actual best/most-played Brawlers — modeMetaScore doesn't
+ * have that failure mode, since a real tier-list-style composite already discounts low-pick-rate
+ * noise. modeWinRate is kept as a smaller supporting signal, not removed outright.
  */
 export const DEFAULT_BAN_WEIGHTS = {
-  opponentMapStrength: 0.2,
-  modeWinRate: 0.35,
-  threatToAvailablePool: 0.2,
-  scarcityOfCounters: 0.15,
-  flexibility: 0.15,
-  recentMetaStrength: 0.1,
+  opponentMapStrength: 0.15,
+  modeMetaScore: 0.4,
+  modeWinRate: 0.15,
+  threatToAvailablePool: 0.15,
+  scarcityOfCounters: 0.1,
+  flexibility: 0.1,
+  recentMetaStrength: 0.05,
   ourOwnPickValue: 0.2, // subtracted: banning something we ourselves want to pick wastes the ban
 };
 
 export interface BanScoreBreakdown {
   opponentMapStrength: number;
+  /** Real per-mode composite-score percentile where imported, neutral (0.5) otherwise — see getModeMetaPercentile. This app's "S tier" proxy and the dominant ban signal. */
+  modeMetaScore: number;
+  realModeMetaScore?: number;
   /** Real per-mode win rate where imported, neutral (0.5) otherwise — see getModeWinRate. */
   modeWinRate: number;
   realModeWinRate?: number;
@@ -45,6 +53,8 @@ function computeBanBreakdown(
   const mapStat = dataset.getMapStat(candidateId, ctx.mapId, ctx.modeId, ctx.rankBucket);
   const opponentMapStrength = mapStat?.adjustedWinRate ?? 0.5;
 
+  const realModeMetaScore = dataset.getModeMetaPercentile(candidateId, ctx.modeId);
+  const modeMetaScore = realModeMetaScore ?? 0.5;
   const realModeWinRate = dataset.getModeWinRate(candidateId, ctx.modeId);
   const modeWinRate = realModeWinRate ?? 0.5;
   const modeStatsDetail = dataset.getModeStatsDetail(candidateId, ctx.modeId);
@@ -93,6 +103,8 @@ function computeBanBreakdown(
 
   return {
     opponentMapStrength,
+    modeMetaScore,
+    realModeMetaScore,
     modeWinRate,
     realModeWinRate,
     modeStatsDetail,
@@ -114,6 +126,7 @@ export function scoreBanCandidate(
   const breakdown = computeBanBreakdown(candidateId, ctx, dataset);
   const positive =
     weights.opponentMapStrength * breakdown.opponentMapStrength +
+    weights.modeMetaScore * breakdown.modeMetaScore +
     weights.modeWinRate * breakdown.modeWinRate +
     weights.threatToAvailablePool * breakdown.threatToAvailablePool +
     weights.scarcityOfCounters * breakdown.scarcityOfCounters +

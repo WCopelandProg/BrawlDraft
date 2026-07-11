@@ -136,6 +136,14 @@ export interface RecommendationDataset {
    */
   getModePopularity(brawlerId: string, modeId: string): number | undefined;
   /**
+   * 0-1 percentile from the source's own composite ranking score for this mode (win rate and pick
+   * rate combined, the way a real tier list would) — this app's real proxy for "S tier"/overall
+   * meta status. Deliberately not used for *pick* scoring (see real-data/types.ts), but it is the
+   * dominant signal for *ban* scoring (see ban.ts): raw win rate alone tends to surface rarely-
+   * played, small-sample outliers instead of the mode's actual best/most-played Brawlers.
+   */
+  getModeMetaPercentile(brawlerId: string, modeId: string): number | undefined;
+  /**
    * Full real-data detail (raw win rate/pick rate/composite score/rank) for building rich "why"
    * explanations, or undefined when no real data has been imported for that mode. See
    * ModeStatsDetail below.
@@ -203,6 +211,7 @@ export type RecommendationReasonType =
   | "meta_popularity"
   | "mode_popularity"
   | "mode_win_rate"
+  | "mode_meta_tier"
   | "class_counter"
   | "class_position_fit"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick

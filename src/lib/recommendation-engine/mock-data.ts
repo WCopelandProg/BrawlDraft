@@ -229,6 +229,10 @@ function getModeWinRate(): number | undefined {
   return undefined;
 }
 
+function getModeMetaPercentile(): number | undefined {
+  return undefined;
+}
+
 function getModeStatsDetail(): undefined {
   return undefined;
 }
@@ -247,5 +251,6 @@ export const MOCK_DATASET: RecommendationDataset = {
   getRealPopularity,
   getModeWinRate,
   getModePopularity,
+  getModeMetaPercentile,
   getModeStatsDetail,
 };

@@ -6,8 +6,11 @@
  *
  * This is richer than scripts/import-pickrate-csv.mjs (rank-bucket-scoped, pick-rate only): it
  * carries an actual measured win rate per mode, not just popularity, plus the source's own
- * composite ranking score used only for "ranked #N" explanatory text and ban-priority ordering —
- * see real-data/types.ts for why score isn't fed into pick scoring as its own weighted term.
+ * composite ranking score (a real proxy for "S tier"/overall meta relevance, since it already
+ * combines win rate and pick rate). The composite score's percentile is the dominant signal for
+ * ban recommendations (see ban.ts) — raw win rate alone tends to surface rarely-played, small-
+ * sample outliers instead of the mode's actual best/most-played Brawlers; see real-data/types.ts
+ * for why it's still not fed into *pick* scoring as its own term (a different job — see there).
  *
  * The source CSVs this was built against didn't state a rank bracket, so — rather than guess one
  * — this is applied uniformly across every rank bucket for the given mode (see
@@ -125,6 +128,7 @@ function main() {
 
   const winRatePercentileById = computePercentileFor(parsed, "winRate");
   const pickRatePercentileById = computePercentileFor(parsed, "pickRate");
+  const scorePercentileById = computePercentileFor(parsed, "score");
   const scoreRankById = computeScoreRanks(parsed);
   const total = parsed.length;
 
@@ -141,6 +145,7 @@ function main() {
     score: entry.score,
     winRatePercentile: winRatePercentileById.get(entry.brawlerId),
     pickRatePercentile: pickRatePercentileById.get(entry.brawlerId),
+    scorePercentile: scorePercentileById.get(entry.brawlerId),
     scoreRank: scoreRankById.get(entry.brawlerId),
     scoreRankTotal: total,
     exportedAt,

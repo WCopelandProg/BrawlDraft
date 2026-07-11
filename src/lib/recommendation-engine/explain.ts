@@ -293,13 +293,22 @@ export function buildBanReasonsAndWarnings(
     });
   }
 
+  const modeMetaImpact = weights.modeMetaScore * (b.modeMetaScore - 0.5) * 2;
+  if (b.realModeMetaScore !== undefined && b.realModeMetaScore > 0.55) {
+    const rankNote = b.modeStatsDetail ? ` (ranked #${b.modeStatsDetail.scoreRank} of ${b.modeStatsDetail.scoreRankTotal} by real win rate + pick rate combined)` : "";
+    reasons.push({
+      type: "mode_meta_tier",
+      impact: modeMetaImpact,
+      message: `One of the mode's real S-tier/most-meta Brawlers${rankNote} — a safe, high-value ban regardless of who's picked so far.`,
+    });
+  }
+
   const modeWinRateImpact = weights.modeWinRate * (b.modeWinRate - 0.5) * 2;
-  if (b.realModeWinRate !== undefined && b.realModeWinRate > 0.5) {
-    const rankNote = b.modeStatsDetail ? ` (ranked #${b.modeStatsDetail.scoreRank} of ${b.modeStatsDetail.scoreRankTotal} in this mode)` : "";
+  if (b.realModeWinRate !== undefined && b.realModeWinRate > 0.55) {
     reasons.push({
       type: "mode_win_rate",
       impact: modeWinRateImpact,
-      message: `One of the real highest win rates in this mode: ${(b.realModeWinRate * 100).toFixed(1)}%${rankNote} — a strong general ban regardless of who's picked so far.`,
+      message: `Also carries a real ${(b.realModeWinRate * 100).toFixed(1)}% win rate in this mode.`,
     });
   }
 

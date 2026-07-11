@@ -245,32 +245,31 @@ describe("generateBanRecommendations", () => {
   });
 });
 
-describe("real per-mode win rate driving initial ban recommendations (HYBRID_DATASET)", () => {
-  it("Mr. P (real top win rate in Gem Grab) has a higher modeWinRate ban component than a low-winrate Brawler", () => {
+describe("real per-mode composite score (meta tier) driving initial ban recommendations (HYBRID_DATASET)", () => {
+  it("Crow (real #1 by composite score in Gem Grab) has a higher modeMetaScore ban component than a low-score Brawler", () => {
     const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
-    const mrpBreakdown = scoreBanCandidate("mrp", ctx, HYBRID_DATASET);
-    const bonnieBreakdown = scoreBanCandidate("bonnie", ctx, HYBRID_DATASET);
-    // Isolated via a modeWinRate-only weight set so other ban signals can't mask the effect.
+    // Isolated via a modeMetaScore-only weight set so other ban signals can't mask the effect.
     const isolated = {
       opponentMapStrength: 0,
-      modeWinRate: 1,
+      modeMetaScore: 1,
+      modeWinRate: 0,
       threatToAvailablePool: 0,
       scarcityOfCounters: 0,
       flexibility: 0,
       recentMetaStrength: 0,
       ourOwnPickValue: 0,
     };
-    const mrpIsolated = scoreBanCandidate("mrp", ctx, HYBRID_DATASET, isolated);
+    const crowIsolated = scoreBanCandidate("crow", ctx, HYBRID_DATASET, isolated);
     const bonnieIsolated = scoreBanCandidate("bonnie", ctx, HYBRID_DATASET, isolated);
-    expect(mrpIsolated.score).toBeGreaterThan(bonnieIsolated.score);
-    expect(mrpBreakdown).toBeDefined();
+    expect(crowIsolated.score).toBeGreaterThan(bonnieIsolated.score);
   });
 
-  it("with only real mode win rate weighted, initial (no picks/bans yet) ban recommendations rank by real win rate", () => {
+  it("with only real composite score weighted, initial (no picks/bans yet) ban recommendations rank by composite score, not raw win rate", () => {
     const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
     const isolated = {
       opponentMapStrength: 0,
-      modeWinRate: 1,
+      modeMetaScore: 1,
+      modeWinRate: 0,
       threatToAvailablePool: 0,
       scarcityOfCounters: 0,
       flexibility: 0,
@@ -278,8 +277,34 @@ describe("real per-mode win rate driving initial ban recommendations (HYBRID_DAT
       ourOwnPickValue: 0,
     };
     const recs = generateBanRecommendations(ctx, HYBRID_DATASET, isolated);
-    // Mr. P (76.92%) is the real highest win rate in the Gem Grab dataset.
-    expect(recs[0]!.brawlerId).toBe("mrp");
+    // Crow has the #1 composite score in the Gem Grab dataset, despite Mr. P having a higher raw win rate.
+    expect(recs[0]!.brawlerId).toBe("crow");
+  });
+
+  it("with default weights, a rarely-played high-winrate outlier no longer outranks a genuinely top-tier, widely-played Brawler", () => {
+    const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
+    // Mr. P: 76.9% real win rate but only 0.07% real pick rate in Gem Grab (a small-sample outlier).
+    // Crow: the mode's actual #1 by composite score (56.3% win rate, 6.37% pick rate — genuinely meta).
+    const crow = scoreBanCandidate("crow", ctx, HYBRID_DATASET);
+    const mrp = scoreBanCandidate("mrp", ctx, HYBRID_DATASET);
+    expect(crow.score).toBeGreaterThan(mrp.score);
+  });
+
+  it("surfaces a mode_meta_tier ban reason citing the composite-score rank for a top-tier Brawler", () => {
+    const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
+    const rec = scoreBanCandidate("crow", ctx, HYBRID_DATASET, {
+      ...DEFAULT_BAN_WEIGHTS,
+      opponentMapStrength: 0,
+      modeWinRate: 0,
+      threatToAvailablePool: 0,
+      scarcityOfCounters: 0,
+      flexibility: 0,
+      recentMetaStrength: 0,
+      ourOwnPickValue: 0,
+    });
+    const reason = rec.reasons.find((r) => r.type === "mode_meta_tier");
+    expect(reason).toBeDefined();
+    expect(reason!.message).toContain("#1 of 105");
   });
 
   it("surfaces a mode_win_rate ban reason citing the real win rate for a top-winrate Brawler", () => {
@@ -287,6 +312,7 @@ describe("real per-mode win rate driving initial ban recommendations (HYBRID_DAT
     const rec = scoreBanCandidate("mrp", ctx, HYBRID_DATASET, {
       ...DEFAULT_BAN_WEIGHTS,
       opponentMapStrength: 0,
+      modeMetaScore: 0,
       threatToAvailablePool: 0,
       scarcityOfCounters: 0,
       flexibility: 0,
@@ -298,10 +324,11 @@ describe("real per-mode win rate driving initial ban recommendations (HYBRID_DAT
     expect(reason!.message).toContain("76.9%");
   });
 
-  it("does not surface a mode_win_rate ban reason for a mode with no real import", () => {
+  it("does not surface mode_meta_tier/mode_win_rate ban reasons for a mode with no real import", () => {
     const ctx = baseContext({ action: "ban", modeId: "showdown" });
     const rec = scoreBanCandidate("mrp", ctx, HYBRID_DATASET);
     expect(rec.reasons.some((r) => r.type === "mode_win_rate")).toBe(false);
+    expect(rec.reasons.some((r) => r.type === "mode_meta_tier")).toBe(false);
   });
 });
 

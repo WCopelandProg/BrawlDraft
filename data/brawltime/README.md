@@ -120,12 +120,20 @@ guessing one, and the resulting numbers are applied the same way regardless of t
 selected in the app.
 
 The result lands in `src/lib/recommendation-engine/real-data/generated-mode-stats.json` with a
-win-rate percentile, a pick-rate percentile, and a 1-indexed rank by the source's own composite
-score. Win rate feeds a `modeWinRate` reason/warning (genuinely measured strength — this app's
-single highest-weighted positive scoring term, per an explicit request to weight real per-mode data
-more strongly than the mostly-mock map-level data); pick rate feeds `mode_popularity` (popularity,
-kept strictly separate from win rate, same as `meta_popularity` above); the composite score is
-stored only for "ranked #N of M" explanatory text, not as a fourth weighted term (it would just
-double-count win rate + pick rate under a different name). `modeWinRate` also drives "initial
-recommended bans" — before any picks/bans reveal enemy-specific signal, the ban list is dominated
-by real per-mode win rate.
+win-rate percentile, a pick-rate percentile, a composite-score percentile, and a 1-indexed rank by
+the source's own composite score. For **pick** scoring: win rate feeds a `modeWinRate`
+reason/warning (genuinely measured strength — this app's single highest-weighted positive pick
+scoring term, per an explicit request to weight real per-mode data more strongly than the
+mostly-mock map-level data); pick rate feeds `mode_popularity` (popularity, kept strictly separate
+from win rate, same as `meta_popularity` above); the composite score itself is only used for
+"ranked #N of M" explanatory text there, not as a fourth weighted pick-scoring term (it would just
+double-count win rate + pick rate under a different name).
+
+For **ban** scoring, the composite score's percentile (`modeMetaScore`) is instead the single
+highest-weighted term — this app's real proxy for "S tier"/overall meta relevance, since it already
+combines win rate and pick rate the way a real tier list would. Bans are meant to consistently
+target the mode's actual best/most-played Brawlers; using raw win rate alone as the dominant ban
+signal (an earlier version of this weighting) tended to surface rarely-played, small-sample
+outliers instead (a Brawler with a handful of real games and a lucky win rate but almost no real
+pick rate) — `modeMetaScore` doesn't have that failure mode. Raw `modeWinRate` remains a smaller
+supporting ban signal, not removed outright.
