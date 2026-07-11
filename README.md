@@ -20,6 +20,7 @@ recommendation engine)** delivery, per the phased plan in `docs/implementation-p
 | Class/archetype drafting framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/Controller, with an Aggressive-beats-Passive-beats-Defensive-beats-Aggressive counter cycle and mode-specific first-pick fit), contributed by a user from their own drafting guide | Class assignment per Brawler (all 105 seeded Brawlers) | Two-ply "pick 2 sets up pick 3" lookahead (this is a known, stated simplification — see `docs/data-sources.md` §2c) |
 | **Real pick-rate (popularity) data** for the Legendary and Masters rank buckets, imported from a user-provided brawltime.ninja export (all 104 Brawlers matched) | Everywhere else (`all`/`diamond`/`mythic` buckets still get a neutral value) | Real win-rate/matchup/synergy data — pick rate is popularity, not measured win rate, and is never conflated with it (see `docs/data-sources.md` §2d) |
 | **Real per-mode win rate + pick rate + ranking score** for all 6 Ranked modes (Gem Grab, Brawl Ball, Bounty, Heist, Hot Zone, Knockout), imported from 6 user-provided exports. This is the single highest-weighted positive term in both pick and ban scoring — real per-mode win rate drives "initial recommended bans" toward the mode's real strongest performers | A distinct axis from the row above (mode-scoped, not rank-bucket-scoped) — applied the same regardless of selected rank bucket since the source didn't state one | Rank-bracket-specific per-mode data (would need a source export that states both a mode and a rank bracket, see `docs/data-sources.md` §2e) |
+| **Post-draft summary**: a 0-100 draft grade (picks + bans, judged with full hindsight against the enemy's actual final roster), a "what went well / tips for improvement" list, and a win-probability estimate for both teams | The 0-100 score/win-probability curve is this app's own heuristic combination of its existing scoring signals | A calibrated, statistically-validated win-probability model (would need real match outcomes to fit against, not just curated/real pick data) |
 | Guest-mode local profiles (rank bracket + available Brawlers remembered per profile, bulk unlock/lock/filter for fast setup) | — | Accounts/auth, official player-tag lookup |
 | Local persistence of in-progress drafts (survives reload) | — | Screenshot/draft auto-detection (deliberately out of scope — see §14/Phase 6 of the original spec) |
 | Mobile-first responsive UI, installable as a PWA | — | Service worker / offline caching strategy (nothing real to cache yet) |
@@ -62,6 +63,9 @@ zero network calls. `.env.example` documents `BRAWL_STARS_API_KEY`, which is unu
    draft without leaving the screen.
 3. Your progress is saved automatically (`localStorage`) — reloading the page resumes the same
    draft; **Start a new draft** at the end returns to the setup screen.
+4. Once every ban/pick is in, a **post-draft summary** appears: a 0-100 draft grade for your team,
+   a win-probability estimate for both teams, and a "what went well / tips for improvement" list —
+   see `docs/data-sources.md` §6 for exactly how the score and win probability are computed.
 
 ### Importing real data (optional, and partly already done)
 

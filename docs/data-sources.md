@@ -288,3 +288,31 @@ to brawltime.ninja. If that boundary ever needs to move (e.g. towards an automat
 would require actually reaching out to brawltime.ninja's maintainer for explicit permission/terms
 first, at which point it would be documented here as a proper source-priority-#2 licensed dataset
 instead of a manual §2b/§2d import.
+
+## 6. Post-draft summary: how the 0-100 score and win prediction are computed
+
+`src/lib/recommendation-engine/draft-analysis.ts` (added per direct user request) grades a
+completed draft once every ban/pick is in. It is built entirely out of scoring this app already
+does live during the draft — `scorePickCandidate`/`scoreBanCandidate` — not a second, parallel
+notion of "good pick":
+
+- **Score (0-100)**: every one of the user's own picks is re-scored with full hindsight (the
+  complete final roster on both sides is already known, unlike the live in-draft recommendations,
+  which only ever see what's been revealed so far) and averaged; every one of the user's own bans
+  is separately re-scored the same way, evaluated with no picks known yet (this app's ban-enabled
+  formats always resolve bans before any picks, so that's the historically faithful information
+  state). The final score blends `0.7 * averagePickScore + 0.3 * averageBanScore` (pure pick
+  quality if the format had no bans), scaled to 0-100.
+- **Win probability**: both teams' average pick quality (each judged from its own perspective, not
+  just the user's) feeds a logistic curve — `1 / (1 + e^(-6 * (allyAvg - enemyAvg)))` — clamped to
+  `[0.05, 0.95]` so the app never claims false certainty. **This is a heuristic curve built from
+  this app's own curated/real scoring signals, not a calibrated, statistically-validated
+  win-probability model** — building one of those would need real match *outcomes* to fit against,
+  which this project has never collected (see §4's ingestion-pipeline design, which remains
+  unbuilt). The UI states this plainly next to the win-probability bar.
+- **Tips and strengths**: the same `reasons`/`warnings` each pick/ban already carries (see
+  `explain.ts`) are pooled across the whole team, deduplicated to one (the most impactful) entry
+  per reason type, attributed to the Brawler that earned it, and capped to 4 each. Two purely
+  structural checks are added on top, since they're properties of the whole composition rather than
+  any single pick: a missing Anti-Tank against an enemy Tank/Space Maker pick, and 3+ picks sharing
+  the same dominant class (a single hard counter can punish all of them at once).

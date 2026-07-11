@@ -21,12 +21,14 @@ import { getMapMeta } from "@/lib/data/maps";
 import { getRankBucketMeta } from "@/lib/data/ranks";
 import { generatePickRecommendations, splitByAvailability } from "@/lib/recommendation-engine/engine";
 import { generateBanRecommendations } from "@/lib/recommendation-engine/ban";
+import { analyzeDraft } from "@/lib/recommendation-engine/draft-analysis";
 import { hasRealMapData, hasRealModeStatsData, HYBRID_DATASET } from "@/lib/recommendation-engine/hybrid-dataset";
 import type { DraftRecommendationContext } from "@/lib/recommendation-engine/types";
 import { loadProfiles, type PlayerProfile } from "@/lib/storage/profiles";
 import { clearDraftSession, loadDraftSession, saveDraftSession } from "@/lib/storage/draft-session";
 import { BrawlerSelector } from "@/components/draft/BrawlerSelector";
 import { DraftBoard } from "@/components/draft/DraftBoard";
+import { DraftSummary } from "@/components/draft/DraftSummary";
 import { RecommendationList } from "@/components/draft/RecommendationList";
 
 const KNOWN_BRAWLER_IDS = new Set(BRAWLER_IDS);
@@ -153,6 +155,20 @@ export default function DraftScreen() {
   const rankBucketMeta = getRankBucketMeta(session.rankBucket);
   const realMapDataActive = hasRealMapData(session.mapId, session.modeId, session.rankBucket);
   const realModeStatsActive = hasRealModeStatsData(session.modeId);
+  const draftAnalysis = complete
+    ? analyzeDraft(
+        {
+          mapId: session.mapId,
+          modeId: session.modeId,
+          rankBucket: session.rankBucket,
+          allyPicks,
+          enemyPicks,
+          allyBans,
+          enemyBans,
+        },
+        HYBRID_DATASET,
+      )
+    : undefined;
 
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-6">
@@ -205,15 +221,18 @@ export default function DraftScreen() {
       <DraftBoard allyBans={allyBans} allyPicks={allyPicks} enemyBans={enemyBans} enemyPicks={enemyPicks} />
 
       {complete ? (
-        <div className="rounded-lg border border-emerald-800 bg-emerald-950/40 p-4 text-center">
-          <p className="font-semibold text-emerald-300">Draft complete.</p>
-          <button
-            type="button"
-            onClick={handleNewSetup}
-            className="mt-3 min-h-[44px] rounded-md bg-yellow-500 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-yellow-400"
-          >
-            Start a new draft
-          </button>
+        <div className="space-y-4">
+          <div className="rounded-lg border border-emerald-800 bg-emerald-950/40 p-4 text-center">
+            <p className="font-semibold text-emerald-300">Draft complete.</p>
+            <button
+              type="button"
+              onClick={handleNewSetup}
+              className="mt-3 min-h-[44px] rounded-md bg-yellow-500 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-yellow-400"
+            >
+              Start a new draft
+            </button>
+          </div>
+          {draftAnalysis && <DraftSummary analysis={draftAnalysis} />}
         </div>
       ) : (
         <>
