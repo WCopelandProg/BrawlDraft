@@ -64,7 +64,6 @@ export const BRAWLERS: BrawlerMeta[] = [
   { id: "gus", name: "Gus", rarity: "Unverified" },
   { id: "pierce", name: "Pierce", rarity: "Unverified" },
   { id: "jaeyong", name: "JaeYong", rarity: "Unverified", recentlyReleased: true },
-  { id: "ninja", name: "Ninja", rarity: "Unverified", recentlyReleased: true },
   { id: "finx", name: "Finx", rarity: "Unverified", recentlyReleased: true },
   { id: "bea", name: "Bea", rarity: "Unverified" },
   { id: "griff", name: "Griff", rarity: "Unverified" },
@@ -174,16 +173,16 @@ export function getRankSkew(id: string): number {
  * The primary classification below (which of "tank" / "assassin" / "tank_counter" / "controller" /
  * "sharpshooter" / "thrower" / "support" each Brawler carries at high weight) follows a 7-class
  * drafting framework a user shared with this project: a categorized reference image covering 101
- * of these 105 Brawlers, plus a companion long-form drafting-strategy video explaining how the
+ * of these 104 Brawlers, plus a companion long-form drafting-strategy video explaining how the
  * classes interact. Both are summarized (not reproduced) here and drive:
  *   - the class label shown on each Brawler during drafting (see components/draft/BrawlerSelector),
  *   - the class-counter matrix in recommendation-engine/class-counters.ts (e.g. tank_counter beats
  *     both tank and assassin — "anti-tank" is that framework's own name for the tank_counter tag),
  *   - draft-position rules (thrower is only safe on the literal last pick; controller is never a
  *     safe first pick; a class-appropriate first pick matters most in non-Bounty/Knockout modes).
- * The 4 Brawlers the reference image didn't cover (ninja, starrnova, damian, bolt) keep an
- * earlier best-effort guess and are marked recentlyReleased above to reflect that extra
- * uncertainty. Secondary tags alongside the primary class reuse this project's earlier,
+ * The 3 Brawlers the reference image didn't cover (starrnova, damian, bolt) keep an earlier
+ * best-effort guess and are marked recentlyReleased above to reflect that extra uncertainty.
+ * Secondary tags alongside the primary class reuse this project's earlier,
  * independent 9-class/archetype framework (RPS cycle in archetypes.ts) and older granular tags
  * (mobility, healer, area_denial, etc.) — both systems read the same tag list without conflicting.
  */
@@ -316,9 +315,8 @@ export const BRAWLER_ROLE_FEATURES: Record<string, RoleFeature[]> = {
   bonnie: [{ tag: "controller", weight: 0.65 }, { tag: "sharpshooter", weight: 0.6 }],
   mrp: [{ tag: "controller", weight: 0.8 }, { tag: "support", weight: 0.4 }],
 
-  // --- Not covered by the reference image (4 of 105) — kept as an earlier best-effort guess, see
+  // --- Not covered by the reference image (3 of 104) — kept as an earlier best-effort guess, see
   // the recentlyReleased markers above.
-  ninja: [{ tag: "sharpshooter", weight: 0.5 }, { tag: "mobility", weight: 0.4 }],
   starrnova: [{ tag: "support", weight: 0.6 }, { tag: "controller", weight: 0.4 }],
   damian: [{ tag: "damage_dealer", weight: 0.5 }, { tag: "tank_counter", weight: 0.3 }],
   bolt: [{ tag: "speedster", weight: 0.7 }, { tag: "assassin", weight: 0.4 }],

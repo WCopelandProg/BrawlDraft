@@ -17,8 +17,9 @@ recommendation engine)** delivery, per the phased plan in `docs/implementation-p
 | Deterministic recommendation scoring (map/matchup/synergy/composition/role coverage/flexibility/confidence) with structured, non-LLM explanations | Brawler role/archetype tags (hand-curated, always labeled heuristic) | Statistical ingestion pipeline / real match data |
 | Rank-bracket-sensitive scoring (a Brawler strong at low elo but an easy high-elo counter scores differently by bracket — real mechanism, curated skew values) | Rank-skew values per Brawler (`BRAWLER_RANK_SKEW`) | Rank-segmented real match data to replace the curated skew guesses |
 | Patch buff/nerf reactivity (recommendations shift immediately when a patch buffs/nerfs a Brawler) | Patch buff/nerf list (`MOCK_PATCH_HISTORY`) | Real, continuously updated patch feed + the pre/post-patch decay weighting from `docs/implementation-plan.md` §4 |
-| Class/archetype drafting framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/Controller, with an Aggressive-beats-Passive-beats-Defensive-beats-Aggressive counter cycle and mode-specific first-pick fit), contributed by a user from their own drafting guide | Class assignment per Brawler (all 105 seeded Brawlers) | Two-ply "pick 2 sets up pick 3" lookahead (this is a known, stated simplification — see `docs/data-sources.md` §2c) |
-| **Real pick-rate (popularity) data** for the Legendary and Masters rank buckets, imported from a user-provided brawltime.ninja export (104 of 105 Brawlers matched) | Everywhere else (`all`/`diamond`/`mythic` buckets still get a neutral value) | Real win-rate/matchup/synergy data — pick rate is popularity, not measured win rate, and is never conflated with it (see `docs/data-sources.md` §2d) |
+| Class/archetype drafting framework (Assassin/Tank/Speedster/Anti-Agro/Damage Dealer/Trapper/Support/Sharpshooter/Controller, with an Aggressive-beats-Passive-beats-Defensive-beats-Aggressive counter cycle and mode-specific first-pick fit), contributed by a user from their own drafting guide | Class assignment per Brawler (all 104 seeded Brawlers) | Two-ply "pick 2 sets up pick 3" lookahead (this is a known, stated simplification — see `docs/data-sources.md` §2c) |
+| **Real pick-rate (popularity) data** for the Legendary and Masters rank buckets, imported from a user-provided brawltime.ninja export (all 104 Brawlers matched) | Everywhere else (`all`/`diamond`/`mythic` buckets still get a neutral value) | Real win-rate/matchup/synergy data — pick rate is popularity, not measured win rate, and is never conflated with it (see `docs/data-sources.md` §2d) |
+| **Real per-mode use-rate data** for all 6 Ranked modes, imported from 6 user-provided brawltime.ninja exports | A distinct axis from the row above (mode-scoped, not rank-bucket-scoped) — applied the same regardless of selected rank bucket since the source didn't state one | Rank-bracket-specific per-mode data (would need a source export that states both a mode and a rank bracket, see `docs/data-sources.md` §2e) |
 | Guest-mode local profiles (rank bracket + available Brawlers remembered per profile, bulk unlock/lock/filter for fast setup) | — | Accounts/auth, official player-tag lookup |
 | Local persistence of in-progress drafts (survives reload) | — | Screenshot/draft auto-detection (deliberately out of scope — see §14/Phase 6 of the original spec) |
 | Mobile-first responsive UI, installable as a PWA | — | Service worker / offline caching strategy (nothing real to cache yet) |
@@ -64,14 +65,16 @@ zero network calls. `.env.example` documents `BRAWL_STARS_API_KEY`, which is unu
 
 ### Importing real data (optional, and partly already done)
 
-By default all statistics are a seeded/labeled mock dataset, but this repo already includes one
-real import: a user-provided brawltime.ninja pick-rate export for Legendary/Masters Ranked (104 of
-105 Brawlers), feeding a `meta_popularity` signal that's honestly labeled as popularity, never as
-win rate. To add real per-Brawler **win-rate** data for a specific map/mode/rank bracket too,
-export a CSV from [brawltime.ninja](https://brawltime.ninja)'s dashboard and run the other import
-script — see `data/brawltime/README.md` for both. The draft screen shows, per map/mode/rank,
-whether it's currently backed by real imported win-rate data (green) or still the mock fallback
-(amber), independent of the pick-rate signal.
+By default all statistics are a seeded/labeled mock dataset, but this repo already includes two real
+imports: a user-provided brawltime.ninja pick-rate export for Legendary/Masters Ranked (all 104
+Brawlers matched), feeding a `meta_popularity` signal, and 6 user-provided per-mode use-rate
+exports (one per Ranked mode), feeding a separate `mode_popularity` signal — both honestly labeled
+as popularity, never as win rate. To add real per-Brawler **win-rate** data for a specific
+map/mode/rank bracket too, export a CSV from [brawltime.ninja](https://brawltime.ninja)'s dashboard
+and run the other import script — see `data/brawltime/README.md` for all three. The draft screen
+shows, per map/mode/rank, whether it's currently backed by real imported win-rate data (green) or
+still the mock fallback (amber), and separately whether the active mode has real use-rate data,
+independent of the pick-rate and win-rate signals.
 
 ### Testing
 
@@ -131,7 +134,7 @@ this does not affect the current Phase 1/2 deployment above.
   two rank buckets (see table above) — win rate, matchup, and synergy remain mock.
 - Brawler role/class tags are hand-curated heuristics, not statistics — there is no official source
   for them, and a number of the newer Brawlers' classes are inferred from context rather than confirmed.
-- The Brawler roster (105) now covers essentially the full current game roster. All 6 live Ranked
+- The Brawler roster (104) now covers essentially the full current game roster. All 6 live Ranked
   modes are seeded (confirmed via web search); the specific map names per mode (4 each, `maps.ts`)
   are this assistant's best-effort recall, not independently verified against a live source in this
   environment — see `docs/data-sources.md` for exactly why and how to correct them.

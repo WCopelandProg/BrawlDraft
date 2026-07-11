@@ -95,12 +95,18 @@ export interface ScoreBreakdown {
   /** 0-1 if real pick-rate data exists for this rank bucket, else undefined (metaPopularity uses 0.5). */
   realPopularity?: number;
   metaPopularity: number;
+  /** 0-1 if real per-mode use-rate data exists for this mode, else undefined (modePopularity uses 0.5). */
+  realModePopularity?: number;
+  modePopularity: number;
   /** The candidate's single dominant class per class-counters.ts (Thrower/Tank/Space Maker/Anti-Tank/Support/Sniper/Control). */
   candidateClass?: CoreClass;
   /** 0-1, centered 0.5: how well the candidate's class counters the enemy's revealed classes. */
   classCounter: number;
   /** 0-1, centered 0.5: draft-position/mode fit for the candidate's class (e.g. Thrower only safe last pick). */
   classPositionFit: number;
+  /** Whether this candidate is being scored for the literal first or last pick action of the draft — used to phrase explanations situationally (e.g. "keeps later picks open" is only true when there is a later pick). */
+  isFirstPick: boolean;
+  isLastPick: boolean;
 }
 
 export function computeScoreBreakdown(
@@ -232,12 +238,15 @@ export function computeScoreBreakdown(
   const enemyClasses = ctx.enemyPicks.map((id) => dominantClass((tag) => roleWeight(dataset, id, tag)));
   const classCounter = classCounterValue(candidateClass, enemyClasses);
 
+  const isFirstPick = ctx.action === "pick" && ctx.picksSoFar === 0;
+  const isLastPick = ctx.action === "pick" && ctx.totalPicksInFormat - ctx.picksSoFar === 1;
+
   const allyClasses = ctx.allyPicks.map((id) => dominantClass((tag) => roleWeight(dataset, id, tag)));
   const classPositionFitValue = classPositionFit({
     candidateClass,
     modeId: ctx.modeId,
-    isFirstPick: ctx.action === "pick" && ctx.picksSoFar === 0,
-    isLastPick: ctx.action === "pick" && ctx.totalPicksInFormat - ctx.picksSoFar === 1,
+    isFirstPick,
+    isLastPick,
     allyDominantClasses: allyClasses,
   });
 
@@ -246,6 +255,12 @@ export function computeScoreBreakdown(
   // fabricated. Neutral (0.5) fallback so it contributes nothing when absent.
   const realPopularity = dataset.getRealPopularity(candidateId, ctx.rankBucket);
   const metaPopularity = realPopularity ?? 0.5;
+
+  // Real per-mode use-rate popularity (data/brawltime/README.md §6): a second, independent real
+  // popularity signal keyed by mode instead of rank bucket. Kept as its own term rather than
+  // merged into metaPopularity above so a recommendation can explain which axis it came from.
+  const realModePopularity = dataset.getModePopularity(candidateId, ctx.modeId);
+  const modePopularity = realModePopularity ?? 0.5;
 
   return {
     mapPerformance,
@@ -274,9 +289,13 @@ export function computeScoreBreakdown(
     modeClassFit,
     realPopularity,
     metaPopularity,
+    realModePopularity,
+    modePopularity,
     candidateClass,
     classCounter,
     classPositionFit: classPositionFitValue,
+    isFirstPick,
+    isLastPick,
   };
 }
 
@@ -294,6 +313,7 @@ function weightedScore(breakdown: ScoreBreakdown, weights: ScoreWeights): number
     weights.archetypeCounter * breakdown.archetypeCounter +
     weights.modeClassFit * breakdown.modeClassFit +
     weights.metaPopularity * breakdown.metaPopularity +
+    weights.modePopularity * breakdown.modePopularity +
     weights.classCounter * breakdown.classCounter +
     weights.classPositionFit * breakdown.classPositionFit;
   const penalty = weights.counterRiskPenalty * breakdown.counterRisk + weights.redundancyPenalty * breakdown.redundancy;

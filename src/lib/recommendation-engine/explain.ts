@@ -75,13 +75,17 @@ export function buildReasonsAndWarnings(
     reasons.push({
       type: "safe_first_pick",
       impact: flexImpact,
-      message: "Versatile, low-risk pick with few hard counters visible yet.",
+      message: b.isLastPick
+        ? "Versatile and low-risk — a safe way to close out the draft against whatever the enemy ended up with."
+        : "Versatile, low-risk pick with few hard counters visible yet.",
     });
   } else if (flexImpact > 0.02) {
     reasons.push({
       type: "flexibility",
       impact: flexImpact,
-      message: "Flexible across multiple roles, keeping later picks open.",
+      message: b.isLastPick
+        ? "Flexible across multiple roles — a safe closing pick with the whole draft now visible."
+        : "Flexible across multiple roles, keeping later picks open.",
     });
   }
 
@@ -134,7 +138,11 @@ export function buildReasonsAndWarnings(
           ? "Thrower saved for the last pick, where it's very hard for the enemy to counter."
           : b.candidateClass === "tank_counter"
             ? "Best available Anti-Tank — the strongest first pick outside Bounty/Knockout, since it denies both Tanks and Space Makers."
-            : "Strong draft-position fit for its class.",
+            : b.isLastPick
+              ? "Strong closer for its class — a safe way to finish the draft."
+              : b.isFirstPick
+                ? "Strong opening pick for its class."
+                : "Strong draft-position fit for its class.",
     });
   } else if (classPositionImpact < -0.03 && b.candidateClass) {
     warnings.push({
@@ -145,7 +153,11 @@ export function buildReasonsAndWarnings(
           ? "Throwers are only safe on the last pick — taking one now risks losing the lane outright."
           : b.candidateClass === "controller"
             ? "Control is a risky first pick — it can get overrun before it establishes position."
-            : "Weak draft-position fit for its class right now.",
+            : b.isLastPick
+              ? "Weak closer for its class — risky to leave for the last pick."
+              : b.isFirstPick
+                ? "Weak opening pick for its class — better saved for later."
+                : "Weak draft-position fit for its class right now.",
     });
   }
 
@@ -154,6 +166,20 @@ export function buildReasonsAndWarnings(
       type: "meta_popularity",
       impact: weights.metaPopularity * (b.realPopularity - 0.5),
       message: `Heavily favored by real Ranked players at this rank bracket (top ${Math.round((1 - b.realPopularity) * 100)}% by pick rate) — reflects real pick-rate data, not measured win rate.`,
+    });
+  }
+
+  if (b.realModePopularity !== undefined && b.realModePopularity > 0.7) {
+    reasons.push({
+      type: "mode_popularity",
+      impact: weights.modePopularity * (b.realModePopularity - 0.5),
+      message: `Heavily favored by real Ranked players specifically in this game mode (top ${Math.round((1 - b.realModePopularity) * 100)}% by use rate) — real use-rate data, not measured win rate.`,
+    });
+  } else if (b.realModePopularity !== undefined && b.realModePopularity < 0.15) {
+    warnings.push({
+      type: "mode_popularity",
+      impact: -weights.modePopularity * (0.5 - b.realModePopularity),
+      message: "Rarely played by real Ranked players in this specific game mode, even though it may do well elsewhere.",
     });
   }
 

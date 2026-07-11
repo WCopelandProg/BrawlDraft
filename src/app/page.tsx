@@ -8,8 +8,8 @@ import type { Team } from "@/lib/draft-engine/types";
 import { GAME_MODES } from "@/lib/data/modes";
 import { mapsForMode } from "@/lib/data/maps";
 import { BRAWLERS, BRAWLER_IDS } from "@/lib/data/brawlers";
-import { RANK_BUCKETS } from "@/lib/data/ranks";
-import { createProfile, loadProfiles, upsertProfile, type PlayerProfile } from "@/lib/storage/profiles";
+import { RANK_BUCKETS, getRankBucketMeta } from "@/lib/data/ranks";
+import { createProfile, deleteProfile, loadProfiles, upsertProfile, type PlayerProfile } from "@/lib/storage/profiles";
 import { saveDraftSession } from "@/lib/storage/draft-session";
 
 export default function SetupScreen() {
@@ -17,7 +17,6 @@ export default function SetupScreen() {
   const [profiles, setProfiles] = useState<PlayerProfile[]>([]);
   const [selectedProfileId, setSelectedProfileId] = useState<string>("guest");
   const [newProfileLabel, setNewProfileLabel] = useState("");
-  const [newProfileTag, setNewProfileTag] = useState("");
   const [newProfileRankBucket, setNewProfileRankBucket] = useState("all");
 
   const [formatId, setFormatId] = useState(DRAFT_FORMATS[1]!.id);
@@ -60,14 +59,22 @@ export default function SetupScreen() {
 
   function handleCreateProfile() {
     if (!newProfileLabel.trim()) return;
-    const profile = createProfile(newProfileLabel.trim(), newProfileTag.trim() || undefined);
+    const profile = createProfile(newProfileLabel.trim());
     const withRank = { ...profile, defaultRankBucket: newProfileRankBucket };
     upsertProfile(withRank);
     setProfiles((prev) => [...prev, withRank]);
     setSelectedProfileId(profile.id);
     setRankBucket(newProfileRankBucket);
     setNewProfileLabel("");
-    setNewProfileTag("");
+  }
+
+  function handleDeleteProfile(profileId: string) {
+    deleteProfile(profileId);
+    setProfiles((prev) => prev.filter((p) => p.id !== profileId));
+    if (selectedProfileId === profileId) {
+      setSelectedProfileId("guest");
+      setRankBucket("all");
+    }
   }
 
   function toggleBrawlerExcluded(brawlerId: string) {
@@ -138,19 +145,29 @@ export default function SetupScreen() {
         <h2 id="profile-heading" className="text-sm font-semibold uppercase tracking-wide text-slate-400">
           Player profile
         </h2>
-        <select
-          value={selectedProfileId}
-          onChange={(e) => handleProfileChange(e.target.value)}
-          className="w-full rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100"
-        >
-          <option value="guest">Guest (no saved profile)</option>
-          {profiles.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.label}
-              {p.playerTag ? ` (${p.playerTag})` : ""}
-            </option>
-          ))}
-        </select>
+        <div className="flex gap-2">
+          <select
+            value={selectedProfileId}
+            onChange={(e) => handleProfileChange(e.target.value)}
+            className="w-full min-w-0 flex-1 rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100"
+          >
+            <option value="guest">Guest (no saved profile)</option>
+            {profiles.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.label} ({getRankBucketMeta(p.defaultRankBucket ?? "all")?.name ?? "All ranks"})
+              </option>
+            ))}
+          </select>
+          {selectedProfile && (
+            <button
+              type="button"
+              onClick={() => handleDeleteProfile(selectedProfile.id)}
+              className="min-h-[44px] shrink-0 rounded-md border border-red-900 bg-red-950/50 px-3 py-2 text-sm font-medium text-red-300 hover:bg-red-900/50"
+            >
+              Delete profile
+            </button>
+          )}
+        </div>
 
         <div className="flex flex-col gap-2 rounded-md border border-slate-800 bg-slate-900/50 p-3 sm:flex-row">
           <input
@@ -158,13 +175,6 @@ export default function SetupScreen() {
             placeholder="Profile name (e.g. Main account)"
             value={newProfileLabel}
             onChange={(e) => setNewProfileLabel(e.target.value)}
-            className="flex-1 rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500"
-          />
-          <input
-            type="text"
-            placeholder="Player tag (optional, manual)"
-            value={newProfileTag}
-            onChange={(e) => setNewProfileTag(e.target.value)}
             className="flex-1 rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500"
           />
           <label htmlFor="new-profile-rank" className="sr-only">
@@ -191,8 +201,8 @@ export default function SetupScreen() {
           </button>
         </div>
         <p className="text-xs text-slate-500">
-          Player tags are not looked up automatically yet (no live API integration in this build &mdash; see
-          docs/discovery.md). Edit your available Brawlers manually below.
+          Profiles are stored only in this browser (no account/login) &mdash; pick a rank when you create
+          one and it's remembered for next time. Edit your available Brawlers manually below.
         </p>
 
         {selectedProfile && (

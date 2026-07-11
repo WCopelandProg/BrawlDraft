@@ -1,7 +1,8 @@
 import { confidenceFromSampleSize, MOCK_DATASET, shrinkToPrior } from "./mock-data";
 import generatedMapStats from "./real-data/generated-map-stats.json";
 import generatedPickRates from "./real-data/generated-pick-rates.json";
-import type { ImportedMapStatRow, ImportedPickRateRow } from "./real-data/types";
+import generatedModeUseRates from "./real-data/generated-mode-userates.json";
+import type { ImportedMapStatRow, ImportedModeUseRateRow, ImportedPickRateRow } from "./real-data/types";
 import type { MapStatRecord, RecommendationDataset } from "./types";
 
 /**
@@ -13,6 +14,10 @@ import type { MapStatRecord, RecommendationDataset } from "./types";
  *   simple "Group By: Brawler" dashboard export.
  * - getRealPopularity: real, global (not map-specific) pick-rate percentile for a rank bucket —
  *   popularity, not win rate, and never written into adjustedWinRate.
+ * - getModePopularity: real, per-mode (all maps, all ranks combined) use-rate percentile — a
+ *   different axis from getRealPopularity above (mode-scoped instead of rank-bucket-scoped). The
+ *   source export didn't state a rank bracket, so this applies the same per-mode number regardless
+ *   of the selected rank bucket rather than guessing one (see real-data/types.ts).
  *
  * getMatchup/getSynergy/getRoleFeatures/getMetaStrength/getRankSkew still come from the seeded
  * mock dataset — brawltime.ninja's exports don't carry pairwise or role/archetype data. This is
@@ -25,6 +30,7 @@ import type { MapStatRecord, RecommendationDataset } from "./types";
 
 const IMPORTED_MAP_ROWS = generatedMapStats as ImportedMapStatRow[];
 const IMPORTED_PICK_RATE_ROWS = generatedPickRates as ImportedPickRateRow[];
+const IMPORTED_MODE_USE_RATE_ROWS = generatedModeUseRates as ImportedModeUseRateRow[];
 
 function findImportedMapRow(
   brawlerId: string,
@@ -59,10 +65,16 @@ function getRealPopularity(brawlerId: string, rankBucket: string): number | unde
     ?.popularityPercentile;
 }
 
+function getModePopularity(brawlerId: string, modeId: string): number | undefined {
+  return IMPORTED_MODE_USE_RATE_ROWS.find((r) => r.brawlerId === brawlerId && r.modeId === modeId)
+    ?.popularityPercentile;
+}
+
 /** True if any real (non-mock) map data has been imported at all, for a one-time UI banner. */
 export const HAS_ANY_REAL_MAP_DATA = IMPORTED_MAP_ROWS.length > 0;
 export const HAS_ANY_REAL_PICK_RATE_DATA = IMPORTED_PICK_RATE_ROWS.length > 0;
-const HAS_ANY_REAL_DATA = HAS_ANY_REAL_MAP_DATA || HAS_ANY_REAL_PICK_RATE_DATA;
+export const HAS_ANY_REAL_MODE_USE_RATE_DATA = IMPORTED_MODE_USE_RATE_ROWS.length > 0;
+const HAS_ANY_REAL_DATA = HAS_ANY_REAL_MAP_DATA || HAS_ANY_REAL_PICK_RATE_DATA || HAS_ANY_REAL_MODE_USE_RATE_DATA;
 
 export function hasRealMapData(mapId: string, modeId: string, rankBucket: string): boolean {
   return IMPORTED_MAP_ROWS.some((r) => r.mapId === mapId && r.modeId === modeId && r.rankBucket === rankBucket);
@@ -72,10 +84,15 @@ export function hasRealPickRateData(rankBucket: string): boolean {
   return IMPORTED_PICK_RATE_ROWS.some((r) => r.rankBucket === rankBucket);
 }
 
+export function hasRealModeUseRateData(modeId: string): boolean {
+  return IMPORTED_MODE_USE_RATE_ROWS.some((r) => r.modeId === modeId);
+}
+
 export const HYBRID_DATASET: RecommendationDataset = {
   ...MOCK_DATASET,
   versionId: HAS_ANY_REAL_DATA ? `${MOCK_DATASET.versionId}+brawltime` : MOCK_DATASET.versionId,
   isMock: !HAS_ANY_REAL_DATA,
   getMapStat,
   getRealPopularity,
+  getModePopularity,
 };

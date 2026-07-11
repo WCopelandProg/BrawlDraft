@@ -6,7 +6,7 @@ export const BRAWLER_IDS = [
   "dynamike", "tick", "8bit", "rico", "penny", "darryl", "edgar", "gigi", "alli", "frank", "hank",
   "bibi", "kaze", "shade", "otis", "maisie", "chester", "clancy", "amber", "lumi", "lou", "charlie",
   "ruffs", "max", "belle", "nani", "angelo", "emz", "mortis", "lily", "gene", "mina", "gray", "gus",
-  "pierce", "jaeyong", "ninja", "finx", "bea", "griff", "stu", "meeple", "sirius", "kit", "crow",
+  "pierce", "jaeyong", "finx", "bea", "griff", "stu", "meeple", "sirius", "kit", "crow",
   "meg", "starrnova", "colette", "surge", "damian", "byron", "piper", "leon", "najia", "bolt",
   "kenji", "cordelius", "mico", "chuck", "melodie", "carl", "mandy", "bo", "sprout", "spike",
   "fang", "tara", "moe", "pearl", "ash", "buster", "berry", "lola", "squeak", "trunk", "juju",

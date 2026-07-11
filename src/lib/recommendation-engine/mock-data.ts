@@ -220,6 +220,11 @@ function getRealPopularity(): number | undefined {
   return undefined;
 }
 
+/** Same as getRealPopularity above — only hybrid-dataset.ts overlays real per-mode use-rate data. */
+function getModePopularity(): number | undefined {
+  return undefined;
+}
+
 export const MOCK_DATASET: RecommendationDataset = {
   versionId: MOCK_DATASET_VERSION,
   patchId: MOCK_PATCH_ID,
@@ -232,4 +237,5 @@ export const MOCK_DATASET: RecommendationDataset = {
   getMetaTrend,
   getRankSkew,
   getRealPopularity,
+  getModePopularity,
 };

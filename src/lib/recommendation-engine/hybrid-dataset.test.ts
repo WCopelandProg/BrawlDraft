@@ -2,9 +2,11 @@ import { describe, expect, it } from "vitest";
 import {
   HAS_ANY_REAL_MAP_DATA,
   HAS_ANY_REAL_PICK_RATE_DATA,
+  HAS_ANY_REAL_MODE_USE_RATE_DATA,
   HYBRID_DATASET,
   hasRealMapData,
   hasRealPickRateData,
+  hasRealModeUseRateData,
 } from "./hybrid-dataset";
 import { MOCK_DATASET } from "./mock-data";
 
@@ -62,7 +64,32 @@ describe("real pick-rate data (imported from a user-provided brawltime.ninja exp
     expect(HYBRID_DATASET.getRealPopularity("crow", "diamond")).toBeUndefined();
   });
 
-  it("returns undefined for a Brawler not present in the imported export (e.g. the guide-only 'ninja' entry)", () => {
-    expect(HYBRID_DATASET.getRealPopularity("ninja", "legendary")).toBeUndefined();
+  it("returns undefined for a Brawler id not present in the imported export", () => {
+    expect(HYBRID_DATASET.getRealPopularity("not-a-real-brawler", "legendary")).toBeUndefined();
+  });
+});
+
+describe("real per-mode use-rate data (imported from 6 user-provided brawltime.ninja exports)", () => {
+  it("has real data imported for all 6 seeded Ranked modes", () => {
+    expect(HAS_ANY_REAL_MODE_USE_RATE_DATA).toBe(true);
+    for (const modeId of ["gem-grab", "brawl-ball", "bounty", "heist", "hot-zone", "knockout"]) {
+      expect(hasRealModeUseRateData(modeId)).toBe(true);
+    }
+  });
+
+  it("Crow (the most-used Brawler in the Gem Grab export) has the maximum popularity percentile", () => {
+    expect(HYBRID_DATASET.getModePopularity("crow", "gem-grab")).toBeCloseTo(1, 5);
+  });
+
+  it("a Brawler with a tiny use rate in the Gem Grab export has a near-zero popularity percentile", () => {
+    expect(HYBRID_DATASET.getModePopularity("angelo", "gem-grab")).toBeLessThan(0.05);
+  });
+
+  it("is a distinct axis from rank-bucket pick rate — not defined for a mode with no import", () => {
+    expect(HYBRID_DATASET.getModePopularity("crow", "not-a-real-mode")).toBeUndefined();
+  });
+
+  it("returns undefined for a Brawler id not present in the imported export", () => {
+    expect(HYBRID_DATASET.getModePopularity("not-a-real-brawler", "gem-grab")).toBeUndefined();
   });
 });

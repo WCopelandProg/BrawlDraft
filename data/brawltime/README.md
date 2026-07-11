@@ -68,7 +68,7 @@ map/mode/rank combination has real data loaded, amber when it's still on the moc
 
 ## 4. Brawler name matching
 
-The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (105 as of
+The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (104 as of
 this writing — every Brawler named in a user-provided drafting guide plus every Brawler appearing
 in the real pick-rate export in step 5 below). Any CSV row for a Brawler outside that set is
 skipped with a warning printed to the console; it isn't silently dropped without telling you. Both
@@ -95,3 +95,26 @@ same real numbers are written to each bucket named, with that fact recorded in `
 lands in `src/lib/recommendation-engine/real-data/generated-pick-rates.json` as a 0-1 percentile
 per Brawler per rank bucket, and shows up in recommendations as a `meta_popularity` reason on
 Brawlers with real, high pick rate at the active rank bucket — never as a claim about win rate.
+
+## 6. Importing per-mode use-rate data instead (a third, independent axis)
+
+If your export is a **per-mode use-rate snapshot** (dashboard: Metric = "Use Rate" or "Pick Rate",
+Map = "All Maps", Mode = one specific mode, Group By = "Brawler") rather than a single rank-bucket
+snapshot across all modes, use a third importer:
+
+```bash
+node scripts/import-mode-userate-csv.mjs data/brawltime/mode-userate-gem-grab.csv \
+  --mode gem-grab \
+  --exported-at 2026-07-11 \
+  --note "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified"
+```
+
+This is a genuinely different axis from step 5 above: it's scoped to one *mode* (all ranks
+combined) instead of one *rank bucket* (all modes combined) — the two are never averaged together.
+If the export you're working from doesn't state which rank bracket it came from (this app's own
+seed data, six real exports covering Gem Grab/Brawl Ball/Bounty/Heist/Hot Zone/Knockout, didn't),
+say so honestly in `--note` rather than guessing one, and the resulting percentile is applied the
+same way regardless of the rank bucket selected in the app. The result lands in
+`src/lib/recommendation-engine/real-data/generated-mode-userates.json` and shows up as a
+`mode_popularity` reason/warning — labeled as real use-rate data for that specific mode, never
+conflated with `meta_popularity`'s rank-bucket-scoped signal or with measured win rate.

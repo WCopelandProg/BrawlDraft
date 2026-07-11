@@ -452,6 +452,46 @@ describe("real pick-rate data feeding into recommendations (HYBRID_DATASET)", ()
   });
 });
 
+describe("real per-mode use-rate data feeding into recommendations (HYBRID_DATASET)", () => {
+  it("Crow (real top use rate in Gem Grab) has a higher modePopularity component than a low-use-rate Brawler", () => {
+    const ctx = baseContext({ modeId: "gem-grab" });
+    const crowBreakdown = computeScoreBreakdown("crow", ctx, HYBRID_DATASET);
+    const angeloBreakdown = computeScoreBreakdown("angelo", ctx, HYBRID_DATASET);
+    expect(crowBreakdown.modePopularity).toBeGreaterThan(angeloBreakdown.modePopularity);
+    expect(crowBreakdown.realModePopularity).toBeCloseTo(1, 5);
+  });
+
+  it("surfaces a mode_popularity reason for a Brawler with real high use rate in this mode", () => {
+    const modePopularityOnlyWeights = {
+      ...DEFAULT_WEIGHTS,
+      mapPerformance: 0,
+      matchupValue: 0,
+      allySynergy: 0,
+      compositionFit: 0,
+      roleCoverage: 0,
+      draftFlexibility: 0,
+      recentMetaStrength: 0,
+      playerComfort: 0,
+      statisticalConfidence: 0,
+      archetypeCounter: 0,
+      modeClassFit: 0,
+      metaPopularity: 0,
+      classCounter: 0,
+      classPositionFit: 0,
+    };
+    const ctx = baseContext({ modeId: "gem-grab" });
+    const rec = scorePickCandidate("crow", ctx, HYBRID_DATASET, modePopularityOnlyWeights);
+    expect(rec.reasons.some((r) => r.type === "mode_popularity")).toBe(true);
+  });
+
+  it("does not surface a mode_popularity reason for a mode with no real use-rate import", () => {
+    const ctx = baseContext({ modeId: "showdown" });
+    const rec = scorePickCandidate("crow", ctx, HYBRID_DATASET);
+    expect(rec.reasons.some((r) => r.type === "mode_popularity")).toBe(false);
+    expect(rec.warnings.some((w) => w.type === "mode_popularity")).toBe(false);
+  });
+});
+
 describe("class-counter matrix scoring (Anti-Tank / Tank / Space Maker / Thrower / Sniper / Control / Support)", () => {
   it("an Anti-Tank (chester) scores its classCounter higher against an enemy Tank than Support does", () => {
     const ctx = baseContext({ enemyPicks: ["frank"] }); // frank is a Tank
@@ -507,6 +547,53 @@ describe("expanded roster data integrity", () => {
       expect(Number.isFinite(rec.score)).toBe(true);
       expect(rec.score).toBeGreaterThanOrEqual(0);
       expect(rec.score).toBeLessThanOrEqual(1);
+    }
+  });
+});
+
+describe("situational explanation text (first/last pick)", () => {
+  // Isolate the draftFlexibility term so its reason text is guaranteed to actually appear,
+  // regardless of what other signals happen to dominate for a given candidate/context.
+  const flexibilityOnlyWeights = {
+    ...DEFAULT_WEIGHTS,
+    mapPerformance: 0,
+    matchupValue: 0,
+    allySynergy: 0,
+    compositionFit: 0,
+    roleCoverage: 0,
+    recentMetaStrength: 0,
+    playerComfort: 0,
+    statisticalConfidence: 0,
+    archetypeCounter: 0,
+    modeClassFit: 0,
+    metaPopularity: 0,
+    classCounter: 0,
+    classPositionFit: 0,
+    counterRiskPenalty: 0,
+    redundancyPenalty: 0,
+  };
+
+  it("never claims a last pick 'keeps later picks open' (no later pick exists)", () => {
+    const ctx = baseContext({ picksSoFar: 5, totalPicksInFormat: 6 });
+    const rec = scorePickCandidate("gray", ctx, MOCK_DATASET, flexibilityOnlyWeights);
+    const allMessages = [...rec.reasons, ...rec.warnings].map((r) => r.message);
+    expect(allMessages.some((m) => m.toLowerCase().includes("later picks open"))).toBe(false);
+  });
+
+  it("uses closing-pick wording instead when a flexibility-style reason fires on the last pick", () => {
+    const lastPickCtx = baseContext({ picksSoFar: 5, totalPicksInFormat: 6 });
+    const rec = scorePickCandidate("gray", lastPickCtx, MOCK_DATASET, flexibilityOnlyWeights);
+    const flexReason = rec.reasons.find((r) => r.type === "flexibility" || r.type === "safe_first_pick");
+    expect(flexReason).toBeDefined();
+    expect(flexReason!.message.toLowerCase()).not.toContain("later picks open");
+  });
+
+  it("keeps the original 'keeping later picks open' wording on a genuinely early pick", () => {
+    const earlyPickCtx = baseContext({ picksSoFar: 0, totalPicksInFormat: 6 });
+    const rec = scorePickCandidate("gray", earlyPickCtx, MOCK_DATASET, flexibilityOnlyWeights);
+    const flexReason = rec.reasons.find((r) => r.type === "flexibility");
+    if (flexReason) {
+      expect(flexReason.message.toLowerCase()).toContain("later picks open");
     }
   });
 });

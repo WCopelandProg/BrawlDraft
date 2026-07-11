@@ -26,6 +26,10 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   // for every candidate otherwise (same "neutral until real data exists" pattern as
   // mapPerformance/matchupValue/allySynergy above when their own inputs are absent).
   metaPopularity: 0.08,
+  // Real per-mode use-rate popularity (data/brawltime/README.md §6) — a second, independent real
+  // popularity signal, this one keyed by mode rather than rank bucket. Same "neutral 0.5 until
+  // real data exists" fallback pattern as metaPopularity above.
+  modePopularity: 0.06,
   // Class-counter matrix and draft-position/mode fit (Anti-Tank/Tank/Space Maker/Thrower/Sniper/
   // Control/Support), from a second, independent user-provided framework — see class-counters.ts.
   classCounter: 0.1,

@@ -49,3 +49,21 @@ export interface ImportedPickRateRow {
   exportedAt: string;
   sourceNote?: string;
 }
+
+/**
+ * One row of real, per-mode (not rank-bucket-scoped) use-rate data, imported by
+ * scripts/import-mode-userate-csv.mjs. The source CSVs this was built against gave a use-rate
+ * breakdown per game mode (all maps combined) but didn't state which rank bracket they came from,
+ * so — rather than guess one — this is applied uniformly across every rank bucket for the given
+ * mode, and `sourceNote` records that the rank bracket is unstated so it stays auditable.
+ */
+export interface ImportedModeUseRateRow {
+  brawlerId: string;
+  modeId: string;
+  /** 0-1 fraction, exactly as exported. */
+  useRate: number;
+  /** 0-1, this Brawler's rank among every Brawler in the same mode's import by use rate. */
+  popularityPercentile: number;
+  exportedAt: string;
+  sourceNote?: string;
+}

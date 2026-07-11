@@ -42,6 +42,7 @@ production behavior (§18, §19.14):
 | Rank-bracket skew (a Brawler being stronger at low elo but easily countered at high elo, or vice versa) | **Mechanism is real, inputs are curated.** `BRAWLER_RANK_SKEW` in `src/lib/data/brawlers.ts` is a hand-curated -1..+1 value per Brawler; `getMapStat`/`getMatchup` in the mock dataset apply it as a genuine, monotonic function of the selected rank bucket (see §2a below). The *shape* of the effect is real and tested; the specific skew numbers are heuristic guesses, not measured from real rank-segmented data. |
 | Patch buff/nerf reactivity (a recent buff/nerf shifting a Brawler's recommendation) | **Mechanism is real, patch list is seeded.** `MOCK_PATCH_HISTORY` in `mock-data.ts` lists which Brawlers were buffed/nerfed per patch; `getMetaStrength`/`getMetaTrend` react to it immediately. In Phase 4 this same shape is populated from the real `balance_patches` table instead of being hand-written — no engine code changes when that happens. |
 | Meta popularity (pick rate) | **Real**, as of this writing. `generated-pick-rates.json` holds a real, user-provided brawltime.ninja pick-rate-by-Brawler export (Ranked, Legendary I-Masters), imported into the `legendary` and `masters` rank buckets via `scripts/import-pickrate-csv.mjs`. This is genuinely measured popularity, not fabricated — see §2d below for exactly what it does and doesn't imply. |
+| Mode popularity (use rate, per game mode) | **Real**, as of this writing. `generated-mode-userates.json` holds 6 real, user-provided brawltime.ninja use-rate-by-Brawler exports, one per Ranked mode (Gem Grab, Brawl Ball, Bounty, Heist, Hot Zone, Knockout), imported via `scripts/import-mode-userate-csv.mjs`. A distinct axis from the row above (mode-scoped, not rank-bucket-scoped) — the source exports didn't state a rank bracket, so the percentile is applied the same way regardless of rank bucket, and that gap is recorded honestly rather than guessed. Surfaced as its own `mode_popularity` reason/warning, never merged into `meta_popularity`. See §2e below. |
 
 No part of the Phase 1/2 delivery calls the network. This is intentional — it lets the draft engine
 and recommendation engine be fully built and tested against the real constraints (formats, filtering,
@@ -160,10 +161,11 @@ node scripts/import-pickrate-csv.mjs data/brawltime/legendary-masters-pickrate.c
   --note "brawltime.ninja, Ranked pick rate, Legendary I-Masters, provided by user 2026-07-10"
 ```
 
-104 of this app's 105 Brawlers matched a row in the export (the one that didn't — `ninja`, from
-the guide-derived roster in §2c — has no corresponding row in this particular export; it isn't the
-same entry as the export's `Najia`, which was added as its own Brawler rather than guessed to be a
-rename, per the same no-fabrication rule as everything else in this file). The result lives in
+All 104 of this app's Brawlers matched a row in the export (a since-removed guide-derived
+`ninja` entry — not a real Brawl Stars character — was the one exception before it was deleted from
+the roster; it isn't the same entry as the export's `Najia`, which was added as its own Brawler
+rather than guessed to be a rename, per the same no-fabrication rule as everything else in this
+file). The result lives in
 `src/lib/recommendation-engine/real-data/generated-pick-rates.json` and is genuinely real: every
 number in it is exactly what the user pasted, converted to a 0-1 popularity percentile per rank
 bucket (§2b's `computePercentiles`).
@@ -182,6 +184,41 @@ what it is, not stretched to claim something stronger.
 applies) — `all`/`diamond`/`mythic` still get a neutral 0.5 contribution from this term, since
 applying a Legendary-Masters-specific popularity signal to lower brackets would be an unwarranted
 generalization the data doesn't support.
+
+### 2e. Real per-mode use-rate data (imported, live in this repo as of this writing)
+
+A user provided 6 real CSV exports from brawltime.ninja's dashboard: use rate by Brawler, one file
+per Ranked mode (all maps combined within that mode) —
+`data/brawltime/mode-userate-{gem-grab,brawl-ball,bounty,heist,hot-zone,knockout}.csv`. Each was
+imported with, e.g.:
+
+```
+node scripts/import-mode-userate-csv.mjs data/brawltime/mode-userate-gem-grab.csv \
+  --mode gem-grab --exported-at 2026-07-11 \
+  --note "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+```
+
+Every row across all 6 files matched a Brawler already in this app's roster (100-104 rows per mode,
+matching however many Brawlers appeared in that mode's real export — not every Brawler necessarily
+shows up in every mode's list). The result lives in
+`src/lib/recommendation-engine/real-data/generated-mode-userates.json`, converted to a 0-1
+popularity percentile per Brawler per mode (`computeModePercentiles`, the same math as §2d's
+`computePercentiles` but scoped to one mode's rows instead of one rank bucket's).
+
+**What's different from §2d, and why it's kept separate.** §2d's pick-rate data is scoped to a rank
+bucket (Legendary-Masters) across all modes combined; this data is scoped to a mode across all
+ranks combined — two genuinely different axes of the same underlying "how often do real players
+pick this" question, neither a subset of the other. They are never averaged together: a
+recommendation can show both a `meta_popularity` reason (real for this rank bucket) and a
+`mode_popularity` reason (real for this mode) side by side, each labeled with which axis it came
+from.
+
+**Coverage and its one honest gap.** All 6 Ranked modes now have real per-mode popularity data,
+applied regardless of the selected rank bucket. The source exports did not state which rank
+bracket they were pulled from (unlike §2d's explicit "Legendary I-Masters" filter) — rather than
+guess a bracket that was never given, this data is applied the same way across every rank bucket
+for its mode, and `sourceNote` on every imported row says "rank bracket unspecified" so this
+approximation stays auditable instead of silently presented as bracket-specific.
 
 ## 3. Statistical record shapes (for Phase 4 ingestion, designed now)
 

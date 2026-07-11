@@ -119,6 +119,14 @@ export interface RecommendationDataset {
    * conflated with getMapStat's adjustedWinRate.
    */
   getRealPopularity(brawlerId: string, rankBucket: string): number | undefined;
+  /**
+   * 0-1 percentile from real, user-imported per-mode use-rate data (see
+   * scripts/import-mode-userate-csv.mjs and data/brawltime/README.md), or undefined when no real
+   * data has been imported for that mode. A different axis from getRealPopularity above (mode-
+   * scoped rather than rank-bucket-scoped) — the two are never averaged together, only ever
+   * surfaced as separate, separately-labeled signals.
+   */
+  getModePopularity(brawlerId: string, modeId: string): number | undefined;
 }
 
 export interface ScoreWeights {
@@ -137,6 +145,8 @@ export interface ScoreWeights {
   modeClassFit: number;
   /** Real pick-rate popularity for this rank bucket where imported, neutral (0.5) otherwise. */
   metaPopularity: number;
+  /** Real per-mode use-rate popularity where imported, neutral (0.5) otherwise. See class-counters.ts-adjacent getModePopularity. */
+  modePopularity: number;
   /** Class-counter matrix (Anti-Tank/Tank/Space Maker/Thrower/Sniper/Control/Support), see class-counters.ts. */
   classCounter: number;
   /** Draft-position/mode fit for the candidate's class (e.g. Thrower only safe last pick), see class-counters.ts. */
@@ -161,6 +171,7 @@ export type RecommendationReasonType =
   | "archetype_counter"
   | "mode_class_fit"
   | "meta_popularity"
+  | "mode_popularity"
   | "class_counter"
   | "class_position_fit"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick

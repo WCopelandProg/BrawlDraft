@@ -1,0 +1,4946 @@
+[
+  {
+    "brawlerId": "8bit",
+    "modeId": "bounty",
+    "useRate": 0.032896512393704135,
+    "popularityPercentile": 0.9215686274509803,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "bounty",
+    "useRate": 0.001894877742619108,
+    "popularityPercentile": 0.45098039215686275,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "bounty",
+    "useRate": 0.00008967386477629561,
+    "popularityPercentile": 0.029411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "angelo",
+    "modeId": "bounty",
+    "useRate": 0.012985120519087514,
+    "popularityPercentile": 0.7549019607843137,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "bounty",
+    "useRate": 0.0005201084157025145,
+    "popularityPercentile": 0.17647058823529413,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "bounty",
+    "useRate": 0.0008298281486606433,
+    "popularityPercentile": 0.28431372549019607,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "bounty",
+    "useRate": 0.003719395991336815,
+    "popularityPercentile": 0.5784313725490197,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "bounty",
+    "useRate": 0.016202515317417027,
+    "popularityPercentile": 0.7843137254901961,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "bounty",
+    "useRate": 0.0006853152665788438,
+    "popularityPercentile": 0.22549019607843138,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "bounty",
+    "useRate": 0.0009822737187803457,
+    "popularityPercentile": 0.3235294117647059,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "bounty",
+    "useRate": 0.001309238425733916,
+    "popularityPercentile": 0.38235294117647056,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "bounty",
+    "useRate": 0.015068658277216752,
+    "popularityPercentile": 0.7745098039215687,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "bounty",
+    "useRate": 0.00147151363103102,
+    "popularityPercentile": 0.4019607843137255,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "bounty",
+    "useRate": 0.05751319542297696,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "bounty",
+    "useRate": 0.002837660470949893,
+    "popularityPercentile": 0.5196078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "bounty",
+    "useRate": 0.001345452871124343,
+    "popularityPercentile": 0.39215686274509803,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "bounty",
+    "useRate": 0.0009908962057780665,
+    "popularityPercentile": 0.3333333333333333,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "bounty",
+    "useRate": 0.05744369817777533,
+    "popularityPercentile": 0.9901960784313726,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "bounty",
+    "useRate": 0.006521014466636235,
+    "popularityPercentile": 0.6372549019607843,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "bounty",
+    "useRate": 0.0066036178920744,
+    "popularityPercentile": 0.6470588235294118,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "bounty",
+    "useRate": 0.003454513190766834,
+    "popularityPercentile": 0.5392156862745098,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "bounty",
+    "useRate": 0.00017934772955259122,
+    "popularityPercentile": 0.058823529411764705,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "bounty",
+    "useRate": 0.0003228259131946642,
+    "popularityPercentile": 0.11764705882352941,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "bounty",
+    "useRate": 0.024771025546532027,
+    "popularityPercentile": 0.8529411764705882,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "bounty",
+    "useRate": 0.009827738230262137,
+    "popularityPercentile": 0.696078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "cordelius",
+    "modeId": "bounty",
+    "useRate": 0.003541427859703859,
+    "popularityPercentile": 0.5686274509803921,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "bounty",
+    "useRate": 0.025228879606110997,
+    "popularityPercentile": 0.8627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "bounty",
+    "useRate": 0.023962408715885775,
+    "popularityPercentile": 0.8333333333333334,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "bounty",
+    "useRate": 0.00037973432737962103,
+    "popularityPercentile": 0.13725490196078433,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "bounty",
+    "useRate": 0.0009507154163686879,
+    "popularityPercentile": 0.3137254901960784,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "bounty",
+    "useRate": 0.0002510868213736277,
+    "popularityPercentile": 0.09803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "bounty",
+    "useRate": 0.0009391612837917422,
+    "popularityPercentile": 0.30392156862745096,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "bounty",
+    "useRate": 0.019072251439998442,
+    "popularityPercentile": 0.8137254901960784,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "bounty",
+    "useRate": 0.0003731812372613533,
+    "popularityPercentile": 0.12745098039215685,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "bounty",
+    "useRate": 0.0016251663493304035,
+    "popularityPercentile": 0.4215686274509804,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "bounty",
+    "useRate": 0.0006104720794386278,
+    "popularityPercentile": 0.20588235294117646,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "bounty",
+    "useRate": 0.012633495499320462,
+    "popularityPercentile": 0.7450980392156863,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "bounty",
+    "useRate": 0.0007963728991094868,
+    "popularityPercentile": 0.2647058823529412,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "bounty",
+    "useRate": 0.0004256059582074953,
+    "popularityPercentile": 0.14705882352941177,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "bounty",
+    "useRate": 0.0007698156391565069,
+    "popularityPercentile": 0.23529411764705882,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "bounty",
+    "useRate": 0.030820045074913028,
+    "popularityPercentile": 0.9019607843137255,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "bounty",
+    "useRate": 0.0028221399943539954,
+    "popularityPercentile": 0.5098039215686274,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "bounty",
+    "useRate": 0.001279749520201711,
+    "popularityPercentile": 0.3627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "bounty",
+    "useRate": 0.008553507101738966,
+    "popularityPercentile": 0.6666666666666666,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "bounty",
+    "useRate": 0.011304770252971698,
+    "popularityPercentile": 0.7254901960784313,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "bounty",
+    "useRate": 0.0023679073793140674,
+    "popularityPercentile": 0.49019607843137253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "bounty",
+    "useRate": 0.01751951398144889,
+    "popularityPercentile": 0.7941176470588235,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "bounty",
+    "useRate": 0.0006277170534340693,
+    "popularityPercentile": 0.21568627450980393,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "bounty",
+    "useRate": 0.00010760863773155473,
+    "popularityPercentile": 0.0392156862745098,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "bounty",
+    "useRate": 0.00871267821171689,
+    "popularityPercentile": 0.6764705882352942,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "bounty",
+    "useRate": 0.0005815005231262862,
+    "popularityPercentile": 0.18627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "bounty",
+    "useRate": 0.0002452235302151776,
+    "popularityPercentile": 0.0784313725490196,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "bounty",
+    "useRate": 0.0011355815375998204,
+    "popularityPercentile": 0.3431372549019608,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "bounty",
+    "useRate": 0.010017605393951946,
+    "popularityPercentile": 0.7058823529411765,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "bounty",
+    "useRate": 0.005798277606487283,
+    "popularityPercentile": 0.6274509803921569,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "bounty",
+    "useRate": 0.014191578899808597,
+    "popularityPercentile": 0.7647058823529411,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "bounty",
+    "useRate": 0.0002510868213736277,
+    "popularityPercentile": 0.08823529411764706,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "bounty",
+    "useRate": 0.0392116218708348,
+    "popularityPercentile": 0.9509803921568627,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "bounty",
+    "useRate": 0.0035378064151648163,
+    "popularityPercentile": 0.5588235294117647,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "bounty",
+    "useRate": 0.0007891300100314014,
+    "popularityPercentile": 0.2549019607843137,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "bounty",
+    "useRate": 0.001218184963037985,
+    "popularityPercentile": 0.35294117647058826,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "bounty",
+    "useRate": 0.004620618332338585,
+    "popularityPercentile": 0.5980392156862745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "bounty",
+    "useRate": 0.0002709185414683854,
+    "popularityPercentile": 0.10784313725490197,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "bounty",
+    "useRate": 0.01939249060709379,
+    "popularityPercentile": 0.8235294117647058,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "bounty",
+    "useRate": 0.057221755362454,
+    "popularityPercentile": 0.9803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "bounty",
+    "useRate": 0.031384300624043876,
+    "popularityPercentile": 0.9117647058823529,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "bounty",
+    "useRate": 0.029619449985350394,
+    "popularityPercentile": 0.8921568627450981,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "bounty",
+    "useRate": 0.0012913036527786568,
+    "popularityPercentile": 0.37254901960784315,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "bounty",
+    "useRate": 0.001614129565973321,
+    "popularityPercentile": 0.4117647058823529,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "bounty",
+    "useRate": 0.018577493136069226,
+    "popularityPercentile": 0.803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "bounty",
+    "useRate": 0.00044836932388147806,
+    "popularityPercentile": 0.1568627450980392,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "bounty",
+    "useRate": 0.03700029885539934,
+    "popularityPercentile": 0.9411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "bounty",
+    "useRate": 0.0019642025380807826,
+    "popularityPercentile": 0.46078431372549017,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "bounty",
+    "useRate": 0.025266128749941153,
+    "popularityPercentile": 0.8725490196078431,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "bounty",
+    "useRate": 0.024698596655751172,
+    "popularityPercentile": 0.8431372549019608,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "bounty",
+    "useRate": 0.000053804318865777365,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ollie",
+    "modeId": "bounty",
+    "useRate": 0.000878803874807697,
+    "popularityPercentile": 0.29411764705882354,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "bounty",
+    "useRate": 0.011919036226689323,
+    "popularityPercentile": 0.7352941176470589,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "bounty",
+    "useRate": 0.00007173909182103649,
+    "popularityPercentile": 0.0196078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "bounty",
+    "useRate": 0.0034836571968191303,
+    "popularityPercentile": 0.5490196078431373,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "penny",
+    "modeId": "bounty",
+    "useRate": 0.00941851499735031,
+    "popularityPercentile": 0.6862745098039216,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "bounty",
+    "useRate": 0.05464535624753505,
+    "popularityPercentile": 0.9705882352941176,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "bounty",
+    "useRate": 0.04168937973449983,
+    "popularityPercentile": 0.9607843137254902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "bounty",
+    "useRate": 0.000466648996316646,
+    "popularityPercentile": 0.16666666666666666,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "bounty",
+    "useRate": 0.0028071368669779617,
+    "popularityPercentile": 0.5,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "bounty",
+    "useRate": 0.00022728875725991848,
+    "popularityPercentile": 0.06862745098039216,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "bounty",
+    "useRate": 0.0016320643389285802,
+    "popularityPercentile": 0.43137254901960786,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "bounty",
+    "useRate": 0.005539085647335798,
+    "popularityPercentile": 0.6176470588235294,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "bounty",
+    "useRate": 0.00007173909182103649,
+    "popularityPercentile": 0.00980392156862745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "bounty",
+    "useRate": 0.010746550444739256,
+    "popularityPercentile": 0.7156862745098039,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "bounty",
+    "useRate": 0.0008025810897478457,
+    "popularityPercentile": 0.27450980392156865,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "bounty",
+    "useRate": 0.0018210692539186186,
+    "popularityPercentile": 0.4411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "bounty",
+    "useRate": 0.005412335088469303,
+    "popularityPercentile": 0.6078431372549019,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "bounty",
+    "useRate": 0.007619346860405902,
+    "popularityPercentile": 0.6568627450980392,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "bounty",
+    "useRate": 0.002967170225655658,
+    "popularityPercentile": 0.5294117647058824,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "bounty",
+    "useRate": 0.027599201281784426,
+    "popularityPercentile": 0.8823529411764706,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "bounty",
+    "useRate": 0.0022887529486749912,
+    "popularityPercentile": 0.4803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "bounty",
+    "useRate": 0.033774971369031924,
+    "popularityPercentile": 0.9313725490196079,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "bounty",
+    "useRate": 0.00017089769229482491,
+    "popularityPercentile": 0.049019607843137254,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "bounty",
+    "useRate": 0.0037325021715733505,
+    "popularityPercentile": 0.5882352941176471,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "bounty",
+    "useRate": 0.0006102996296986734,
+    "popularityPercentile": 0.19607843137254902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "bounty",
+    "useRate": 0.0007843014173126777,
+    "popularityPercentile": 0.24509803921568626,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "bounty",
+    "useRate": 0.002276681466878182,
+    "popularityPercentile": 0.47058823529411764,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Bounty, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "8bit",
+    "modeId": "brawl-ball",
+    "useRate": 0.025261756480124936,
+    "popularityPercentile": 0.8529411764705882,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "brawl-ball",
+    "useRate": 0.005984984879910565,
+    "popularityPercentile": 0.6764705882352942,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "brawl-ball",
+    "useRate": 0.0019885282015910306,
+    "popularityPercentile": 0.43137254901960786,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "brawl-ball",
+    "useRate": 0.004284862554247153,
+    "popularityPercentile": 0.6176470588235294,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "brawl-ball",
+    "useRate": 0.004117015530959548,
+    "popularityPercentile": 0.5980392156862745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "brawl-ball",
+    "useRate": 0.002257880235865774,
+    "popularityPercentile": 0.47058823529411764,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "brawl-ball",
+    "useRate": 0.00028823265918532007,
+    "popularityPercentile": 0.10784313725490197,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007751449217874443,
+    "popularityPercentile": 0.2647058823529412,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "brawl-ball",
+    "useRate": 0.008072766274838848,
+    "popularityPercentile": 0.6862745098039216,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "brawl-ball",
+    "useRate": 0.0035970188705783395,
+    "popularityPercentile": 0.5784313725490197,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "brawl-ball",
+    "useRate": 0.003338579491068425,
+    "popularityPercentile": 0.5686274509803921,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "brawl-ball",
+    "useRate": 0.00010808724719449503,
+    "popularityPercentile": 0.029411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "brawl-ball",
+    "useRate": 0.02951110960220082,
+    "popularityPercentile": 0.8823529411764706,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "brawl-ball",
+    "useRate": 0.013120995012397121,
+    "popularityPercentile": 0.7647058823529411,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "brawl-ball",
+    "useRate": 0.002637917768469495,
+    "popularityPercentile": 0.5,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "brawl-ball",
+    "useRate": 0.0031113191251723074,
+    "popularityPercentile": 0.5196078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "brawl-ball",
+    "useRate": 0.003272237478767958,
+    "popularityPercentile": 0.5588235294117647,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "brawl-ball",
+    "useRate": 0.008285996084608758,
+    "popularityPercentile": 0.696078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "brawl-ball",
+    "useRate": 0.004461197197907403,
+    "popularityPercentile": 0.6274509803921569,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "brawl-ball",
+    "useRate": 0.050524205827219074,
+    "popularityPercentile": 0.9803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "brawl-ball",
+    "useRate": 0.00028823265918532007,
+    "popularityPercentile": 0.11764705882352941,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "brawl-ball",
+    "useRate": 0.0022674071566922117,
+    "popularityPercentile": 0.4803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "brawl-ball",
+    "useRate": 0.03058903738952669,
+    "popularityPercentile": 0.8921568627450981,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "brawl-ball",
+    "useRate": 0.020096606441514925,
+    "popularityPercentile": 0.8137254901960784,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "cordelius",
+    "modeId": "brawl-ball",
+    "useRate": 0.009140993924595981,
+    "popularityPercentile": 0.7156862745098039,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "brawl-ball",
+    "useRate": 0.056517158677275386,
+    "popularityPercentile": 0.9901960784313726,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "brawl-ball",
+    "useRate": 0.03091641703247156,
+    "popularityPercentile": 0.9019607843137255,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "brawl-ball",
+    "useRate": 0.0003422762827825676,
+    "popularityPercentile": 0.12745098039215685,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "brawl-ball",
+    "useRate": 0.0008487620372644642,
+    "popularityPercentile": 0.28431372549019607,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007749717050451455,
+    "popularityPercentile": 0.2549019607843137,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "brawl-ball",
+    "useRate": 0.004609817162799834,
+    "popularityPercentile": 0.6470588235294118,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "brawl-ball",
+    "useRate": 0.027992171988982028,
+    "popularityPercentile": 0.8627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "brawl-ball",
+    "useRate": 0.0012163279644226668,
+    "popularityPercentile": 0.3431372549019608,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "brawl-ball",
+    "useRate": 0.02284676865899409,
+    "popularityPercentile": 0.8235294117647058,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "brawl-ball",
+    "useRate": 0.000054043623597247514,
+    "popularityPercentile": 0.00980392156862745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "brawl-ball",
+    "useRate": 0.0020697668537292004,
+    "popularityPercentile": 0.4411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007117475941060578,
+    "popularityPercentile": 0.21568627450980393,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "brawl-ball",
+    "useRate": 0.00420552928627427,
+    "popularityPercentile": 0.6078431372549019,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "brawl-ball",
+    "useRate": 0.0031244835975870215,
+    "popularityPercentile": 0.5294117647058824,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "brawl-ball",
+    "useRate": 0.00010808724719449503,
+    "popularityPercentile": 0.0196078431372549,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "brawl-ball",
+    "useRate": 0.0019819459653836733,
+    "popularityPercentile": 0.4215686274509804,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "brawl-ball",
+    "useRate": 0.0002347086858149692,
+    "popularityPercentile": 0.0784313725490196,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "brawl-ball",
+    "useRate": 0.000555332875810178,
+    "popularityPercentile": 0.16666666666666666,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "brawl-ball",
+    "useRate": 0.061421271085241,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005224216947733927,
+    "popularityPercentile": 0.1568627450980392,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "brawl-ball",
+    "useRate": 0.0006074711152421379,
+    "popularityPercentile": 0.20588235294117646,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "brawl-ball",
+    "useRate": 0.0022228904539214017,
+    "popularityPercentile": 0.46078431372549017,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "brawl-ball",
+    "useRate": 0.0012551285146976138,
+    "popularityPercentile": 0.35294117647058826,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007794753403449161,
+    "popularityPercentile": 0.27450980392156865,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005759456681437436,
+    "popularityPercentile": 0.17647058823529413,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005030214196359192,
+    "popularityPercentile": 0.13725490196078433,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "brawl-ball",
+    "useRate": 0.0010808724719449504,
+    "popularityPercentile": 0.3137254901960784,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007191959140249093,
+    "popularityPercentile": 0.22549019607843138,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "brawl-ball",
+    "useRate": 0.015026205960942396,
+    "popularityPercentile": 0.7843137254901961,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "brawl-ball",
+    "useRate": 0.0013500512894773946,
+    "popularityPercentile": 0.3627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "brawl-ball",
+    "useRate": 0.0025663792539000617,
+    "popularityPercentile": 0.49019607843137253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "brawl-ball",
+    "useRate": 0.0018071702724041132,
+    "popularityPercentile": 0.39215686274509803,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "brawl-ball",
+    "useRate": 0.0018655443145588326,
+    "popularityPercentile": 0.4019607843137255,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "brawl-ball",
+    "useRate": 0.0002702181179862376,
+    "popularityPercentile": 0.09803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "brawl-ball",
+    "useRate": 0.0031284675826598954,
+    "popularityPercentile": 0.5392156862745098,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "brawl-ball",
+    "useRate": 0.036425229087802526,
+    "popularityPercentile": 0.9117647058823529,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "brawl-ball",
+    "useRate": 0.002668230698371797,
+    "popularityPercentile": 0.5098039215686274,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "brawl-ball",
+    "useRate": 0.00021617449438899005,
+    "popularityPercentile": 0.058823529411764705,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "brawl-ball",
+    "useRate": 0.03930616994571734,
+    "popularityPercentile": 0.9215686274509803,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "brawl-ball",
+    "useRate": 0.042667094396542316,
+    "popularityPercentile": 0.9509803921568627,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "brawl-ball",
+    "useRate": 0.044504057948621834,
+    "popularityPercentile": 0.9607843137254902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "brawl-ball",
+    "useRate": 0.0010988870131440327,
+    "popularityPercentile": 0.3235294117647059,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005044071535743102,
+    "popularityPercentile": 0.14705882352941177,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "brawl-ball",
+    "useRate": 0.010647633149111555,
+    "popularityPercentile": 0.7549019607843137,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "brawl-ball",
+    "useRate": 0.005195462968512314,
+    "popularityPercentile": 0.6568627450980392,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "brawl-ball",
+    "useRate": 0.014887979000587897,
+    "popularityPercentile": 0.7745098039215687,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "brawl-ball",
+    "useRate": 0.00014411632959266004,
+    "popularityPercentile": 0.0392156862745098,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "brawl-ball",
+    "useRate": 0.005334556012578307,
+    "popularityPercentile": 0.6666666666666666,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "brawl-ball",
+    "useRate": 0.00003602908239816501,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "brawl-ball",
+    "useRate": 0.009787265590113066,
+    "popularityPercentile": 0.7352941176470589,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ollie",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005875511898777679,
+    "popularityPercentile": 0.18627450980392157,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "brawl-ball",
+    "useRate": 0.04220651107876962,
+    "popularityPercentile": 0.9411764705882353,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "brawl-ball",
+    "useRate": 0.0002522035767871551,
+    "popularityPercentile": 0.08823529411764706,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "brawl-ball",
+    "useRate": 0.0012045492259463437,
+    "popularityPercentile": 0.3333333333333333,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "penny",
+    "modeId": "brawl-ball",
+    "useRate": 0.000930520339629531,
+    "popularityPercentile": 0.29411764705882354,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "brawl-ball",
+    "useRate": 0.019319209702077598,
+    "popularityPercentile": 0.803921568627451,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "brawl-ball",
+    "useRate": 0.0005944798595697227,
+    "popularityPercentile": 0.19607843137254902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "brawl-ball",
+    "useRate": 0.0009653369048316039,
+    "popularityPercentile": 0.30392156862745096,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "brawl-ball",
+    "useRate": 0.04549676309873666,
+    "popularityPercentile": 0.9705882352941176,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "brawl-ball",
+    "useRate": 0.0014181254692008506,
+    "popularityPercentile": 0.37254901960784315,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "brawl-ball",
+    "useRate": 0.00023211043468048613,
+    "popularityPercentile": 0.06862745098039216,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "brawl-ball",
+    "useRate": 0.015320674422850476,
+    "popularityPercentile": 0.7941176470588235,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "brawl-ball",
+    "useRate": 0.00016213087079174255,
+    "popularityPercentile": 0.049019607843137254,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sandy",
+    "modeId": "brawl-ball",
+    "useRate": 0.0021302194967915064,
+    "popularityPercentile": 0.45098039215686275,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "brawl-ball",
+    "useRate": 0.028491209423545074,
+    "popularityPercentile": 0.8725490196078431,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "brawl-ball",
+    "useRate": 0.004031792893748504,
+    "popularityPercentile": 0.5882352941176471,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "brawl-ball",
+    "useRate": 0.009628079403940403,
+    "popularityPercentile": 0.7254901960784313,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "brawl-ball",
+    "useRate": 0.01020350542185725,
+    "popularityPercentile": 0.7450980392156863,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007385961891623827,
+    "popularityPercentile": 0.23529411764705882,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "brawl-ball",
+    "useRate": 0.0019272094748172303,
+    "popularityPercentile": 0.4117647058823529,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "brawl-ball",
+    "useRate": 0.039542264365470696,
+    "popularityPercentile": 0.9313725490196079,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "brawl-ball",
+    "useRate": 0.02509408267357963,
+    "popularityPercentile": 0.8431372549019608,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "brawl-ball",
+    "useRate": 0.024815376935220748,
+    "popularityPercentile": 0.8333333333333334,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "brawl-ball",
+    "useRate": 0.00451073718620488,
+    "popularityPercentile": 0.6372549019607843,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "brawl-ball",
+    "useRate": 0.0007510677946079014,
+    "popularityPercentile": 0.24509803921568626,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "brawl-ball",
+    "useRate": 0.0031473482075704724,
+    "popularityPercentile": 0.5490196078431373,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "brawl-ball",
+    "useRate": 0.009023206539832749,
+    "popularityPercentile": 0.7058823529411765,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "brawl-ball",
+    "useRate": 0.0016576842238001882,
+    "popularityPercentile": 0.38235294117647056,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Brawl Ball, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "8bit",
+    "modeId": "gem-grab",
+    "useRate": 0.0405452873805144,
+    "popularityPercentile": 0.941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "gem-grab",
+    "useRate": 0.01699552242308231,
+    "popularityPercentile": 0.8058252427184466,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "gem-grab",
+    "useRate": 0.005615636605915635,
+    "popularityPercentile": 0.6310679611650486,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "angelo",
+    "modeId": "gem-grab",
+    "useRate": 0.000036975385059526817,
+    "popularityPercentile": 0.019417475728155338,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "gem-grab",
+    "useRate": 0.005194863834589193,
+    "popularityPercentile": 0.6019417475728155,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "gem-grab",
+    "useRate": 0.00014790154023810727,
+    "popularityPercentile": 0.06796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "gem-grab",
+    "useRate": 0.0010708640365316804,
+    "popularityPercentile": 0.3786407766990291,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "gem-grab",
+    "useRate": 0.0004437046207143218,
+    "popularityPercentile": 0.23300970873786409,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "gem-grab",
+    "useRate": 0.0001628339072813777,
+    "popularityPercentile": 0.07766990291262135,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "gem-grab",
+    "useRate": 0.003061135243870441,
+    "popularityPercentile": 0.5242718446601942,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "gem-grab",
+    "useRate": 0.02677231197838931,
+    "popularityPercentile": 0.8640776699029126,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "gem-grab",
+    "useRate": 0.01243137332979697,
+    "popularityPercentile": 0.7475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "gem-grab",
+    "useRate": 0.0004248613956359091,
+    "popularityPercentile": 0.22330097087378642,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "gem-grab",
+    "useRate": 0.02516068293536205,
+    "popularityPercentile": 0.8543689320388349,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "gem-grab",
+    "useRate": 0.008311817688597574,
+    "popularityPercentile": 0.7281553398058253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "gem-grab",
+    "useRate": 0.0021753258989107194,
+    "popularityPercentile": 0.44660194174757284,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "gem-grab",
+    "useRate": 0.0021378172150282185,
+    "popularityPercentile": 0.4368932038834951,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "gem-grab",
+    "useRate": 0.004337141560972766,
+    "popularityPercentile": 0.5825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "gem-grab",
+    "useRate": 0.005717496681103659,
+    "popularityPercentile": 0.6407766990291263,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "gem-grab",
+    "useRate": 0.0071678917133184625,
+    "popularityPercentile": 0.6990291262135923,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "gem-grab",
+    "useRate": 0.05497084277568527,
+    "popularityPercentile": 0.9902912621359223,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "gem-grab",
+    "useRate": 0.0002773153879464511,
+    "popularityPercentile": 0.13592233009708737,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "gem-grab",
+    "useRate": 0.0027086247218846638,
+    "popularityPercentile": 0.5145631067961165,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "gem-grab",
+    "useRate": 0.029613372574645837,
+    "popularityPercentile": 0.883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "gem-grab",
+    "useRate": 0.004273501234764542,
+    "popularityPercentile": 0.5728155339805825,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "cordelius",
+    "modeId": "gem-grab",
+    "useRate": 0.005875353132703946,
+    "popularityPercentile": 0.6504854368932039,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "gem-grab",
+    "useRate": 0.07105300208128754,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "gem-grab",
+    "useRate": 0.03925772625558097,
+    "popularityPercentile": 0.9320388349514563,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "gem-grab",
+    "useRate": 0.00037722003411690336,
+    "popularityPercentile": 0.21359223300970873,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "gem-grab",
+    "useRate": 0.00035126615806550473,
+    "popularityPercentile": 0.1941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "gem-grab",
+    "useRate": 0.0009243846264881704,
+    "popularityPercentile": 0.32038834951456313,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "gem-grab",
+    "useRate": 0.0006196932322957234,
+    "popularityPercentile": 0.2524271844660194,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "gem-grab",
+    "useRate": 0.026883771432390863,
+    "popularityPercentile": 0.8737864077669902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "gem-grab",
+    "useRate": 0.0003702871494182421,
+    "popularityPercentile": 0.20388349514563106,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "gem-grab",
+    "useRate": 0.016194863123524094,
+    "popularityPercentile": 0.7864077669902912,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "gem-grab",
+    "useRate": 0.000055463077589290225,
+    "popularityPercentile": 0.038834951456310676,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "gem-grab",
+    "useRate": 0.003932545520609866,
+    "popularityPercentile": 0.5631067961165048,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "gem-grab",
+    "useRate": 0.0017822846663789224,
+    "popularityPercentile": 0.4174757281553398,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "gem-grab",
+    "useRate": 0.0009798477040774607,
+    "popularityPercentile": 0.34951456310679613,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "gem-grab",
+    "useRate": 0.001948140600323819,
+    "popularityPercentile": 0.42718446601941745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "gem-grab",
+    "useRate": 0.0031341971826178714,
+    "popularityPercentile": 0.5339805825242718,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "gem-grab",
+    "useRate": 0.002256209553728434,
+    "popularityPercentile": 0.4563106796116505,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "gem-grab",
+    "useRate": 0.0008509671551920907,
+    "popularityPercentile": 0.3106796116504854,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "gem-grab",
+    "useRate": 0.0002300295589760947,
+    "popularityPercentile": 0.11650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "gem-grab",
+    "useRate": 0.04584769981107,
+    "popularityPercentile": 0.970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "gem-grab",
+    "useRate": 0.000055463077589290225,
+    "popularityPercentile": 0.02912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "gem-grab",
+    "useRate": 0.0024809061244747896,
+    "popularityPercentile": 0.49514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "gem-grab",
+    "useRate": 0.0003064690569356934,
+    "popularityPercentile": 0.1650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "gem-grab",
+    "useRate": 0.0002403400028869243,
+    "popularityPercentile": 0.1262135922330097,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "gem-grab",
+    "useRate": 0.0010470433557721777,
+    "popularityPercentile": 0.36893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "gem-grab",
+    "useRate": 0.006376476260025129,
+    "popularityPercentile": 0.6796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "gem-grab",
+    "useRate": 0.00062147089503897,
+    "popularityPercentile": 0.2621359223300971,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "gem-grab",
+    "useRate": 0.000036975385059526817,
+    "popularityPercentile": 0.009708737864077669,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "gem-grab",
+    "useRate": 0.0009778922750598895,
+    "popularityPercentile": 0.3300970873786408,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "gem-grab",
+    "useRate": 0.013567122056457147,
+    "popularityPercentile": 0.7669902912621359,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "gem-grab",
+    "useRate": 0.007182468547813084,
+    "popularityPercentile": 0.7087378640776699,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "gem-grab",
+    "useRate": 0.00019198757627062,
+    "popularityPercentile": 0.0970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "gem-grab",
+    "useRate": 0.007672036867303164,
+    "popularityPercentile": 0.7184466019417476,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "gem-grab",
+    "useRate": 0.005909484257374279,
+    "popularityPercentile": 0.6601941747572816,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "gem-grab",
+    "useRate": 0.0009787811064315127,
+    "popularityPercentile": 0.33980582524271846,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "gem-grab",
+    "useRate": 0.002533347175400561,
+    "popularityPercentile": 0.5048543689320388,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "gem-grab",
+    "useRate": 0.01905387811348741,
+    "popularityPercentile": 0.8349514563106796,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "gem-grab",
+    "useRate": 0.0012024110795319201,
+    "popularityPercentile": 0.39805825242718446,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "gem-grab",
+    "useRate": 0.00018487692529763408,
+    "popularityPercentile": 0.08737864077669903,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "gem-grab",
+    "useRate": 0.03863483323034741,
+    "popularityPercentile": 0.9223300970873787,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "gem-grab",
+    "useRate": 0.03046327313219198,
+    "popularityPercentile": 0.8932038834951457,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "gem-grab",
+    "useRate": 0.054055524229187656,
+    "popularityPercentile": 0.9805825242718447,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "gem-grab",
+    "useRate": 0.0004582814552089429,
+    "popularityPercentile": 0.24271844660194175,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "gem-grab",
+    "useRate": 0.0006374698597281883,
+    "popularityPercentile": 0.2815533980582524,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "gem-grab",
+    "useRate": 0.01276184083376649,
+    "popularityPercentile": 0.7572815533980582,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "gem-grab",
+    "useRate": 0.006154979482216618,
+    "popularityPercentile": 0.6699029126213593,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "gem-grab",
+    "useRate": 0.022472323568750396,
+    "popularityPercentile": 0.8446601941747572,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "gem-grab",
+    "useRate": 0.00009243846264881704,
+    "popularityPercentile": 0.04854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "gem-grab",
+    "useRate": 0.005593949120448028,
+    "popularityPercentile": 0.6213592233009708,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "gem-grab",
+    "useRate": 0.000036975385059526817,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "gem-grab",
+    "useRate": 0.005235039012586563,
+    "popularityPercentile": 0.6116504854368932,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ollie",
+    "modeId": "gem-grab",
+    "useRate": 0.00035126615806550473,
+    "popularityPercentile": 0.18446601941747573,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "gem-grab",
+    "useRate": 0.045578028372919514,
+    "popularityPercentile": 0.9611650485436893,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "gem-grab",
+    "useRate": 0.0006285815460119558,
+    "popularityPercentile": 0.27184466019417475,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "gem-grab",
+    "useRate": 0.0023298047912988385,
+    "popularityPercentile": 0.47572815533980584,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "penny",
+    "modeId": "gem-grab",
+    "useRate": 0.0035796794660754396,
+    "popularityPercentile": 0.5533980582524272,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "gem-grab",
+    "useRate": 0.01716600028015965,
+    "popularityPercentile": 0.8155339805825242,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "gem-grab",
+    "useRate": 0.0008504338563691167,
+    "popularityPercentile": 0.30097087378640774,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "gem-grab",
+    "useRate": 0.0010093569056153521,
+    "popularityPercentile": 0.3592233009708738,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "gem-grab",
+    "useRate": 0.03731722960505311,
+    "popularityPercentile": 0.912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "gem-grab",
+    "useRate": 0.0014960809647162389,
+    "popularityPercentile": 0.4077669902912621,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "gem-grab",
+    "useRate": 0.00009243846264881704,
+    "popularityPercentile": 0.05825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "gem-grab",
+    "useRate": 0.016130511732218574,
+    "popularityPercentile": 0.7766990291262136,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "gem-grab",
+    "useRate": 0.0002773153879464511,
+    "popularityPercentile": 0.14563106796116504,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sandy",
+    "modeId": "gem-grab",
+    "useRate": 0.0032515229236721394,
+    "popularityPercentile": 0.5436893203883495,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "gem-grab",
+    "useRate": 0.011980913590658311,
+    "popularityPercentile": 0.7378640776699029,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "gem-grab",
+    "useRate": 0.002288385249381196,
+    "popularityPercentile": 0.46601941747572817,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "gem-grab",
+    "useRate": 0.004805911226366862,
+    "popularityPercentile": 0.5922330097087378,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "gem-grab",
+    "useRate": 0.007078830809881814,
+    "popularityPercentile": 0.6893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "gem-grab",
+    "useRate": 0.0002033646178273975,
+    "popularityPercentile": 0.10679611650485436,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "gem-grab",
+    "useRate": 0.0011942338309129863,
+    "popularityPercentile": 0.3883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "gem-grab",
+    "useRate": 0.043015349762255385,
+    "popularityPercentile": 0.9514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "gem-grab",
+    "useRate": 0.01647697820087731,
+    "popularityPercentile": 0.7961165048543689,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "gem-grab",
+    "useRate": 0.03197499752904879,
+    "popularityPercentile": 0.9029126213592233,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "gem-grab",
+    "useRate": 0.017240662115376,
+    "popularityPercentile": 0.8252427184466019,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "gem-grab",
+    "useRate": 0.000729552789828356,
+    "popularityPercentile": 0.2912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "gem-grab",
+    "useRate": 0.0024460639347071585,
+    "popularityPercentile": 0.4854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "gem-grab",
+    "useRate": 0.00029580308047621453,
+    "popularityPercentile": 0.1553398058252427,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "gem-grab",
+    "useRate": 0.0003142907730059779,
+    "popularityPercentile": 0.17475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "8bit",
+    "modeId": "heist",
+    "useRate": 0.03559395707867545,
+    "popularityPercentile": 0.9090909090909091,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "heist",
+    "useRate": 0.006656909424929349,
+    "popularityPercentile": 0.6868686868686869,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "heist",
+    "useRate": 0.004715877625414318,
+    "popularityPercentile": 0.6363636363636364,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "heist",
+    "useRate": 0.00003823485835271731,
+    "popularityPercentile": 0.020202020202020204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "heist",
+    "useRate": 0.0015687321210677378,
+    "popularityPercentile": 0.5151515151515151,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "heist",
+    "useRate": 0.0013068478508762094,
+    "popularityPercentile": 0.43434343434343436,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "heist",
+    "useRate": 0.007149305773843509,
+    "popularityPercentile": 0.7070707070707071,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "heist",
+    "useRate": 0.007534840595566742,
+    "popularityPercentile": 0.7272727272727273,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "heist",
+    "useRate": 0.007117075749014135,
+    "popularityPercentile": 0.696969696969697,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "heist",
+    "useRate": 0.003795422429621819,
+    "popularityPercentile": 0.6161616161616161,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "heist",
+    "useRate": 0.007489865617953129,
+    "popularityPercentile": 0.7171717171717171,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "heist",
+    "useRate": 0.0011597907033657582,
+    "popularityPercentile": 0.41414141414141414,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "heist",
+    "useRate": 0.05691381213424896,
+    "popularityPercentile": 0.9797979797979798,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "heist",
+    "useRate": 0.01287031900249176,
+    "popularityPercentile": 0.7878787878787878,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "heist",
+    "useRate": 0.000025489905568478202,
+    "popularityPercentile": 0.010101010101010102,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "heist",
+    "useRate": 0.001444591379044332,
+    "popularityPercentile": 0.47474747474747475,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "heist",
+    "useRate": 0.013553889643169508,
+    "popularityPercentile": 0.797979797979798,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "heist",
+    "useRate": 0.014296773333343137,
+    "popularityPercentile": 0.8181818181818182,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "heist",
+    "useRate": 0.004336960375329056,
+    "popularityPercentile": 0.6262626262626263,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "heist",
+    "useRate": 0.001487605594691139,
+    "popularityPercentile": 0.494949494949495,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "heist",
+    "useRate": 0.034451323042519244,
+    "popularityPercentile": 0.898989898989899,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "heist",
+    "useRate": 0.00160365819360147,
+    "popularityPercentile": 0.5252525252525253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "heist",
+    "useRate": 0.05468896004003876,
+    "popularityPercentile": 0.9696969696969697,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "heist",
+    "useRate": 0.08553052030166813,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "heist",
+    "useRate": 0.06086388966400261,
+    "popularityPercentile": 0.98989898989899,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "heist",
+    "useRate": 0.0013056223746469556,
+    "popularityPercentile": 0.42424242424242425,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "heist",
+    "useRate": 0.0034081719411776313,
+    "popularityPercentile": 0.5959595959595959,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "heist",
+    "useRate": 0.00020220357782687036,
+    "popularityPercentile": 0.13131313131313133,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "heist",
+    "useRate": 0.00024215410290054292,
+    "popularityPercentile": 0.1717171717171717,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "heist",
+    "useRate": 0.0026677392034625096,
+    "popularityPercentile": 0.5757575757575758,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "heist",
+    "useRate": 0.0378108435773955,
+    "popularityPercentile": 0.9292929292929293,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "heist",
+    "useRate": 0.00039043672664024784,
+    "popularityPercentile": 0.2727272727272727,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "heist",
+    "useRate": 0.0021782839974985578,
+    "popularityPercentile": 0.5555555555555556,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "heist",
+    "useRate": 0.005967456498351183,
+    "popularityPercentile": 0.6565656565656566,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "heist",
+    "useRate": 0.0014318464262600928,
+    "popularityPercentile": 0.45454545454545453,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "heist",
+    "useRate": 0.001402557544380928,
+    "popularityPercentile": 0.4444444444444444,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "heist",
+    "useRate": 0.0002166641973320647,
+    "popularityPercentile": 0.1414141414141414,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "heist",
+    "useRate": 0.0005129843495656238,
+    "popularityPercentile": 0.3434343434343434,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "heist",
+    "useRate": 0.000025489905568478202,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "heist",
+    "useRate": 0.0023333067404991584,
+    "popularityPercentile": 0.5656565656565656,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "heist",
+    "useRate": 0.000624502686427716,
+    "popularityPercentile": 0.36363636363636365,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "heist",
+    "useRate": 0.00026788910371487186,
+    "popularityPercentile": 0.1919191919191919,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "heist",
+    "useRate": 0.026493693147859956,
+    "popularityPercentile": 0.8686868686868687,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "heist",
+    "useRate": 0.0004544065858072941,
+    "popularityPercentile": 0.31313131313131315,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "heist",
+    "useRate": 0.00032156496255618654,
+    "popularityPercentile": 0.23232323232323232,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "heist",
+    "useRate": 0.00047058287203344376,
+    "popularityPercentile": 0.32323232323232326,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "heist",
+    "useRate": 0.00010686152719092785,
+    "popularityPercentile": 0.050505050505050504,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "heist",
+    "useRate": 0.00023014443585385607,
+    "popularityPercentile": 0.16161616161616163,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "heist",
+    "useRate": 0.00011470457505815191,
+    "popularityPercentile": 0.06060606060606061,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "heist",
+    "useRate": 0.002716513157386809,
+    "popularityPercentile": 0.5858585858585859,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "heist",
+    "useRate": 0.0007240113562431213,
+    "popularityPercentile": 0.3939393939393939,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "heist",
+    "useRate": 0.0373144031569248,
+    "popularityPercentile": 0.9191919191919192,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "heist",
+    "useRate": 0.000665923782976493,
+    "popularityPercentile": 0.3838383838383838,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "heist",
+    "useRate": 0.0021318384484098406,
+    "popularityPercentile": 0.5454545454545454,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "heist",
+    "useRate": 0.00032254534353958955,
+    "popularityPercentile": 0.24242424242424243,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "heist",
+    "useRate": 0.00026249700830615534,
+    "popularityPercentile": 0.18181818181818182,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "heist",
+    "useRate": 0.006244904316654234,
+    "popularityPercentile": 0.6666666666666666,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "heist",
+    "useRate": 0.00583289920837912,
+    "popularityPercentile": 0.6464646464646465,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "heist",
+    "useRate": 0.0005308763025127287,
+    "popularityPercentile": 0.35353535353535354,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "heist",
+    "useRate": 0.012792256166688297,
+    "popularityPercentile": 0.7777777777777778,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "heist",
+    "useRate": 0.0002980358189545144,
+    "popularityPercentile": 0.20202020202020202,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "heist",
+    "useRate": 0.006344412986469639,
+    "popularityPercentile": 0.6767676767676768,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "heist",
+    "useRate": 0.009595111232188163,
+    "popularityPercentile": 0.7575757575757576,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "heist",
+    "useRate": 0.0014936104282144824,
+    "popularityPercentile": 0.5050505050505051,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "heist",
+    "useRate": 0.021955999766179134,
+    "popularityPercentile": 0.8585858585858586,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "heist",
+    "useRate": 0.03226666656862857,
+    "popularityPercentile": 0.8888888888888888,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "heist",
+    "useRate": 0.04027784977450625,
+    "popularityPercentile": 0.9393939393939394,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "heist",
+    "useRate": 0.0006479092824064628,
+    "popularityPercentile": 0.37373737373737376,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "heist",
+    "useRate": 0.00030587886682173845,
+    "popularityPercentile": 0.21212121212121213,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "heist",
+    "useRate": 0.000847784455397751,
+    "popularityPercentile": 0.40404040404040403,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "heist",
+    "useRate": 0.0001401944806266301,
+    "popularityPercentile": 0.09090909090909091,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "heist",
+    "useRate": 0.009093891454423375,
+    "popularityPercentile": 0.7474747474747475,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "heist",
+    "useRate": 0.010654290337132187,
+    "popularityPercentile": 0.7676767676767676,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "heist",
+    "useRate": 0.00886877147110946,
+    "popularityPercentile": 0.7373737373737373,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "heist",
+    "useRate": 0.0274607164403641,
+    "popularityPercentile": 0.8787878787878788,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "heist",
+    "useRate": 0.0001401944806266301,
+    "popularityPercentile": 0.1111111111111111,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "heist",
+    "useRate": 0.0004941120156351159,
+    "popularityPercentile": 0.3333333333333333,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "heist",
+    "useRate": 0.04552497134530207,
+    "popularityPercentile": 0.9595959595959596,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "heist",
+    "useRate": 0.019111056699966534,
+    "popularityPercentile": 0.8383838383838383,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "heist",
+    "useRate": 0.00007377366900107634,
+    "popularityPercentile": 0.04040404040404041,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "heist",
+    "useRate": 0.018613758446135355,
+    "popularityPercentile": 0.8282828282828283,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "heist",
+    "useRate": 0.00016151776701564554,
+    "popularityPercentile": 0.12121212121212122,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "heist",
+    "useRate": 0.0020954418044010037,
+    "popularityPercentile": 0.5353535353535354,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "heist",
+    "useRate": 0.001455007926992989,
+    "popularityPercentile": 0.48484848484848486,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "heist",
+    "useRate": 0.00022205629274078126,
+    "popularityPercentile": 0.15151515151515152,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sandy",
+    "modeId": "heist",
+    "useRate": 0.000050979811136956404,
+    "popularityPercentile": 0.030303030303030304,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "heist",
+    "useRate": 0.01400915406233728,
+    "popularityPercentile": 0.8080808080808081,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "heist",
+    "useRate": 0.000407103203358099,
+    "popularityPercentile": 0.2828282828282828,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "heist",
+    "useRate": 0.0014335620929810482,
+    "popularityPercentile": 0.46464646464646464,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "heist",
+    "useRate": 0.003644443758177756,
+    "popularityPercentile": 0.6060606060606061,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "heist",
+    "useRate": 0.00042095108474866645,
+    "popularityPercentile": 0.29292929292929293,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "heist",
+    "useRate": 0.00030587886682173845,
+    "popularityPercentile": 0.2222222222222222,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "heist",
+    "useRate": 0.02090858523303595,
+    "popularityPercentile": 0.8484848484848485,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "heist",
+    "useRate": 0.0003303883914068136,
+    "popularityPercentile": 0.25252525252525254,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "heist",
+    "useRate": 0.040912033723145065,
+    "popularityPercentile": 0.9494949494949495,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "heist",
+    "useRate": 0.00011470457505815191,
+    "popularityPercentile": 0.0707070707070707,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "heist",
+    "useRate": 0.00011911628948346544,
+    "popularityPercentile": 0.08080808080808081,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "heist",
+    "useRate": 0.00038234858352717305,
+    "popularityPercentile": 0.26262626262626265,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "heist",
+    "useRate": 0.0004463184426942193,
+    "popularityPercentile": 0.30303030303030304,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "heist",
+    "useRate": 0.0001401944806266301,
+    "popularityPercentile": 0.10101010101010101,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Heist, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "8bit",
+    "modeId": "hot-zone",
+    "useRate": 0.03469042671962142,
+    "popularityPercentile": 0.9320388349514563,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "hot-zone",
+    "useRate": 0.003491488345221024,
+    "popularityPercentile": 0.5242718446601942,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "hot-zone",
+    "useRate": 0.0025239520881593053,
+    "popularityPercentile": 0.4563106796116505,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "angelo",
+    "modeId": "hot-zone",
+    "useRate": 0.00036059065332967876,
+    "popularityPercentile": 0.08737864077669903,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "hot-zone",
+    "useRate": 0.0018224791775321365,
+    "popularityPercentile": 0.34951456310679613,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "hot-zone",
+    "useRate": 0.007562002066461821,
+    "popularityPercentile": 0.6504854368932039,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "hot-zone",
+    "useRate": 0.0030374652958868945,
+    "popularityPercentile": 0.5048543689320388,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "hot-zone",
+    "useRate": 0.0017148129399488822,
+    "popularityPercentile": 0.32038834951456313,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "hot-zone",
+    "useRate": 0.0028615496127847636,
+    "popularityPercentile": 0.49514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "hot-zone",
+    "useRate": 0.007618025007034802,
+    "popularityPercentile": 0.6601941747572816,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "hot-zone",
+    "useRate": 0.025420911119148567,
+    "popularityPercentile": 0.8446601941747572,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "hot-zone",
+    "useRate": 0.00879322936302829,
+    "popularityPercentile": 0.7087378640776699,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "hot-zone",
+    "useRate": 0.00028467683157606217,
+    "popularityPercentile": 0.038834951456310676,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "hot-zone",
+    "useRate": 0.026549581762288277,
+    "popularityPercentile": 0.8543689320388349,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "hot-zone",
+    "useRate": 0.0069322458191740065,
+    "popularityPercentile": 0.6407766990291263,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "hot-zone",
+    "useRate": 0.0012525780589346736,
+    "popularityPercentile": 0.23300970873786409,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "hot-zone",
+    "useRate": 0.0016516730785864993,
+    "popularityPercentile": 0.2912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "hot-zone",
+    "useRate": 0.008481179759185298,
+    "popularityPercentile": 0.6893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "hot-zone",
+    "useRate": 0.004713408899216737,
+    "popularityPercentile": 0.6116504854368932,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "hot-zone",
+    "useRate": 0.003753901988686651,
+    "popularityPercentile": 0.5533980582524272,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "hot-zone",
+    "useRate": 0.0290151386029448,
+    "popularityPercentile": 0.8737864077669902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "hot-zone",
+    "useRate": 0.0018938308705745983,
+    "popularityPercentile": 0.36893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "hot-zone",
+    "useRate": 0.002085805246739994,
+    "popularityPercentile": 0.39805825242718446,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "hot-zone",
+    "useRate": 0.03375300051205333,
+    "popularityPercentile": 0.912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "hot-zone",
+    "useRate": 0.00456942811709269,
+    "popularityPercentile": 0.5922330097087378,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "cordelius",
+    "modeId": "hot-zone",
+    "useRate": 0.009910038471518995,
+    "popularityPercentile": 0.7378640776699029,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "hot-zone",
+    "useRate": 0.058809488789754845,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "hot-zone",
+    "useRate": 0.034026910719871066,
+    "popularityPercentile": 0.9223300970873787,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "hot-zone",
+    "useRate": 0.0005693536631521243,
+    "popularityPercentile": 0.13592233009708737,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "hot-zone",
+    "useRate": 0.0017129880884644204,
+    "popularityPercentile": 0.3106796116504854,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "hot-zone",
+    "useRate": 0.0021069735239597526,
+    "popularityPercentile": 0.4077669902912621,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "hot-zone",
+    "useRate": 0.0032920320779693344,
+    "popularityPercentile": 0.5145631067961165,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "hot-zone",
+    "useRate": 0.03274860225500548,
+    "popularityPercentile": 0.8932038834951457,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "hot-zone",
+    "useRate": 0.0006073105740289327,
+    "popularityPercentile": 0.14563106796116504,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "hot-zone",
+    "useRate": 0.017780805409151775,
+    "popularityPercentile": 0.7961165048543689,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "hot-zone",
+    "useRate": 0.00020274099992372122,
+    "popularityPercentile": 0.009708737864077669,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "hot-zone",
+    "useRate": 0.00798153542273962,
+    "popularityPercentile": 0.6699029126213593,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "hot-zone",
+    "useRate": 0.011401124619472845,
+    "popularityPercentile": 0.7572815533980582,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "hot-zone",
+    "useRate": 0.001733426425090394,
+    "popularityPercentile": 0.33980582524271846,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "hot-zone",
+    "useRate": 0.002421942890177883,
+    "popularityPercentile": 0.44660194174757284,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "hot-zone",
+    "useRate": 0.00013284918806882903,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "hot-zone",
+    "useRate": 0.0016879876231272917,
+    "popularityPercentile": 0.30097087378640774,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "hot-zone",
+    "useRate": 0.001973576880445585,
+    "popularityPercentile": 0.3883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "hot-zone",
+    "useRate": 0.0026126398703041555,
+    "popularityPercentile": 0.46601941747572817,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "hot-zone",
+    "useRate": 0.044368891537762196,
+    "popularityPercentile": 0.9805825242718447,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "hot-zone",
+    "useRate": 0.0003233636830466553,
+    "popularityPercentile": 0.07766990291262135,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "hot-zone",
+    "useRate": 0.0006501945839137882,
+    "popularityPercentile": 0.1553398058252427,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "hot-zone",
+    "useRate": 0.003584008315483244,
+    "popularityPercentile": 0.5339805825242718,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "hot-zone",
+    "useRate": 0.0011122469797795506,
+    "popularityPercentile": 0.21359223300970873,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "hot-zone",
+    "useRate": 0.0011704597421338865,
+    "popularityPercentile": 0.22330097087378642,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "hot-zone",
+    "useRate": 0.00022774146526084976,
+    "popularityPercentile": 0.02912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "hot-zone",
+    "useRate": 0.0010441800194091204,
+    "popularityPercentile": 0.1941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "hot-zone",
+    "useRate": 0.010009857847719064,
+    "popularityPercentile": 0.7475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "hot-zone",
+    "useRate": 0.0015646276627776649,
+    "popularityPercentile": 0.2815533980582524,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "hot-zone",
+    "useRate": 0.026920756554227834,
+    "popularityPercentile": 0.8640776699029126,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "hot-zone",
+    "useRate": 0.003701346265934147,
+    "popularityPercentile": 0.5436893203883495,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "hot-zone",
+    "useRate": 0.0026912909692844646,
+    "popularityPercentile": 0.47572815533980584,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "hot-zone",
+    "useRate": 0.0043946073448812364,
+    "popularityPercentile": 0.5825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "hot-zone",
+    "useRate": 0.0028080814642900288,
+    "popularityPercentile": 0.4854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "hot-zone",
+    "useRate": 0.0005065787720866337,
+    "popularityPercentile": 0.11650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "hot-zone",
+    "useRate": 0.017323132656848723,
+    "popularityPercentile": 0.7864077669902912,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "hot-zone",
+    "useRate": 0.029519162582953187,
+    "popularityPercentile": 0.883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "hot-zone",
+    "useRate": 0.0005689886928552319,
+    "popularityPercentile": 0.1262135922330097,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "hot-zone",
+    "useRate": 0.00043650447508329534,
+    "popularityPercentile": 0.0970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "hot-zone",
+    "useRate": 0.03367708669029971,
+    "popularityPercentile": 0.9029126213592233,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "hot-zone",
+    "useRate": 0.04155113836060452,
+    "popularityPercentile": 0.970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "hot-zone",
+    "useRate": 0.04950895071404614,
+    "popularityPercentile": 0.9902912621359223,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "hot-zone",
+    "useRate": 0.0007786641284199086,
+    "popularityPercentile": 0.1650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "hot-zone",
+    "useRate": 0.004248984196421174,
+    "popularityPercentile": 0.5728155339805825,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "hot-zone",
+    "useRate": 0.01522145120219391,
+    "popularityPercentile": 0.7766990291262136,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "hot-zone",
+    "useRate": 0.0015567808013944786,
+    "popularityPercentile": 0.27184466019417475,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "hot-zone",
+    "useRate": 0.020917360140644953,
+    "popularityPercentile": 0.8349514563106796,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "hot-zone",
+    "useRate": 0.0002239092771434797,
+    "popularityPercentile": 0.019417475728155338,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "hot-zone",
+    "useRate": 0.00813153821476239,
+    "popularityPercentile": 0.6796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "hot-zone",
+    "useRate": 0.00030365528701446634,
+    "popularityPercentile": 0.05825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "hot-zone",
+    "useRate": 0.00610120845315004,
+    "popularityPercentile": 0.6213592233009708,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ollie",
+    "modeId": "hot-zone",
+    "useRate": 0.00030365528701446634,
+    "popularityPercentile": 0.04854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "hot-zone",
+    "useRate": 0.019056559081939116,
+    "popularityPercentile": 0.8155339805825242,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "hot-zone",
+    "useRate": 0.0009784853659684906,
+    "popularityPercentile": 0.18446601941747573,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "hot-zone",
+    "useRate": 0.0008514757026499398,
+    "popularityPercentile": 0.17475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "penny",
+    "modeId": "hot-zone",
+    "useRate": 0.01444187464803177,
+    "popularityPercentile": 0.7669902912621359,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "hot-zone",
+    "useRate": 0.03828994627272259,
+    "popularityPercentile": 0.9514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "hot-zone",
+    "useRate": 0.0010637059302928632,
+    "popularityPercentile": 0.20388349514563106,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "hot-zone",
+    "useRate": 0.006689358086592123,
+    "popularityPercentile": 0.6310679611650486,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "hot-zone",
+    "useRate": 0.004177085047933374,
+    "popularityPercentile": 0.5631067961165048,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "hot-zone",
+    "useRate": 0.0004934398413985078,
+    "popularityPercentile": 0.10679611650485436,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "hot-zone",
+    "useRate": 0.0023923802961295995,
+    "popularityPercentile": 0.4368932038834951,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "hot-zone",
+    "useRate": 0.009259296432159869,
+    "popularityPercentile": 0.7281553398058253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "hot-zone",
+    "useRate": 0.0003233636830466553,
+    "popularityPercentile": 0.06796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sandy",
+    "modeId": "hot-zone",
+    "useRate": 0.0018739399893939633,
+    "popularityPercentile": 0.3592233009708738,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "hot-zone",
+    "useRate": 0.01784960231011599,
+    "popularityPercentile": 0.8058252427184466,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "hot-zone",
+    "useRate": 0.0014270338608492349,
+    "popularityPercentile": 0.2524271844660194,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "hot-zone",
+    "useRate": 0.009181922729218682,
+    "popularityPercentile": 0.7184466019417476,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "hot-zone",
+    "useRate": 0.008501618095811273,
+    "popularityPercentile": 0.6990291262135923,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "hot-zone",
+    "useRate": 0.001348017791572033,
+    "popularityPercentile": 0.24271844660194175,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "hot-zone",
+    "useRate": 0.0017160903359880056,
+    "popularityPercentile": 0.3300970873786408,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "hot-zone",
+    "useRate": 0.040384693291736454,
+    "popularityPercentile": 0.9611650485436893,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "hot-zone",
+    "useRate": 0.020159864289444804,
+    "popularityPercentile": 0.8252427184466019,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "hot-zone",
+    "useRate": 0.035041345660083455,
+    "popularityPercentile": 0.941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "hot-zone",
+    "useRate": 0.0015372548905107357,
+    "popularityPercentile": 0.2621359223300971,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "hot-zone",
+    "useRate": 0.0021274118605857264,
+    "popularityPercentile": 0.4174757281553398,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "hot-zone",
+    "useRate": 0.004696255295262795,
+    "popularityPercentile": 0.6019417475728155,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "hot-zone",
+    "useRate": 0.0022294210585671486,
+    "popularityPercentile": 0.42718446601941745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "hot-zone",
+    "useRate": 0.0019124443557161101,
+    "popularityPercentile": 0.3786407766990291,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Hot Zone, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "8bit",
+    "modeId": "knockout",
+    "useRate": 0.029792132861153897,
+    "popularityPercentile": 0.9029126213592233,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "alli",
+    "modeId": "knockout",
+    "useRate": 0.0007525611219112136,
+    "popularityPercentile": 0.23300970873786409,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "amber",
+    "modeId": "knockout",
+    "useRate": 0.00029639743005992994,
+    "popularityPercentile": 0.1262135922330097,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "angelo",
+    "modeId": "knockout",
+    "useRate": 0.018519307073772785,
+    "popularityPercentile": 0.8252427184466019,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ash",
+    "modeId": "knockout",
+    "useRate": 0.0001394811435576141,
+    "popularityPercentile": 0.04854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "barley",
+    "modeId": "knockout",
+    "useRate": 0.0010258234584483662,
+    "popularityPercentile": 0.3106796116504854,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bea",
+    "modeId": "knockout",
+    "useRate": 0.002084673101128523,
+    "popularityPercentile": 0.4368932038834951,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "belle",
+    "modeId": "knockout",
+    "useRate": 0.017377975793315768,
+    "popularityPercentile": 0.7961165048543689,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "berry",
+    "modeId": "knockout",
+    "useRate": 0.0005579245742304564,
+    "popularityPercentile": 0.21359223300970873,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bibi",
+    "modeId": "knockout",
+    "useRate": 0.0005212101866834401,
+    "popularityPercentile": 0.18446601941747573,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bo",
+    "modeId": "knockout",
+    "useRate": 0.001955585985095635,
+    "popularityPercentile": 0.4174757281553398,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bolt",
+    "modeId": "knockout",
+    "useRate": 0.010948263895641281,
+    "popularityPercentile": 0.6990291262135923,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bonnie",
+    "modeId": "knockout",
+    "useRate": 0.0012912064515393554,
+    "popularityPercentile": 0.34951456310679613,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "brock",
+    "modeId": "knockout",
+    "useRate": 0.05048798282772536,
+    "popularityPercentile": 0.9805825242718447,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "bull",
+    "modeId": "knockout",
+    "useRate": 0.0026645592496450945,
+    "popularityPercentile": 0.49514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buster",
+    "modeId": "knockout",
+    "useRate": 0.007409265169077299,
+    "popularityPercentile": 0.6407766990291263,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "buzz",
+    "modeId": "knockout",
+    "useRate": 0.0003302618423179084,
+    "popularityPercentile": 0.14563106796116504,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "byron",
+    "modeId": "knockout",
+    "useRate": 0.05485297145129459,
+    "popularityPercentile": 0.9902912621359223,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "carl",
+    "modeId": "knockout",
+    "useRate": 0.004482508192840728,
+    "popularityPercentile": 0.5922330097087378,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "charlie",
+    "modeId": "knockout",
+    "useRate": 0.008780941511130663,
+    "popularityPercentile": 0.6796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chester",
+    "modeId": "knockout",
+    "useRate": 0.0023411708771419243,
+    "popularityPercentile": 0.46601941747572817,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "chuck",
+    "modeId": "knockout",
+    "useRate": 0.0004533137165622458,
+    "popularityPercentile": 0.17475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "clancy",
+    "modeId": "knockout",
+    "useRate": 0.000052305428834105285,
+    "popularityPercentile": 0.009708737864077669,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colette",
+    "modeId": "knockout",
+    "useRate": 0.026600328183036814,
+    "popularityPercentile": 0.883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "colt",
+    "modeId": "knockout",
+    "useRate": 0.011540891110155905,
+    "popularityPercentile": 0.7087378640776699,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "cordelius",
+    "modeId": "knockout",
+    "useRate": 0.0054457998405355,
+    "popularityPercentile": 0.6019417475728155,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "crow",
+    "modeId": "knockout",
+    "useRate": 0.018613188612705795,
+    "popularityPercentile": 0.8349514563106796,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "damian",
+    "modeId": "knockout",
+    "useRate": 0.023674912371642143,
+    "popularityPercentile": 0.8640776699029126,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "darryl",
+    "modeId": "knockout",
+    "useRate": 0.0032771362911829813,
+    "popularityPercentile": 0.5533980582524272,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "doug",
+    "modeId": "knockout",
+    "useRate": 0.0019356361580723706,
+    "popularityPercentile": 0.4077669902912621,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "draco",
+    "modeId": "knockout",
+    "useRate": 0.0001394811435576141,
+    "popularityPercentile": 0.05825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "dynamike",
+    "modeId": "knockout",
+    "useRate": 0.0016117448487534879,
+    "popularityPercentile": 0.3786407766990291,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "edgar",
+    "modeId": "knockout",
+    "useRate": 0.023447920222150545,
+    "popularityPercentile": 0.8543689320388349,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "elprimo",
+    "modeId": "knockout",
+    "useRate": 0.0003138325730046317,
+    "popularityPercentile": 0.13592233009708737,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "emz",
+    "modeId": "knockout",
+    "useRate": 0.0012001748878953838,
+    "popularityPercentile": 0.3300970873786408,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "eve",
+    "modeId": "knockout",
+    "useRate": 0.0028119197366488716,
+    "popularityPercentile": 0.5145631067961165,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "fang",
+    "modeId": "knockout",
+    "useRate": 0.006642621816326134,
+    "popularityPercentile": 0.6213592233009708,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "finx",
+    "modeId": "knockout",
+    "useRate": 0.0011701663245578683,
+    "popularityPercentile": 0.32038834951456313,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "frank",
+    "modeId": "knockout",
+    "useRate": 0.0007671462895668775,
+    "popularityPercentile": 0.2524271844660194,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gale",
+    "modeId": "knockout",
+    "useRate": 0.0006105652942750367,
+    "popularityPercentile": 0.22330097087378642,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gene",
+    "modeId": "knockout",
+    "useRate": 0.04886550866023667,
+    "popularityPercentile": 0.970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gigi",
+    "modeId": "knockout",
+    "useRate": 0.0043473858350192894,
+    "popularityPercentile": 0.5825242718446602,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "glowy",
+    "modeId": "knockout",
+    "useRate": 0.0010117412276084148,
+    "popularityPercentile": 0.30097087378640774,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gray",
+    "modeId": "knockout",
+    "useRate": 0.0165643916710981,
+    "popularityPercentile": 0.7669902912621359,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "griff",
+    "modeId": "knockout",
+    "useRate": 0.015414007527958257,
+    "popularityPercentile": 0.7475728155339806,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "grom",
+    "modeId": "knockout",
+    "useRate": 0.0032607070218697047,
+    "popularityPercentile": 0.5436893203883495,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "gus",
+    "modeId": "knockout",
+    "useRate": 0.017127680904696154,
+    "popularityPercentile": 0.7766990291262136,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "hank",
+    "modeId": "knockout",
+    "useRate": 0.0001394811435576141,
+    "popularityPercentile": 0.06796116504854369,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jacky",
+    "modeId": "knockout",
+    "useRate": 0.000052305428834105285,
+    "popularityPercentile": 0.019417475728155338,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jaeyong",
+    "modeId": "knockout",
+    "useRate": 0.008446320883076579,
+    "popularityPercentile": 0.6699029126213593,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "janet",
+    "modeId": "knockout",
+    "useRate": 0.0005404894312857546,
+    "popularityPercentile": 0.20388349514563106,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "jessie",
+    "modeId": "knockout",
+    "useRate": 0.0002266568582811229,
+    "popularityPercentile": 0.0970873786407767,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "juju",
+    "modeId": "knockout",
+    "useRate": 0.0018655602950830884,
+    "popularityPercentile": 0.3883495145631068,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kaze",
+    "modeId": "knockout",
+    "useRate": 0.001339991322663473,
+    "popularityPercentile": 0.3592233009708738,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kenji",
+    "modeId": "knockout",
+    "useRate": 0.002979062405070676,
+    "popularityPercentile": 0.5242718446601942,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "kit",
+    "modeId": "knockout",
+    "useRate": 0.014820877376627923,
+    "popularityPercentile": 0.7378640776699029,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "larrylawrie",
+    "modeId": "knockout",
+    "useRate": 0.0009046156858616415,
+    "popularityPercentile": 0.2815533980582524,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "leon",
+    "modeId": "knockout",
+    "useRate": 0.03256046474044102,
+    "popularityPercentile": 0.9223300970873787,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lily",
+    "modeId": "knockout",
+    "useRate": 0.0026974177882716477,
+    "popularityPercentile": 0.5048543689320388,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lola",
+    "modeId": "knockout",
+    "useRate": 0.00026152714417052643,
+    "popularityPercentile": 0.10679611650485436,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lou",
+    "modeId": "knockout",
+    "useRate": 0.001010232417161277,
+    "popularityPercentile": 0.2912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "lumi",
+    "modeId": "knockout",
+    "useRate": 0.0019151833942333935,
+    "popularityPercentile": 0.39805825242718446,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "maisie",
+    "modeId": "knockout",
+    "useRate": 0.00040100828772814053,
+    "popularityPercentile": 0.1553398058252427,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mandy",
+    "modeId": "knockout",
+    "useRate": 0.0225124577449252,
+    "popularityPercentile": 0.8446601941747572,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "max",
+    "modeId": "knockout",
+    "useRate": 0.04481032911514638,
+    "popularityPercentile": 0.9611650485436893,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meeple",
+    "modeId": "knockout",
+    "useRate": 0.03398109359922374,
+    "popularityPercentile": 0.941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "meg",
+    "modeId": "knockout",
+    "useRate": 0.03252224154244686,
+    "popularityPercentile": 0.912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "melodie",
+    "modeId": "knockout",
+    "useRate": 0.0005230542883410529,
+    "popularityPercentile": 0.1941747572815534,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mico",
+    "modeId": "knockout",
+    "useRate": 0.0034176233083720205,
+    "popularityPercentile": 0.5631067961165048,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mina",
+    "modeId": "knockout",
+    "useRate": 0.01725576214709762,
+    "popularityPercentile": 0.7864077669902912,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "moe",
+    "modeId": "knockout",
+    "useRate": 0.00040100828772814053,
+    "popularityPercentile": 0.1650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mortis",
+    "modeId": "knockout",
+    "useRate": 0.018512265958352807,
+    "popularityPercentile": 0.8155339805825242,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "mrp",
+    "modeId": "knockout",
+    "useRate": 0.002235051209026576,
+    "popularityPercentile": 0.4563106796116505,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "najia",
+    "modeId": "knockout",
+    "useRate": 0.029406212677897135,
+    "popularityPercentile": 0.8932038834951457,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nani",
+    "modeId": "knockout",
+    "useRate": 0.009965693003344194,
+    "popularityPercentile": 0.6893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "nita",
+    "modeId": "knockout",
+    "useRate": 0.0001207048357710122,
+    "popularityPercentile": 0.038834951456310676,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ollie",
+    "modeId": "knockout",
+    "useRate": 0.0020120825540606785,
+    "popularityPercentile": 0.42718446601941745,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "otis",
+    "modeId": "knockout",
+    "useRate": 0.012765709902021203,
+    "popularityPercentile": 0.7281553398058253,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pam",
+    "modeId": "knockout",
+    "useRate": 0.00006974057177880705,
+    "popularityPercentile": 0.02912621359223301,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pearl",
+    "modeId": "knockout",
+    "useRate": 0.008015974614431872,
+    "popularityPercentile": 0.6601941747572816,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "penny",
+    "modeId": "knockout",
+    "useRate": 0.004324586032706987,
+    "popularityPercentile": 0.5728155339805825,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "pierce",
+    "modeId": "knockout",
+    "useRate": 0.05513411313127791,
+    "popularityPercentile": 1,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "piper",
+    "modeId": "knockout",
+    "useRate": 0.037178095291103185,
+    "popularityPercentile": 0.9514563106796117,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "poco",
+    "modeId": "knockout",
+    "useRate": 0.0015812333486002598,
+    "popularityPercentile": 0.36893203883495146,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rico",
+    "modeId": "knockout",
+    "useRate": 0.016391884343308693,
+    "popularityPercentile": 0.7572815533980582,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rosa",
+    "modeId": "knockout",
+    "useRate": 0.0008137517678229072,
+    "popularityPercentile": 0.2621359223300971,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "rt",
+    "modeId": "knockout",
+    "useRate": 0.002345697308483337,
+    "popularityPercentile": 0.47572815533980584,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ruffs",
+    "modeId": "knockout",
+    "useRate": 0.011977775557404874,
+    "popularityPercentile": 0.7184466019417476,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sam",
+    "modeId": "knockout",
+    "useRate": 0.00020922171533642114,
+    "popularityPercentile": 0.07766990291262135,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sandy",
+    "modeId": "knockout",
+    "useRate": 0.000034870285889403524,
+    "popularityPercentile": 0,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shade",
+    "modeId": "knockout",
+    "useRate": 0.0012553302920185268,
+    "popularityPercentile": 0.33980582524271846,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "shelly",
+    "modeId": "knockout",
+    "useRate": 0.0009026039385987912,
+    "popularityPercentile": 0.27184466019417475,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sirius",
+    "modeId": "knockout",
+    "useRate": 0.002149887241565917,
+    "popularityPercentile": 0.44660194174757284,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "spike",
+    "modeId": "knockout",
+    "useRate": 0.006125099832957919,
+    "popularityPercentile": 0.6116504854368932,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "sprout",
+    "modeId": "knockout",
+    "useRate": 0.018400446339659385,
+    "popularityPercentile": 0.8058252427184466,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "squeak",
+    "modeId": "knockout",
+    "useRate": 0.00699400700490397,
+    "popularityPercentile": 0.6310679611650486,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "starrnova",
+    "modeId": "knockout",
+    "useRate": 0.02448464064493935,
+    "popularityPercentile": 0.8737864077669902,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "stu",
+    "modeId": "knockout",
+    "useRate": 0.002396326281265067,
+    "popularityPercentile": 0.4854368932038835,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "surge",
+    "modeId": "knockout",
+    "useRate": 0.03308150728151922,
+    "popularityPercentile": 0.9320388349514563,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tara",
+    "modeId": "knockout",
+    "useRate": 0.00021995103407162223,
+    "popularityPercentile": 0.08737864077669903,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "tick",
+    "modeId": "knockout",
+    "useRate": 0.007629383848754158,
+    "popularityPercentile": 0.6504854368932039,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "trunk",
+    "modeId": "knockout",
+    "useRate": 0.00027946522393094075,
+    "popularityPercentile": 0.11650485436893204,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "willow",
+    "modeId": "knockout",
+    "useRate": 0.0007651345423040273,
+    "popularityPercentile": 0.24271844660194175,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  },
+  {
+    "brawlerId": "ziggy",
+    "modeId": "knockout",
+    "useRate": 0.003124075853601128,
+    "popularityPercentile": 0.5339805825242718,
+    "exportedAt": "2026-07-11",
+    "sourceNote": "brawltime.ninja, Ranked, Knockout, all maps, rank bracket unspecified by user-provided export"
+  }
+]
