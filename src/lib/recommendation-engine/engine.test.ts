@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
 import { computeScoreBreakdown, generatePickRecommendations, scorePickCandidate, splitByAvailability } from "./engine";
-import { generateBanRecommendations, scoreBanCandidate } from "./ban";
+import { DEFAULT_BAN_WEIGHTS, generateBanRecommendations, scoreBanCandidate } from "./ban";
 import { HYBRID_DATASET } from "./hybrid-dataset";
 import { MOCK_DATASET } from "./mock-data";
 import { applyDraftPositionAdjustment, DEFAULT_WEIGHTS } from "./weights";
@@ -245,6 +245,66 @@ describe("generateBanRecommendations", () => {
   });
 });
 
+describe("real per-mode win rate driving initial ban recommendations (HYBRID_DATASET)", () => {
+  it("Mr. P (real top win rate in Gem Grab) has a higher modeWinRate ban component than a low-winrate Brawler", () => {
+    const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
+    const mrpBreakdown = scoreBanCandidate("mrp", ctx, HYBRID_DATASET);
+    const bonnieBreakdown = scoreBanCandidate("bonnie", ctx, HYBRID_DATASET);
+    // Isolated via a modeWinRate-only weight set so other ban signals can't mask the effect.
+    const isolated = {
+      opponentMapStrength: 0,
+      modeWinRate: 1,
+      threatToAvailablePool: 0,
+      scarcityOfCounters: 0,
+      flexibility: 0,
+      recentMetaStrength: 0,
+      ourOwnPickValue: 0,
+    };
+    const mrpIsolated = scoreBanCandidate("mrp", ctx, HYBRID_DATASET, isolated);
+    const bonnieIsolated = scoreBanCandidate("bonnie", ctx, HYBRID_DATASET, isolated);
+    expect(mrpIsolated.score).toBeGreaterThan(bonnieIsolated.score);
+    expect(mrpBreakdown).toBeDefined();
+  });
+
+  it("with only real mode win rate weighted, initial (no picks/bans yet) ban recommendations rank by real win rate", () => {
+    const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
+    const isolated = {
+      opponentMapStrength: 0,
+      modeWinRate: 1,
+      threatToAvailablePool: 0,
+      scarcityOfCounters: 0,
+      flexibility: 0,
+      recentMetaStrength: 0,
+      ourOwnPickValue: 0,
+    };
+    const recs = generateBanRecommendations(ctx, HYBRID_DATASET, isolated);
+    // Mr. P (76.92%) is the real highest win rate in the Gem Grab dataset.
+    expect(recs[0]!.brawlerId).toBe("mrp");
+  });
+
+  it("surfaces a mode_win_rate ban reason citing the real win rate for a top-winrate Brawler", () => {
+    const ctx = baseContext({ action: "ban", modeId: "gem-grab" });
+    const rec = scoreBanCandidate("mrp", ctx, HYBRID_DATASET, {
+      ...DEFAULT_BAN_WEIGHTS,
+      opponentMapStrength: 0,
+      threatToAvailablePool: 0,
+      scarcityOfCounters: 0,
+      flexibility: 0,
+      recentMetaStrength: 0,
+      ourOwnPickValue: 0,
+    });
+    const reason = rec.reasons.find((r) => r.type === "mode_win_rate");
+    expect(reason).toBeDefined();
+    expect(reason!.message).toContain("76.9%");
+  });
+
+  it("does not surface a mode_win_rate ban reason for a mode with no real import", () => {
+    const ctx = baseContext({ action: "ban", modeId: "showdown" });
+    const rec = scoreBanCandidate("mrp", ctx, HYBRID_DATASET);
+    expect(rec.reasons.some((r) => r.type === "mode_win_rate")).toBe(false);
+  });
+});
+
 describe("mock dataset invariants", () => {
   it("matchup rates are antisymmetric: candidate-vs-opponent + opponent-vs-candidate == 1", () => {
     const a = MOCK_DATASET.getMatchup("shelly", "nita", "sneaky-fields", "brawl-ball", "all")!;
@@ -452,8 +512,26 @@ describe("real pick-rate data feeding into recommendations (HYBRID_DATASET)", ()
   });
 });
 
-describe("real per-mode use-rate data feeding into recommendations (HYBRID_DATASET)", () => {
-  it("Crow (real top use rate in Gem Grab) has a higher modePopularity component than a low-use-rate Brawler", () => {
+describe("real per-mode win rate / pick rate data feeding into recommendations (HYBRID_DATASET)", () => {
+  const isolationWeights = {
+    ...DEFAULT_WEIGHTS,
+    mapPerformance: 0,
+    matchupValue: 0,
+    allySynergy: 0,
+    compositionFit: 0,
+    roleCoverage: 0,
+    draftFlexibility: 0,
+    recentMetaStrength: 0,
+    playerComfort: 0,
+    statisticalConfidence: 0,
+    archetypeCounter: 0,
+    modeClassFit: 0,
+    metaPopularity: 0,
+    classCounter: 0,
+    classPositionFit: 0,
+  };
+
+  it("Crow (real top pick rate in Gem Grab) has a higher modePopularity component than a low-pick-rate Brawler", () => {
     const ctx = baseContext({ modeId: "gem-grab" });
     const crowBreakdown = computeScoreBreakdown("crow", ctx, HYBRID_DATASET);
     const angeloBreakdown = computeScoreBreakdown("angelo", ctx, HYBRID_DATASET);
@@ -461,34 +539,43 @@ describe("real per-mode use-rate data feeding into recommendations (HYBRID_DATAS
     expect(crowBreakdown.realModePopularity).toBeCloseTo(1, 5);
   });
 
-  it("surfaces a mode_popularity reason for a Brawler with real high use rate in this mode", () => {
-    const modePopularityOnlyWeights = {
-      ...DEFAULT_WEIGHTS,
-      mapPerformance: 0,
-      matchupValue: 0,
-      allySynergy: 0,
-      compositionFit: 0,
-      roleCoverage: 0,
-      draftFlexibility: 0,
-      recentMetaStrength: 0,
-      playerComfort: 0,
-      statisticalConfidence: 0,
-      archetypeCounter: 0,
-      modeClassFit: 0,
-      metaPopularity: 0,
-      classCounter: 0,
-      classPositionFit: 0,
-    };
+  it("Mr. P (real top win rate in Gem Grab) has a higher modeWinRate component than a low-winrate Brawler", () => {
     const ctx = baseContext({ modeId: "gem-grab" });
-    const rec = scorePickCandidate("crow", ctx, HYBRID_DATASET, modePopularityOnlyWeights);
+    const mrpBreakdown = computeScoreBreakdown("mrp", ctx, HYBRID_DATASET);
+    const bonnieBreakdown = computeScoreBreakdown("bonnie", ctx, HYBRID_DATASET);
+    expect(mrpBreakdown.modeWinRate).toBeGreaterThan(bonnieBreakdown.modeWinRate);
+    expect(mrpBreakdown.realModeWinRate).toBeCloseTo(0.7692, 3);
+    expect(mrpBreakdown.modeStatsDetail?.scoreRankTotal).toBe(105);
+  });
+
+  it("surfaces a mode_popularity reason for a Brawler with real high pick rate in this mode", () => {
+    const ctx = baseContext({ modeId: "gem-grab" });
+    const rec = scorePickCandidate("crow", ctx, HYBRID_DATASET, { ...isolationWeights, modeWinRate: 0 });
     expect(rec.reasons.some((r) => r.type === "mode_popularity")).toBe(true);
   });
 
-  it("does not surface a mode_popularity reason for a mode with no real use-rate import", () => {
+  it("surfaces a mode_win_rate reason citing the real win rate for a Brawler with strong mode win rate", () => {
+    const ctx = baseContext({ modeId: "gem-grab" });
+    const rec = scorePickCandidate("mrp", ctx, HYBRID_DATASET, { ...isolationWeights, modePopularity: 0 });
+    const reason = rec.reasons.find((r) => r.type === "mode_win_rate");
+    expect(reason).toBeDefined();
+    expect(reason!.message).toContain("76.9%");
+    expect(reason!.message).toContain("of 105");
+  });
+
+  it("surfaces a mode_win_rate warning for a Brawler with weak real mode win rate", () => {
+    const ctx = baseContext({ modeId: "gem-grab" });
+    const rec = scorePickCandidate("belle", ctx, HYBRID_DATASET, { ...isolationWeights, modePopularity: 0 });
+    expect(rec.warnings.some((w) => w.type === "mode_win_rate")).toBe(true);
+  });
+
+  it("does not surface mode_popularity/mode_win_rate reasons for a mode with no real import", () => {
     const ctx = baseContext({ modeId: "showdown" });
     const rec = scorePickCandidate("crow", ctx, HYBRID_DATASET);
     expect(rec.reasons.some((r) => r.type === "mode_popularity")).toBe(false);
     expect(rec.warnings.some((w) => w.type === "mode_popularity")).toBe(false);
+    expect(rec.reasons.some((r) => r.type === "mode_win_rate")).toBe(false);
+    expect(rec.warnings.some((w) => w.type === "mode_win_rate")).toBe(false);
   });
 });
 

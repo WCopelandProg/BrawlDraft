@@ -1,15 +1,21 @@
 import { BRAWLER_IDS } from "@/lib/data/brawlers";
 import { computeScoreBreakdown, scorePickCandidate } from "./engine";
 import { buildBanReasonsAndWarnings } from "./explain";
-import type { BrawlerRecommendation, DraftRecommendationContext, RecommendationDataset } from "./types";
+import type { BrawlerRecommendation, DraftRecommendationContext, ModeStatsDetail, RecommendationDataset } from "./types";
 
 /**
  * Ban scoring is intentionally a different formula from pick scoring (spec section 6.6) — a good
  * ban is often a Brawler that's dangerous *for the enemy to have available*, not one our own team
  * necessarily wants. Starting weights, not permanent truth, same as DEFAULT_WEIGHTS.
+ *
+ * modeWinRate is weighted the highest of any positive term by explicit user request: "initial
+ * recommended bans... should be the brawlers with the highest winrates from the datasets" — before
+ * any picks/bans reveal enemy-specific signal, this real per-mode win rate (see
+ * scripts/import-mode-stats-csv.mjs) is what should drive the top of the ban list.
  */
 export const DEFAULT_BAN_WEIGHTS = {
-  opponentMapStrength: 0.3,
+  opponentMapStrength: 0.2,
+  modeWinRate: 0.35,
   threatToAvailablePool: 0.2,
   scarcityOfCounters: 0.15,
   flexibility: 0.15,
@@ -19,6 +25,10 @@ export const DEFAULT_BAN_WEIGHTS = {
 
 export interface BanScoreBreakdown {
   opponentMapStrength: number;
+  /** Real per-mode win rate where imported, neutral (0.5) otherwise — see getModeWinRate. */
+  modeWinRate: number;
+  realModeWinRate?: number;
+  modeStatsDetail?: ModeStatsDetail;
   threatToAvailablePool: number;
   scarcityOfCounters: number;
   flexibility: number;
@@ -34,6 +44,10 @@ function computeBanBreakdown(
 ): BanScoreBreakdown {
   const mapStat = dataset.getMapStat(candidateId, ctx.mapId, ctx.modeId, ctx.rankBucket);
   const opponentMapStrength = mapStat?.adjustedWinRate ?? 0.5;
+
+  const realModeWinRate = dataset.getModeWinRate(candidateId, ctx.modeId);
+  const modeWinRate = realModeWinRate ?? 0.5;
+  const modeStatsDetail = dataset.getModeStatsDetail(candidateId, ctx.modeId);
 
   const excluded = new Set([...ctx.allBanned, ...ctx.allPicked, candidateId]);
   const ourRemainingPool = BRAWLER_IDS.filter((id) => !excluded.has(id));
@@ -79,6 +93,9 @@ function computeBanBreakdown(
 
   return {
     opponentMapStrength,
+    modeWinRate,
+    realModeWinRate,
+    modeStatsDetail,
     threatToAvailablePool,
     scarcityOfCounters,
     flexibility,
@@ -97,6 +114,7 @@ export function scoreBanCandidate(
   const breakdown = computeBanBreakdown(candidateId, ctx, dataset);
   const positive =
     weights.opponentMapStrength * breakdown.opponentMapStrength +
+    weights.modeWinRate * breakdown.modeWinRate +
     weights.threatToAvailablePool * breakdown.threatToAvailablePool +
     weights.scarcityOfCounters * breakdown.scarcityOfCounters +
     weights.flexibility * breakdown.flexibility +

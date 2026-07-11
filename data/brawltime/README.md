@@ -68,9 +68,10 @@ map/mode/rank combination has real data loaded, amber when it's still on the moc
 
 ## 4. Brawler name matching
 
-The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (104 as of
-this writing — every Brawler named in a user-provided drafting guide plus every Brawler appearing
-in the real pick-rate export in step 5 below). Any CSV row for a Brawler outside that set is
+The importer only recognizes the Brawlers already seeded in `src/lib/data/brawlers.ts` (105 as of
+this writing — every Brawler named in a user-provided drafting guide, every Brawler appearing in
+the real pick-rate export in step 5 below, and Nori, added because the step 6 exports included it).
+Any CSV row for a Brawler outside that set is
 skipped with a warning printed to the console; it isn't silently dropped without telling you. Both
 import scripts resolve names to ids via `scripts/brawler-ids.mjs`, kept in sync with
 `src/lib/data/brawlers.ts` by hand.
@@ -96,25 +97,35 @@ lands in `src/lib/recommendation-engine/real-data/generated-pick-rates.json` as 
 per Brawler per rank bucket, and shows up in recommendations as a `meta_popularity` reason on
 Brawlers with real, high pick rate at the active rank bucket — never as a claim about win rate.
 
-## 6. Importing per-mode use-rate data instead (a third, independent axis)
+## 6. Importing per-mode win rate / pick rate / score data instead (a third, independent axis)
 
-If your export is a **per-mode use-rate snapshot** (dashboard: Metric = "Use Rate" or "Pick Rate",
-Map = "All Maps", Mode = one specific mode, Group By = "Brawler") rather than a single rank-bucket
-snapshot across all modes, use a third importer:
+If your export gives **win rate, pick rate, AND a composite ranking score per Brawler for one
+specific game mode** (all maps/ranks combined for that mode), use a third importer — this carries
+genuinely more than step 5 above (which is pick-rate/use-rate only, no win rate):
 
 ```bash
-node scripts/import-mode-userate-csv.mjs data/brawltime/mode-userate-gem-grab.csv \
+node scripts/import-mode-stats-csv.mjs data/brawltime/mode-stats-gem-grab.csv \
   --mode gem-grab \
   --exported-at 2026-07-11 \
-  --note "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified"
+  --note "user-provided export, Ranked, Gem Grab, all maps, rank bracket unspecified"
 ```
 
-This is a genuinely different axis from step 5 above: it's scoped to one *mode* (all ranks
-combined) instead of one *rank bucket* (all modes combined) — the two are never averaged together.
-If the export you're working from doesn't state which rank bracket it came from (this app's own
-seed data, six real exports covering Gem Grab/Brawl Ball/Bounty/Heist/Hot Zone/Knockout, didn't),
-say so honestly in `--note` rather than guessing one, and the resulting percentile is applied the
-same way regardless of the rank bucket selected in the app. The result lands in
-`src/lib/recommendation-engine/real-data/generated-mode-userates.json` and shows up as a
-`mode_popularity` reason/warning — labeled as real use-rate data for that specific mode, never
-conflated with `meta_popularity`'s rank-bucket-scoped signal or with measured win rate.
+Expected CSV columns: `Brawler`, `WinRate`, `PickRate`, `Score` (rates as either 0-1 fractions or
+`"NN.NN%"` strings; Score as a raw number, higher = better). This is a genuinely different axis
+from step 5 above: it's scoped to one *mode* (all ranks combined) instead of one *rank bucket* (all
+modes combined) — the two are never averaged together. If the export you're working from doesn't
+state which rank bracket it came from (this app's own seed data, six real exports covering Gem
+Grab/Brawl Ball/Bounty/Heist/Hot Zone/Knockout, didn't), say so honestly in `--note` rather than
+guessing one, and the resulting numbers are applied the same way regardless of the rank bucket
+selected in the app.
+
+The result lands in `src/lib/recommendation-engine/real-data/generated-mode-stats.json` with a
+win-rate percentile, a pick-rate percentile, and a 1-indexed rank by the source's own composite
+score. Win rate feeds a `modeWinRate` reason/warning (genuinely measured strength — this app's
+single highest-weighted positive scoring term, per an explicit request to weight real per-mode data
+more strongly than the mostly-mock map-level data); pick rate feeds `mode_popularity` (popularity,
+kept strictly separate from win rate, same as `meta_popularity` above); the composite score is
+stored only for "ranked #N of M" explanatory text, not as a fourth weighted term (it would just
+double-count win rate + pick rate under a different name). `modeWinRate` also drives "initial
+recommended bans" — before any picks/bans reveal enemy-specific signal, the ban list is dominated
+by real per-mode win rate.

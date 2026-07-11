@@ -42,7 +42,7 @@ production behavior (§18, §19.14):
 | Rank-bracket skew (a Brawler being stronger at low elo but easily countered at high elo, or vice versa) | **Mechanism is real, inputs are curated.** `BRAWLER_RANK_SKEW` in `src/lib/data/brawlers.ts` is a hand-curated -1..+1 value per Brawler; `getMapStat`/`getMatchup` in the mock dataset apply it as a genuine, monotonic function of the selected rank bucket (see §2a below). The *shape* of the effect is real and tested; the specific skew numbers are heuristic guesses, not measured from real rank-segmented data. |
 | Patch buff/nerf reactivity (a recent buff/nerf shifting a Brawler's recommendation) | **Mechanism is real, patch list is seeded.** `MOCK_PATCH_HISTORY` in `mock-data.ts` lists which Brawlers were buffed/nerfed per patch; `getMetaStrength`/`getMetaTrend` react to it immediately. In Phase 4 this same shape is populated from the real `balance_patches` table instead of being hand-written — no engine code changes when that happens. |
 | Meta popularity (pick rate) | **Real**, as of this writing. `generated-pick-rates.json` holds a real, user-provided brawltime.ninja pick-rate-by-Brawler export (Ranked, Legendary I-Masters), imported into the `legendary` and `masters` rank buckets via `scripts/import-pickrate-csv.mjs`. This is genuinely measured popularity, not fabricated — see §2d below for exactly what it does and doesn't imply. |
-| Mode popularity (use rate, per game mode) | **Real**, as of this writing. `generated-mode-userates.json` holds 6 real, user-provided brawltime.ninja use-rate-by-Brawler exports, one per Ranked mode (Gem Grab, Brawl Ball, Bounty, Heist, Hot Zone, Knockout), imported via `scripts/import-mode-userate-csv.mjs`. A distinct axis from the row above (mode-scoped, not rank-bucket-scoped) — the source exports didn't state a rank bracket, so the percentile is applied the same way regardless of rank bucket, and that gap is recorded honestly rather than guessed. Surfaced as its own `mode_popularity` reason/warning, never merged into `meta_popularity`. See §2e below. |
+| Mode win rate / mode popularity (win rate + pick rate + a composite ranking score, per game mode) | **Real**, as of this writing. `generated-mode-stats.json` holds 6 real, user-provided per-mode exports covering all 6 Ranked modes (Gem Grab, Brawl Ball, Bounty, Heist, Hot Zone, Knockout), imported via `scripts/import-mode-stats-csv.mjs`. Two distinct real signals from this one import — `modeWinRate` (genuinely measured strength) and `modePopularity` (pick-rate percentile) — plus a `scoreRank`/`scoreRankTotal` used only for explanatory "ranked #N" text, not as its own scoring term. This is this app's single highest-weighted positive scoring term (see §2e below and `weights.ts`) per an explicit user request to weight real per-mode data more strongly than the mostly-mock map-level data. |
 
 No part of the Phase 1/2 delivery calls the network. This is intentional — it lets the draft engine
 and recommendation engine be fully built and tested against the real constraints (formats, filtering,
@@ -137,8 +137,8 @@ statistical data. This is implemented in `src/lib/recommendation-engine/archetyp
   `rarity` field is marked `"Unverified"` rather than guessed — that field is cosmetic display text
   only and never used in scoring, so it was left honest rather than fabricated. A few Brawlers the
   guide names only as mode-first-pick examples, without stating a class outright (Mina, Gray, Gus,
-  Pierce, JaeYong, Ninja, Finx), have their class inferred from that mode context — heuristic on
-  top of heuristic, flagged in a code comment in `brawlers.ts`.
+  Pierce, JaeYong, Finx), have their class inferred from that mode context — heuristic on top of
+  heuristic, flagged in a code comment in `brawlers.ts`.
 
 **Known limitation, stated plainly**: the guide's pick-2/pick-3 advice ("pick 3 should hard-counter
 the enemy's pick 1... pick 2 should cover pick 3's weakness") describes a *two-ply lookahead* — planning
@@ -185,40 +185,64 @@ applies) — `all`/`diamond`/`mythic` still get a neutral 0.5 contribution from 
 applying a Legendary-Masters-specific popularity signal to lower brackets would be an unwarranted
 generalization the data doesn't support.
 
-### 2e. Real per-mode use-rate data (imported, live in this repo as of this writing)
+### 2e. Real per-mode win rate / pick rate / score data (imported, live in this repo as of this writing)
 
-A user provided 6 real CSV exports from brawltime.ninja's dashboard: use rate by Brawler, one file
-per Ranked mode (all maps combined within that mode) —
-`data/brawltime/mode-userate-{gem-grab,brawl-ball,bounty,heist,hot-zone,knockout}.csv`. Each was
+A user provided 6 real per-mode exports — win rate, pick rate, and a source-computed composite
+ranking score, per Brawler, one file per Ranked mode (all maps/ranks combined within that mode) —
+`data/brawltime/mode-stats-{gem-grab,brawl-ball,bounty,heist,hot-zone,knockout}.csv`. This
+supersedes an earlier, thinner per-mode import that only had a use-rate column (no win rate at
+all); that file/script/JSON have been deleted rather than kept alongside a superset. Each mode was
 imported with, e.g.:
 
 ```
-node scripts/import-mode-userate-csv.mjs data/brawltime/mode-userate-gem-grab.csv \
+node scripts/import-mode-stats-csv.mjs data/brawltime/mode-stats-gem-grab.csv \
   --mode gem-grab --exported-at 2026-07-11 \
-  --note "brawltime.ninja, Ranked, Gem Grab, all maps, rank bracket unspecified by user-provided export"
+  --note "user-provided export, Ranked, Gem Grab, all maps, rank bracket unspecified"
 ```
 
-Every row across all 6 files matched a Brawler already in this app's roster (100-104 rows per mode,
-matching however many Brawlers appeared in that mode's real export — not every Brawler necessarily
-shows up in every mode's list). The result lives in
-`src/lib/recommendation-engine/real-data/generated-mode-userates.json`, converted to a 0-1
-popularity percentile per Brawler per mode (`computeModePercentiles`, the same math as §2d's
-`computePercentiles` but scoped to one mode's rows instead of one rank bucket's).
+Every row across all 6 files matched a Brawler already in this app's roster (105 rows per mode,
+including Nori — see below). The result lives in
+`src/lib/recommendation-engine/real-data/generated-mode-stats.json`, with a win-rate percentile and
+a pick-rate percentile computed per mode (`computePercentileFor`), plus a 1-indexed `scoreRank`
+(best = 1) by the source's own composite score.
 
-**What's different from §2d, and why it's kept separate.** §2d's pick-rate data is scoped to a rank
-bucket (Legendary-Masters) across all modes combined; this data is scoped to a mode across all
-ranks combined — two genuinely different axes of the same underlying "how often do real players
-pick this" question, neither a subset of the other. They are never averaged together: a
-recommendation can show both a `meta_popularity` reason (real for this rank bucket) and a
-`mode_popularity` reason (real for this mode) side by side, each labeled with which axis it came
-from.
+**Three real numbers, three different jobs — deliberately not merged into one:**
+- `winRate` (raw 0-1 fraction) feeds a new `modeWinRate` score term — genuinely measured strength
+  for this specific mode. This is now the single highest-weighted positive term in pick scoring
+  (see `weights.ts`), by explicit user request to weight real per-mode data more strongly than the
+  mostly-mock map-level `mapPerformance` term, which was reduced to make room for it rather than
+  just stacked on top.
+- `pickRate` (converted to a percentile) feeds `modePopularity` — popularity, not strength, kept
+  as its own term for the same reason `meta_popularity` (§2d, rank-bucket-scoped) is never merged
+  with it: a heavily-picked Brawler isn't thereby proven strong, and vice versa.
+- `score` (the source's own composite ranking) is stored only for "ranked #N of M" explanatory text
+  and to drive initial ban recommendations (see below) — it is deliberately **not** its own third
+  weighted scoring term, since it's a derived function of win rate and pick rate this app already
+  has as independent, more legible inputs; adding it as a fourth axis would just double-count the
+  same underlying signal under a different name.
 
-**Coverage and its one honest gap.** All 6 Ranked modes now have real per-mode popularity data,
-applied regardless of the selected rank bucket. The source exports did not state which rank
-bracket they were pulled from (unlike §2d's explicit "Legendary I-Masters" filter) — rather than
-guess a bracket that was never given, this data is applied the same way across every rank bucket
-for its mode, and `sourceNote` on every imported row says "rank bracket unspecified" so this
-approximation stays auditable instead of silently presented as bracket-specific.
+**Bans**: per an explicit user request ("initial recommended bans... should be the brawlers with
+the highest winrates from the datasets"), `modeWinRate` is also the single highest-weighted term in
+ban scoring (`DEFAULT_BAN_WEIGHTS.modeWinRate`, see `ban.ts`) — before any picks/bans reveal
+enemy-specific signal, the ban list is driven primarily by this real, per-mode win rate. One honest
+caveat worth knowing: a few of the resulting top "highest real win rate" bans are low-pick-rate
+outliers (e.g. a rarely-played Brawler with a small real sample happening to have a very high win
+rate) rather than the mode's most generally-relevant Brawler — that's an inherent small-sample-size
+property of "rank purely by win rate," not a bug in how the number is read or applied.
+
+**Coverage and its one honest gap.** All 6 Ranked modes now have real per-mode win rate and pick
+rate data, applied regardless of the selected rank bucket. The source exports did not state which
+rank bracket they were pulled from — rather than guess a bracket that was never given, this data is
+applied the same way across every rank bucket for its mode, and `sourceNote` on every imported row
+says "rank bracket unspecified" so this approximation stays auditable instead of silently presented
+as bracket-specific.
+
+**Nori.** A newly-released Brawler (confirmed via web research, July 2026: a Legendary-rarity
+Assassin/Space Maker — fishing-rod attack with a hook-grapple and a charged leap over walls, high
+mobility, a self-heal gadget) was added to the roster specifically because it appeared in all 6 of
+these real per-mode exports; it wasn't covered by the original 7-class reference image (see §2c),
+so its class tag is this assistant's own best-effort classification rather than confirmed against
+that image.
 
 ## 3. Statistical record shapes (for Phase 4 ingestion, designed now)
 

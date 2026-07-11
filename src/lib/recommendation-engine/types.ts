@@ -120,13 +120,41 @@ export interface RecommendationDataset {
    */
   getRealPopularity(brawlerId: string, rankBucket: string): number | undefined;
   /**
-   * 0-1 percentile from real, user-imported per-mode use-rate data (see
-   * scripts/import-mode-userate-csv.mjs and data/brawltime/README.md), or undefined when no real
+   * 0-1 real measured win rate for this Brawler in this specific mode (all maps/ranks combined),
+   * from scripts/import-mode-stats-csv.mjs, or undefined when no real data has been imported for
+   * that mode. This is genuinely measured strength, not popularity — a stronger signal than
+   * mapPerformance's mostly-mock per-map number when it's available.
+   */
+  getModeWinRate(brawlerId: string, modeId: string): number | undefined;
+  /**
+   * 0-1 percentile from real, user-imported per-mode pick-rate data (see
+   * scripts/import-mode-stats-csv.mjs and data/brawltime/README.md), or undefined when no real
    * data has been imported for that mode. A different axis from getRealPopularity above (mode-
-   * scoped rather than rank-bucket-scoped) — the two are never averaged together, only ever
-   * surfaced as separate, separately-labeled signals.
+   * scoped rather than rank-bucket-scoped) and from getModeWinRate above (popularity, not
+   * strength) — none of these three are ever averaged together, only surfaced as separate,
+   * separately-labeled signals.
    */
   getModePopularity(brawlerId: string, modeId: string): number | undefined;
+  /**
+   * Full real-data detail (raw win rate/pick rate/composite score/rank) for building rich "why"
+   * explanations, or undefined when no real data has been imported for that mode. See
+   * ModeStatsDetail below.
+   */
+  getModeStatsDetail(brawlerId: string, modeId: string): ModeStatsDetail | undefined;
+}
+
+/**
+ * Real per-mode stats detail, as imported by scripts/import-mode-stats-csv.mjs, exposed for
+ * explanation text (e.g. "59.5% real win rate, ranked #3 of 105 in Brawl Ball by the source's own
+ * composite score"). Not itself a scoring input — see real-data/types.ts for why `score` isn't fed
+ * into pick scoring as its own weighted term.
+ */
+export interface ModeStatsDetail {
+  winRate: number;
+  pickRate: number;
+  score: number;
+  scoreRank: number;
+  scoreRankTotal: number;
 }
 
 export interface ScoreWeights {
@@ -145,8 +173,10 @@ export interface ScoreWeights {
   modeClassFit: number;
   /** Real pick-rate popularity for this rank bucket where imported, neutral (0.5) otherwise. */
   metaPopularity: number;
-  /** Real per-mode use-rate popularity where imported, neutral (0.5) otherwise. See class-counters.ts-adjacent getModePopularity. */
+  /** Real per-mode pick-rate popularity where imported, neutral (0.5) otherwise. See getModePopularity. */
   modePopularity: number;
+  /** Real per-mode measured win rate where imported, neutral (0.5) otherwise. See getModeWinRate. */
+  modeWinRate: number;
   /** Class-counter matrix (Anti-Tank/Tank/Space Maker/Thrower/Sniper/Control/Support), see class-counters.ts. */
   classCounter: number;
   /** Draft-position/mode fit for the candidate's class (e.g. Thrower only safe last pick), see class-counters.ts. */
@@ -172,6 +202,7 @@ export type RecommendationReasonType =
   | "mode_class_fit"
   | "meta_popularity"
   | "mode_popularity"
+  | "mode_win_rate"
   | "class_counter"
   | "class_position_fit"
   // Ban-specific reason types (spec section 6.6/6.7: ban scoring is a different formula from pick

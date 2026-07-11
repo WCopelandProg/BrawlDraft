@@ -125,6 +125,9 @@ export const BRAWLERS: BrawlerMeta[] = [
   { id: "mrp", name: "Mr. P", rarity: "Unverified" },
   { id: "pam", name: "Pam", rarity: "Unverified" },
   { id: "sam", name: "Sam", rarity: "Unverified" },
+  // Added mid-session: a newly-released Brawler (per web research, July 2026) not covered by the
+  // original reference image classification — see BRAWLER_ROLE_FEATURES below for sourcing notes.
+  { id: "nori", name: "Nori", rarity: "Legendary", recentlyReleased: true },
 ];
 
 export const BRAWLER_IDS: string[] = BRAWLERS.map((b) => b.id);
@@ -173,8 +176,8 @@ export function getRankSkew(id: string): number {
  * The primary classification below (which of "tank" / "assassin" / "tank_counter" / "controller" /
  * "sharpshooter" / "thrower" / "support" each Brawler carries at high weight) follows a 7-class
  * drafting framework a user shared with this project: a categorized reference image covering 101
- * of these 104 Brawlers, plus a companion long-form drafting-strategy video explaining how the
- * classes interact. Both are summarized (not reproduced) here and drive:
+ * of the (then-104) Brawlers it was drawn from, plus a companion long-form drafting-strategy video
+ * explaining how the classes interact. Both are summarized (not reproduced) here and drive:
  *   - the class label shown on each Brawler during drafting (see components/draft/BrawlerSelector),
  *   - the class-counter matrix in recommendation-engine/class-counters.ts (e.g. tank_counter beats
  *     both tank and assassin — "anti-tank" is that framework's own name for the tank_counter tag),
@@ -315,9 +318,15 @@ export const BRAWLER_ROLE_FEATURES: Record<string, RoleFeature[]> = {
   bonnie: [{ tag: "controller", weight: 0.65 }, { tag: "sharpshooter", weight: 0.6 }],
   mrp: [{ tag: "controller", weight: 0.8 }, { tag: "support", weight: 0.4 }],
 
-  // --- Not covered by the reference image (3 of 104) — kept as an earlier best-effort guess, see
-  // the recentlyReleased markers above.
+  // --- Not covered by the reference image (3 of the original 104, plus Nori added afterward) —
+  // kept as an earlier best-effort guess/independent research, see the recentlyReleased markers above.
   starrnova: [{ tag: "support", weight: 0.6 }, { tag: "controller", weight: 0.4 }],
   damian: [{ tag: "damage_dealer", weight: 0.5 }, { tag: "tank_counter", weight: 0.3 }],
   bolt: [{ tag: "speedster", weight: 0.7 }, { tag: "assassin", weight: 0.4 }],
+
+  // Nori (added mid-session, not in the original reference image): a fishing-rod Legendary with a
+  // charge-based attack (short slash / hook-grapple / charged leap over walls), high mobility, and
+  // a self-heal gadget — classified as Space Maker/Assassin (per web research, July 2026), the same
+  // class as Bolt/Leon/Mortis/Mico in this taxonomy.
+  nori: [{ tag: "assassin", weight: 0.85 }, { tag: "mobility", weight: 0.6 }, { tag: "burst_damage", weight: 0.4 }],
 };

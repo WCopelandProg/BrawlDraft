@@ -169,11 +169,30 @@ export function buildReasonsAndWarnings(
     });
   }
 
+  const modeWinRateImpact = weights.modeWinRate * (b.modeWinRate - 0.5) * 2;
+  if (b.realModeWinRate !== undefined && b.realModeWinRate > 0.52) {
+    const rankNote = b.modeStatsDetail
+      ? ` — ranked #${b.modeStatsDetail.scoreRank} of ${b.modeStatsDetail.scoreRankTotal} in this mode by real combined stats`
+      : "";
+    reasons.push({
+      type: "mode_win_rate",
+      impact: modeWinRateImpact,
+      message: `Genuinely strong in this specific mode: ${(b.realModeWinRate * 100).toFixed(1)}% real win rate across real Ranked matches${rankNote}.`,
+    });
+  } else if (b.realModeWinRate !== undefined && b.realModeWinRate < 0.42) {
+    warnings.push({
+      type: "mode_win_rate",
+      impact: modeWinRateImpact,
+      message: `Historically weak in this specific mode: only ${(b.realModeWinRate * 100).toFixed(1)}% real win rate, even if it does well in others.`,
+    });
+  }
+
   if (b.realModePopularity !== undefined && b.realModePopularity > 0.7) {
+    const pickRateNote = b.modeStatsDetail ? ` (${(b.modeStatsDetail.pickRate * 100).toFixed(1)}% real pick rate)` : "";
     reasons.push({
       type: "mode_popularity",
       impact: weights.modePopularity * (b.realModePopularity - 0.5),
-      message: `Heavily favored by real Ranked players specifically in this game mode (top ${Math.round((1 - b.realModePopularity) * 100)}% by use rate) — real use-rate data, not measured win rate.`,
+      message: `Heavily favored by real Ranked players specifically in this game mode${pickRateNote} — real pick-rate data, not measured win rate.`,
     });
   } else if (b.realModePopularity !== undefined && b.realModePopularity < 0.15) {
     warnings.push({
@@ -271,6 +290,16 @@ export function buildBanReasonsAndWarnings(
       type: "map_strength",
       impact: mapImpact,
       message: `Dominant on this map/mode (adjusted win rate ${(b.opponentMapStrength * 100).toFixed(0)}%) — a strong general ban.`,
+    });
+  }
+
+  const modeWinRateImpact = weights.modeWinRate * (b.modeWinRate - 0.5) * 2;
+  if (b.realModeWinRate !== undefined && b.realModeWinRate > 0.5) {
+    const rankNote = b.modeStatsDetail ? ` (ranked #${b.modeStatsDetail.scoreRank} of ${b.modeStatsDetail.scoreRankTotal} in this mode)` : "";
+    reasons.push({
+      type: "mode_win_rate",
+      impact: modeWinRateImpact,
+      message: `One of the real highest win rates in this mode: ${(b.realModeWinRate * 100).toFixed(1)}%${rankNote} — a strong general ban regardless of who's picked so far.`,
     });
   }
 

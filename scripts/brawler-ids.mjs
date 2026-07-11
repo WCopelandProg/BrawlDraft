@@ -11,7 +11,7 @@ export const BRAWLER_IDS = [
   "kenji", "cordelius", "mico", "chuck", "melodie", "carl", "mandy", "bo", "sprout", "spike",
   "fang", "tara", "moe", "pearl", "ash", "buster", "berry", "lola", "squeak", "trunk", "juju",
   "willow", "buzz", "eve", "rt", "gale", "ziggy", "glowy", "sandy", "janet", "larrylawrie",
-  "bonnie", "draco", "grom", "doug", "ollie", "jacky", "mrp", "pam", "sam",
+  "bonnie", "draco", "grom", "doug", "ollie", "jacky", "mrp", "pam", "sam", "nori",
 ];
 
 export function normalizeBrawlerName(rawName) {

@@ -220,8 +220,16 @@ function getRealPopularity(): number | undefined {
   return undefined;
 }
 
-/** Same as getRealPopularity above — only hybrid-dataset.ts overlays real per-mode use-rate data. */
+/** Same as getRealPopularity above — only hybrid-dataset.ts overlays real per-mode stats data. */
 function getModePopularity(): number | undefined {
+  return undefined;
+}
+
+function getModeWinRate(): number | undefined {
+  return undefined;
+}
+
+function getModeStatsDetail(): undefined {
   return undefined;
 }
 
@@ -237,5 +245,7 @@ export const MOCK_DATASET: RecommendationDataset = {
   getMetaTrend,
   getRankSkew,
   getRealPopularity,
+  getModeWinRate,
   getModePopularity,
+  getModeStatsDetail,
 };

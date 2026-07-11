@@ -12,6 +12,7 @@ import { buildReasonsAndWarnings } from "./explain";
 import type {
   BrawlerRecommendation,
   DraftRecommendationContext,
+  ModeStatsDetail,
   PlayerAvailability,
   RecommendationDataset,
   RoleTag,
@@ -95,9 +96,14 @@ export interface ScoreBreakdown {
   /** 0-1 if real pick-rate data exists for this rank bucket, else undefined (metaPopularity uses 0.5). */
   realPopularity?: number;
   metaPopularity: number;
-  /** 0-1 if real per-mode use-rate data exists for this mode, else undefined (modePopularity uses 0.5). */
+  /** 0-1 if real per-mode pick-rate data exists for this mode, else undefined (modePopularity uses 0.5). */
   realModePopularity?: number;
   modePopularity: number;
+  /** 0-1 if real per-mode win-rate data exists for this mode, else undefined (modeWinRate uses 0.5). */
+  realModeWinRate?: number;
+  modeWinRate: number;
+  /** Full real-data detail (rank, raw rates) for this mode, when imported — for rich explanations. */
+  modeStatsDetail?: ModeStatsDetail;
   /** The candidate's single dominant class per class-counters.ts (Thrower/Tank/Space Maker/Anti-Tank/Support/Sniper/Control). */
   candidateClass?: CoreClass;
   /** 0-1, centered 0.5: how well the candidate's class counters the enemy's revealed classes. */
@@ -256,11 +262,16 @@ export function computeScoreBreakdown(
   const realPopularity = dataset.getRealPopularity(candidateId, ctx.rankBucket);
   const metaPopularity = realPopularity ?? 0.5;
 
-  // Real per-mode use-rate popularity (data/brawltime/README.md §6): a second, independent real
-  // popularity signal keyed by mode instead of rank bucket. Kept as its own term rather than
-  // merged into metaPopularity above so a recommendation can explain which axis it came from.
+  // Real per-mode pick-rate popularity and win rate (scripts/import-mode-stats-csv.mjs): two
+  // independent real signals keyed by mode instead of rank bucket. Kept as their own terms rather
+  // than merged into metaPopularity/mapPerformance above so a recommendation can explain which
+  // axis it came from — modeWinRate in particular is genuinely measured strength for this exact
+  // mode, a stronger signal than mapPerformance's mostly-mock per-map number when both are present.
   const realModePopularity = dataset.getModePopularity(candidateId, ctx.modeId);
   const modePopularity = realModePopularity ?? 0.5;
+  const realModeWinRate = dataset.getModeWinRate(candidateId, ctx.modeId);
+  const modeWinRate = realModeWinRate ?? 0.5;
+  const modeStatsDetail = dataset.getModeStatsDetail(candidateId, ctx.modeId);
 
   return {
     mapPerformance,
@@ -291,6 +302,9 @@ export function computeScoreBreakdown(
     metaPopularity,
     realModePopularity,
     modePopularity,
+    realModeWinRate,
+    modeWinRate,
+    modeStatsDetail,
     candidateClass,
     classCounter,
     classPositionFit: classPositionFitValue,
@@ -314,6 +328,7 @@ function weightedScore(breakdown: ScoreBreakdown, weights: ScoreWeights): number
     weights.modeClassFit * breakdown.modeClassFit +
     weights.metaPopularity * breakdown.metaPopularity +
     weights.modePopularity * breakdown.modePopularity +
+    weights.modeWinRate * breakdown.modeWinRate +
     weights.classCounter * breakdown.classCounter +
     weights.classPositionFit * breakdown.classPositionFit;
   const penalty = weights.counterRiskPenalty * breakdown.counterRisk + weights.redundancyPenalty * breakdown.redundancy;

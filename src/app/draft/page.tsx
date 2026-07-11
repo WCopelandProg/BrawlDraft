@@ -21,7 +21,7 @@ import { getMapMeta } from "@/lib/data/maps";
 import { getRankBucketMeta } from "@/lib/data/ranks";
 import { generatePickRecommendations, splitByAvailability } from "@/lib/recommendation-engine/engine";
 import { generateBanRecommendations } from "@/lib/recommendation-engine/ban";
-import { hasRealMapData, hasRealModeUseRateData, HYBRID_DATASET } from "@/lib/recommendation-engine/hybrid-dataset";
+import { hasRealMapData, hasRealModeStatsData, HYBRID_DATASET } from "@/lib/recommendation-engine/hybrid-dataset";
 import type { DraftRecommendationContext } from "@/lib/recommendation-engine/types";
 import { loadProfiles, type PlayerProfile } from "@/lib/storage/profiles";
 import { clearDraftSession, loadDraftSession, saveDraftSession } from "@/lib/storage/draft-session";
@@ -152,7 +152,7 @@ export default function DraftScreen() {
   const modeMeta = getGameModeMeta(session.modeId);
   const rankBucketMeta = getRankBucketMeta(session.rankBucket);
   const realMapDataActive = hasRealMapData(session.mapId, session.modeId, session.rankBucket);
-  const realModeUseRateActive = hasRealModeUseRateData(session.modeId);
+  const realModeStatsActive = hasRealModeStatsData(session.modeId);
 
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-4 px-4 py-6">
@@ -171,10 +171,10 @@ export default function DraftScreen() {
               ? "Map win rates for this map/mode/rank: real data imported from brawltime.ninja."
               : "Map win rates for this map/mode/rank: seeded/mock demo data, not real match stats."}
           </p>
-          <p className={`text-xs font-medium ${realModeUseRateActive ? "text-emerald-400" : "text-amber-400"}`}>
-            {realModeUseRateActive
-              ? "Use rates for this mode: real data imported from brawltime.ninja (rank bracket unspecified by source)."
-              : "Use rates for this mode: seeded/mock demo data, not real usage stats."}
+          <p className={`text-xs font-medium ${realModeStatsActive ? "text-emerald-400" : "text-amber-400"}`}>
+            {realModeStatsActive
+              ? "Win/pick rates for this mode: real data (rank bracket unspecified by source)."
+              : "Win/pick rates for this mode: seeded/mock demo data, not real match stats."}
           </p>
         </div>
         <div className="flex gap-2">

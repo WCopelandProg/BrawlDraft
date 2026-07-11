@@ -51,19 +51,40 @@ export interface ImportedPickRateRow {
 }
 
 /**
- * One row of real, per-mode (not rank-bucket-scoped) use-rate data, imported by
- * scripts/import-mode-userate-csv.mjs. The source CSVs this was built against gave a use-rate
- * breakdown per game mode (all maps combined) but didn't state which rank bracket they came from,
- * so — rather than guess one — this is applied uniformly across every rank bucket for the given
- * mode, and `sourceNote` records that the rank bracket is unstated so it stays auditable.
+ * One row of real, per-mode (not rank-bucket-scoped) stats data, imported by
+ * scripts/import-mode-stats-csv.mjs — a real win rate, pick rate, AND composite ranking score per
+ * Brawler for one specific game mode (all maps/ranks combined for that mode). This supersedes an
+ * earlier, thinner per-mode import that only had a use-rate column (see git history if needed) —
+ * this one carries actual measured win rate too, which the earlier version didn't have at all.
+ *
+ * The source CSVs this was built against didn't state which rank bracket they came from, so —
+ * rather than guess one — this is applied uniformly across every rank bucket for the given mode,
+ * and `sourceNote` records that the rank bracket is unstated so it stays auditable.
  */
-export interface ImportedModeUseRateRow {
+export interface ImportedModeStatsRow {
   brawlerId: string;
   modeId: string;
+  /** 0-1 fraction, exactly as exported (a real measured win rate, not popularity). */
+  winRate: number;
   /** 0-1 fraction, exactly as exported. */
-  useRate: number;
-  /** 0-1, this Brawler's rank among every Brawler in the same mode's import by use rate. */
-  popularityPercentile: number;
+  pickRate: number;
+  /**
+   * The source's own composite ranking score (higher = better/more meta-relevant in this mode).
+   * Stored as-is for explanatory display (e.g. "ranked #2 in Brawl Ball") and for driving ban
+   * recommendations' "highest real winrate" ask indirectly via `winRateRank` below — not fed into
+   * pick scoring as its own weighted term, since it's a derived function of win rate and pick rate
+   * this app already has as independent, more legible inputs; adding a third overlapping term
+   * would just double-count the same underlying signal under a different name.
+   */
+  score: number;
+  /** 0-1, this Brawler's rank among every Brawler in the same mode's import by win rate. */
+  winRatePercentile: number;
+  /** 0-1, this Brawler's rank among every Brawler in the same mode's import by pick rate. */
+  pickRatePercentile: number;
+  /** 1 = best (highest score) in this mode's import, used for "ranked #N" explanations. */
+  scoreRank: number;
+  /** Total number of Brawlers in this mode's import, so scoreRank can be shown as "#N of M". */
+  scoreRankTotal: number;
   exportedAt: string;
   sourceNote?: string;
 }
