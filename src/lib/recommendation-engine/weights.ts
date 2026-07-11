@@ -43,7 +43,12 @@ export const DEFAULT_WEIGHTS: ScoreWeights = {
   modeWinRate: 0.22,
   // Class-counter matrix and draft-position/mode fit (Anti-Tank/Tank/Space Maker/Thrower/Sniper/
   // Control/Support), from a second, independent user-provided framework — see class-counters.ts.
-  classCounter: 0.1,
+  // Raised from 0.1 per explicit user request: recommendations at the final pick were dominated by
+  // roleCoverage (filling our *own* team's missing role) and the mock matchupValue term, drowning
+  // out this signal even when it correctly identified that a candidate's class was a poor answer
+  // to the enemy's actual, fully-revealed composition. See applyDraftPositionAdjustment below for
+  // the accompanying steeper late-pick ramp.
+  classCounter: 0.22,
   classPositionFit: 0.08,
   counterRiskPenalty: 0.15,
   redundancyPenalty: 0.1,
@@ -70,9 +75,18 @@ export function applyDraftPositionAdjustment(base: ScoreWeights, positionFactor:
     modeWinRate: base.modeWinRate * (1.15 - 0.3 * clamped),
     matchupValue: base.matchupValue * (0.6 + 0.8 * clamped),
     compositionFit: base.compositionFit * (0.6 + 0.8 * clamped),
-    roleCoverage: base.roleCoverage * (0.6 + 0.8 * clamped),
+    // Filling our *own* team's missing role matters most early (it keeps later picks flexible) and
+    // least on the literal last pick, where there is no future pick left to benefit from added
+    // coverage — the mirror image of the old behavior, which wrongly amplified this term right when
+    // it should matter least relative to how well the pick answers the enemy's now-fully-revealed
+    // composition (classCounter below).
+    roleCoverage: base.roleCoverage * (1.2 - 0.4 * clamped),
     archetypeCounter: base.archetypeCounter * (0.6 + 0.8 * clamped),
-    classCounter: base.classCounter * (0.6 + 0.8 * clamped),
+    // Steeper than the shared (0.6 + 0.8x) curve above: by the last pick the enemy's composition is
+    // fully known, so "does this candidate's class directly answer what they actually drafted" is
+    // maximally decision-relevant — it should end up the single largest positive term, ahead of the
+    // mock matchupValue term and the enemy-agnostic modeWinRate term.
+    classCounter: base.classCounter * (0.7 + 1.3 * clamped),
     counterRiskPenalty: base.counterRiskPenalty * (0.7 + 0.6 * clamped),
     // The drafting guide is explicit that doubling up on a class late in the draft is fine ("not
     // a huge issue... 2 of the same class can sometimes overwhelm their natural counters") — so

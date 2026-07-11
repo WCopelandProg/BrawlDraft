@@ -645,6 +645,31 @@ describe("class-counter matrix scoring (Anti-Tank / Tank / Space Maker / Thrower
     );
     expect(breakdown.classPositionFit).toBeGreaterThan(0.5);
   });
+
+  // Regression test for a reported bug: on the last pick against an enemy comp of Anti-Tank +
+  // Anti-Tank + Control (no Tank or Space Maker at all), the app was recommending another
+  // Anti-Tank — a class the counter matrix has no entry for beating another Anti-Tank — instead of
+  // a Sniper or Control, both of which the matrix says directly counter Anti-Tank. The cause was
+  // roleCoverage (filling the ally's own missing role) and the mock matchupValue term outweighing
+  // classCounter even when classCounter correctly flagged the pick as a poor matchup.
+  it("on the last pick, a Sniper/Control candidate outscores an Anti-Tank against an enemy team with no Tank/Space Maker", () => {
+    const ctx = baseContext({
+      modeId: "gem-grab",
+      allyPicks: ["bolt", "brock"],
+      enemyPicks: ["penny", "otis", "charlie"], // controller, tank_counter, tank_counter — no tank/assassin
+      allBanned: ["crow", "surge", "8bit"],
+      allPicked: ["bolt", "brock", "penny", "otis", "charlie"],
+      picksSoFar: 5,
+      totalPicksInFormat: 6,
+    });
+    const spike = scorePickCandidate("spike", ctx, HYBRID_DATASET); // another Anti-Tank
+    const amber = scorePickCandidate("amber", ctx, HYBRID_DATASET); // Control
+    const angelo = scorePickCandidate("angelo", ctx, HYBRID_DATASET); // Sniper
+    expect(amber.score).toBeGreaterThan(spike.score);
+    expect(angelo.score).toBeGreaterThan(spike.score);
+    // The Anti-Tank pick should now come with an explicit warning explaining why.
+    expect(spike.warnings.some((w) => w.type === "class_counter")).toBe(true);
+  });
 });
 
 describe("expanded roster data integrity", () => {
