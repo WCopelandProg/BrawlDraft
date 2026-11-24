@@ -1,6 +1,19 @@
 # BrawlDraft
 
-A companion web app that recommends bans and picks during Brawl Stars Ranked drafts.
+A Brawl Stars draft companion that recommends picks and bans and explains the signals behind each recommendation.
+
+**Stack:** TypeScript, Next.js, React, and Vitest. Draft state is stored locally in the browser.
+
+## Project highlights
+
+- Enforces turn order and legal actions across supported draft formats, with undo and reset.
+- Combines map fit, team composition, matchups, and imported statistics in a deterministic scoring engine.
+- Keeps real imported win/pick-rate data separate from mock values and hand-built heuristics.
+- Includes unit tests for draft rules and recommendation behavior.
+
+**Status:** Working prototype. Some inputs remain mocked or heuristic; the win-probability estimate is not calibrated against match outcomes. There is no live game-state integration.
+
+**Start here:** [Run locally](#getting-started) · [Data sources](docs/data-sources.md) · [Architecture](docs/architecture.md) · [Limitations](#known-limitations)
 
 > **This material is unofficial and is not endorsed by Supercell.** See
 > [Supercell's Fan Content Policy](https://supercell.com/en/fan-content-policy/). BrawlDraft is
